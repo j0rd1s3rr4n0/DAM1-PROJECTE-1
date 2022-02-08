@@ -2,11 +2,28 @@
 <head></head>
 <body>
 	<h1 id="title"><u>_Test_</u></h1>
-	<form action="" >
-		<input type="text" name="" placeholder="name" id="nameField">
-		<input type="text" name="" placeholder="age" id="ageField">
-		<button onclick="escribirDatos()">Submit</button>
-	</form>
+		<input type="text" name="usuario" placeholder="name" id="nameField">
+		<input type="text" name="contrasenya" placeholder="age" id="ageField">
+		<button onclick="registrar()">Submit</button>
 </body>
-<script type="text/javascript" src="js/app.js"></script>
+
+
+
+
+
+
+
+<script>
+
+  function registrar(){
+
+  	let age = document.getElementById('ageField').value
+  	let name = document.getElementById('nameField').value
+
+
+	console.log('Regsitrando Usuario...');
+	console.log(age+" | "+name)
+  }
+</script>
+<!--<script type="text/javascript" src="js/app.js"></script>-->
 </html>
