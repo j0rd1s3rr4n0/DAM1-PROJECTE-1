@@ -1,0 +1,258 @@
+
+
+a:hover{
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 110%;
+
+}
+a{
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 110%;
+  color: white;
+}
+
+*{
+  margin:0;
+  padding:0;
+  font-family: "ROBOTO", sans-serif;
+  text-transform: uppercase;
+}
+h1{
+  font-family: "Josefin Sans", sans-serif;
+}
+body{
+  background: #1E1F26;
+  background: linear-gradient(180deg, rgba(0,212,255,1) 0%, rgba(0,102,105,1)  45%, #1E1F26 100%);
+}
+nav{
+  margin-top: 200px;margin-bottom: -200px;height: auto;width: 50%;background-color: #1E1F26;border-radius: 20px;text-align: center;color: white;
+}
+nav > ul > li {
+display:inline-block;
+margin: 5px;
+border: 1px white solid;
+padding: 5px;
+}
+header{
+  /*background-color:;*/
+}
+header > ul {
+  width: 100%;
+  background-color: black;
+}
+header > ul > *{
+  margin: auto auto;
+  padding: 5% 5%;
+}
+header > ul > img{
+  position: absolute;
+  margin-top: -2%;
+  margin-left: -18%;
+  height: 10%;
+  width: 12%;
+}
+img#logo{
+}
+header > ul{
+  margin: 0;
+  vertical-align: middle;
+}
+header > * , header > ul > li {
+    margin-top:10px;
+    background-color:white;
+    margin:auto -20px;
+    text-align:center;
+    border-radius:0px;
+    display:inline-block;
+
+    background-color: black;
+    color: white;
+
+
+}
+
+article{
+  position: unset;
+  background-color:;
+  padding:3%;
+}
+img.producte{
+  width:100%;
+  height:100px;
+  object-fit: cover;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 0%;
+  border-bottom-left-radius: 0%;
+  border: 6px solid white;
+  margin-left: -6px;
+  margin-top: -5px;
+}
+footer{ position: relative;
+  background-color:black;color: white;margin:0;height:20%;padding-top:2%;padding-bottom:2%;padding: auto;margin-top: 20%;}
+footer > ul >li{font-style:italic;}
+footer > ul > * {margin-left:50px;}
+li{list-style:none;}
+div.producto{
+  height:200px;
+  width:210px;
+  border:8px solid white;
+  border-radius: 10%;
+ background: rgb(63,94,251);
+}
+div.producto > p,span,h3 {
+  margin: 5px;
+}
+
+section {
+  height: 95%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin: 10%;
+  border: 0px blue solid;
+  background-color: #ff;
+}
+article > h1 {
+  font-size: 45px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@charset "utf-8";
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(30, 31, 38,0.9);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+#popupBody{
+    width: 20%;
+    padding: 2%;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #CCC;
+    background: #FFF;
+    position: relative;
+    transition: all 5s ease-in-out;
+    margin: 20% auto;
+}
+#popupBody > div > form > input{
+  border: 1px black dotted;
+  border-radius: 20px;
+  background-color: white;
+  color: white;
+  padding-left: 15px;
+  padding: 5px;
+  margin: 5px;
+}
+#cerrar{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #F00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
