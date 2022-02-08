@@ -20,4 +20,5 @@
       name: document.getElementById("nameField").value,
       age: document.getElementById("ageField").value
     });
+    document.getElementById('title').innerHTML = '<h1>helloWorld</h1>';
   }
