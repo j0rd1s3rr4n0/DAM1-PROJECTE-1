@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Items</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+	</head>
+
+	<body>
+		<div class="container p-5">
+			<div class="row">
+
+				<div class="col-8 offset-2" id="loginForm">
+					<form>
+						<div class="form-group row">
+							<label for="title" class="col-4 col-form-label">Correu electrònic:</label>
+							<div class="col-8">
+								<input type="email" class="form-control" id="loginEmail">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="content" class="col-4 col-form-label">Contrasenya:</label>
+							<div class="col-8">
+								<input type="password" class="form-control" id="loginPassword">
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="offset-4 col-8">
+								<button type="button" id="newUser" class="btn btn-outline-primary float-right">Registrar un nou usuari</button>
+								<button type="button" id="login" class="btn btn-default float-right mr-3">Entrar</button>
+							</div> 
+						</div>
+					</form>
+				</div>
+
+				<div class="col-8 offset-2" id="signupForm" style="display: none;">
+					<form>
+						<div class="form-group row">
+							<label for="title" class="col-4 col-form-label">Correu electrònic:</label>
+							<div class="col-8">
+								<input type="email" class="form-control" id="signupEmail">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="content" class="col-4 col-form-label">Contrasenya:</label>
+							<div class="col-8">
+								<input type="password" class="form-control" id="signupPassword">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="content" class="col-4 col-form-label">Confirmar contrasenya:</label>
+							<div class="col-8">
+								<input type="password" class="form-control" id="signupPasswordConfirm">
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="offset-4 col-8">
+								<button type="button" id="signup" class="btn btn-default float-right">Enviar</button>
+							</div> 
+						</div>
+					</form>
+				</div>
+
+				<div class="col-8 offset-2" id="itemsForm" style="display: none;">
+					<form>
+						<div class="form-group row">
+							<label for="title" class="col-4 col-form-label">Títol:</label>
+							<div class="col-8">
+								<input type="text" class="form-control" id="title">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="content" class="col-4 col-form-label">Contingut:</label>
+							<div class="col-8">
+								<input type="text" class="form-control" id="content">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="image" class="col-4 col-form-label">Imatge:</label>
+							<div class="col-6">
+								<input type="file" class="form-control-file" id="image">
+							</div>
+							<div class="col-2">
+								<img class="rounded" id="thumbnail" style="max-width: 60px; max-height: 60px; visibility: hidden;" alt="imatge">
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="offset-4 col-8">
+								<button type="button" id="save" class="btn btn-default float-right">Guardar</button>
+							</div> 
+						</div>
+						<input type="hidden" id="elementId">
+					</form>
+				</div>
+
+				<div class="col-2">
+					<div id="alert" role="alert"></div>
+				</div>
+			</div>			
+			<div class="table-responsive">
+				<table class="table table-hover" id="listItems" style="display: none;">
+				</table>
+			</div>
+		</div>
+	</body>
+	<script language="javascript" src="js/config.js"></script>
+	<script language="javascript" src="js/firestore.js"></script>
+	<script language="javascript" src="js/storage.js"></script>
+	<script language="javascript" src="js/items.js"></script>
+	<script language="javascript">
+
+		let imatgeModificada = false;
+
+		function eliminar(itemId, imageUrl) {
+			deleteFile(imageUrl)
+			.then(() => {
+				deleteItem(itemId);
+			}).catch(() => {
+            	showAlert("Error al intentar eliminar la imatge", "alert-danger");
+        	});
+		}
+
+		function showAlert(text, type) {
+			document.getElementById("alert").innerText = text;
+			document.getElementById("alert").className = "alert " + type;
+			document.getElementById("alert").style.display = "block";
+			window.setTimeout(function() {
+			document.getElementById("alert").style.display = "none";
+			}, 2000);
+		}
+
+		window.addEventListener("load", function() {
+			loadItems();
+		});
+
+		document.getElementById("login").addEventListener("click", function() {
+			let email = document.getElementById("loginEmail").value;
+			let password = document.getElementById("loginPassword").value;
+
+			auth.signInWithEmailAndPassword(email, password)
+			.then(function() {			
+				showAlert("Usuari autenticat", "alert-success");
+
+				document.getElementById("loginForm").style.display = "none";
+				document.getElementById("itemsForm").style.display = "block";
+				document.getElementById("listItems").style.display = "table";
+			})
+			.catch(function(error) {
+				showAlert("Error d’autenticació", "alert-danger");
+			});
+		});
+
+		document.getElementById("newUser").addEventListener("click", function() {
+			document.getElementById("loginForm").style.display = "none";
+			document.getElementById("signupForm").style.display = "block";
+		});
+
+		document.getElementById("signup").addEventListener("click", function() {
+			let email = document.getElementById("signupEmail").value;
+			let password = document.getElementById("signupPassword").value;
+			let passwordConfirm = document.getElementById("signupPasswordConfirm").value;
+
+			if (email.length > 0 && email.indexOf("@") > 1) {
+				if (password.length > 0) {
+					if (password == passwordConfirm) {
+						auth.createUserWithEmailAndPassword(email, password)
+						.then(function() {			
+							showAlert("Usuari creat correctament", "alert-success");
+
+							document.getElementById("loginForm").style.display = "block";
+							document.getElementById("signupForm").style.display = "none";
+						})
+						.catch(function(error) {
+							showAlert("Error al intentar crear l'usuari", "alert-danger");
+						});
+					} else {
+						showAlert("Les contrasenyes no coincideixen", "alert-danger");
+					}
+				} else {
+					showAlert("La contrasenya és obligatòria", "alert-danger");
+				}
+			} else {
+				showAlert("Email incorrecte", "alert-danger");
+			}
+		});
+
+		document.getElementById("save").addEventListener("click", function() {
+			let id = document.getElementById("elementId").value;
+			let title = document.getElementById("title").value;
+			let content = document.getElementById("content").value;
+			let image = document.getElementById("image").files[0];
+			let doc = {
+				content: content,
+				title: title
+			};
+
+			if (id == "") {
+				uploadFile(image)
+				.then((imageUrl) => {
+					doc.image = imageUrl;								
+					addItem(doc);
+				})
+				.catch(() => {
+					showAlert("Error al intentar guardar l'element", "alert-danger");
+				});
+			} else {				
+				if (imatgeModificada) {
+					let currentImageUrl = document.getElementById("thumbnail").src;
+					deleteFile(currentImageUrl)
+					.then(() => {
+						uploadFile(image)
+						.then((imageUrl) => {
+							doc.image = imageUrl;
+							updateItem(id, doc);
+						})
+						.catch(() => {
+							showAlert("Error al intentar actualitzat l'element", "alert-danger");
+						});
+					})
+					.catch(() => {
+						showAlert("Error al intentar actualitzat l'element", "alert-danger");
+					});
+				} else {
+					updateItem(id, doc);
+				}				
+			}
+
+			imatgeModificada = false;
+		});
+
+		document.getElementById("image").addEventListener("change", function() {
+			imatgeModificada = true;
+		});
+
+	</script>
+</html>

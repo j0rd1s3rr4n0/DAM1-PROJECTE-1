@@ -24,7 +24,7 @@ h1{
 }
 body{
   background: #1E1F26;
-  background: linear-gradient(180deg, rgba(0,212,255,1) 0%, rgba(0,102,105,1)  45%, #1E1F26 100%);
+  color: white;
 }
 nav{
   margin-top: 200px;margin-bottom: -200px;height: auto;width: 50%;background-color: #1E1F26;border-radius: 20px;text-align: center;color: white;
