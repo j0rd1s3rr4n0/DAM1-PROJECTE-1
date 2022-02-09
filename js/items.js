@@ -19,7 +19,7 @@ function addItem(doc) {
 function deleteItem(id) {
     deleteById(items, id)
     .then(() => {
-        loadItems();
+        loadItems();            
         showAlert("Element eliminat correctament", "alert-success");
     }).catch(() => {
         showAlert("Error al intentar eliminar l'element", "alert-danger");
@@ -48,7 +48,7 @@ function loadItems() {
 																<th>Títol</th>
 																<th>Contingut</th>
 																<th></th>
-															</tr>`;
+															</tr>`; 
 		arrayItems.forEach((doc) => {
 			let image = "";
 			if (doc.data().image != null) {
@@ -67,7 +67,7 @@ function loadItems() {
 																		</button>
 																	</td>
 																</tr>`;
-		});
+		});		
 	})
     .catch(() => {
         showAlert("Error al mostrar els elements", "alert-danger");
