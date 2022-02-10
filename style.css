@@ -199,7 +199,7 @@ article > h1 {
     padding: 2%;
     border-radius: 15px;
     box-shadow: 0 0 5px #CCC;
-    background: #FFF;
+    background: var(--color-producto);
     position: relative;
     transition: all 5s ease-in-out;
     margin: 20% auto;
