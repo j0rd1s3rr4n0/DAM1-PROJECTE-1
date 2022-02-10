@@ -194,8 +194,8 @@ article > h1 {
     visibility: visible;
     opacity: 1;
 }
-#popupBody{
-    width: 20%;
+#loginBody{
+    width: 40%;
     padding: 2%;
     border-radius: 15px;
     box-shadow: 0 0 5px #CCC;
@@ -204,7 +204,7 @@ article > h1 {
     transition: all 5s ease-in-out;
     margin: 20% auto;
 }
-#popupBody > div > form > input{
+#loginBody > div > form > input{
   border: 1px black dotted;
   border-radius: 20px;
   background-color: white;
@@ -230,6 +230,29 @@ article > h1 {
 
 
 
+@keyframes AnimationBorder {
+  0% {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 30px;
+
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 0px;
+
+  }
+}
+a#buscar:hover{
+animation: 1.8s ease-out 0s 1 AnimationBorder; 
+border: 2px white solid;
+  margin-bottom: 1%;
+}
 
 
 
@@ -288,3 +311,8 @@ article > h1 {
     color: #c59b08;
 }
 
+
+
+a{
+  color: linear-gradient(red,orange);
+}
