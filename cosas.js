@@ -1,9 +1,8 @@
-  let coded = `
-                <div class="col-md-3 col-sm-6 asd aqui">
+  let coded = `<div class="col-md-3 col-sm-6 asd aqui">
                     <div class="product-grid">
                         <div class="product-image">
                             <a href="#" class="image" style="background-color:#F3F3F3;">
-                            <img class="pic-1" src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg">
+                            <img class="pic-1" src="https://rockcontent.com/es/wp-content/uploads/sites/3/2019/02/o-que-e-produto-no-mix-de-marketing-1024x538.png"><!--https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg-->
                             </a>
                         </div>
                         <div class="product-content">

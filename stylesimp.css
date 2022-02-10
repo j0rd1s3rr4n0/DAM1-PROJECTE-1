@@ -4,6 +4,7 @@
     --color-fondo: #1E1F26;
     --color-menu:  #34495e;
     --color-producto:  #1E1F26;
+
     /* TEXTO */
     --c-main: white;
     --c-prod: white;
@@ -78,28 +79,24 @@
 .product-grid{
     border:1px solid transparent;
     font-family: 'Roboto', sans-serif;
-    padding:10px 10px;
+    padding:20px;
     transition: all 0.5s;
     margin-bottom:80px;
     margin-top:40px;
-    background-color: var(--color-producto);
-    padding: 10%;
-    border-radius: 30px;
     color: var(--c-prod);
+    background-color: var(--color-producto);
 }
 
 .product-grid .product-image{
     position: relative;
     overflow: hidden;
-  
-    
 }
 .product-grid .product-image a.image{ display: block; }
 .product-grid .product-image img{
     width: 100%;
     height: auto;
   border-radius: 5px;
-   
+
 }
 .product-grid .add-to-cart{
     color: #fff;
