@@ -1,5 +1,4 @@
 
-
 a:hover{
   text-decoration: underline;
   font-weight: bold;
@@ -23,7 +22,7 @@ h1{
   font-family: "Josefin Sans", sans-serif;
 }
 body{
-  background: #1E1F26;
+  background: var(--color-fondo);
   color: white;
 }
 nav{
@@ -35,12 +34,36 @@ margin: 5px;
 border: 1px white solid;
 padding: 5px;
 }
-header{
-  /*background-color:;*/
+
+@keyframes AnimationHeader {
+  0% {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 30px;
+
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 0px;
+
+  }
+}
+
+header {  
+  /*border-radius: 30px;*/
+  /*border: 5px yellow solid;*/
+  animation: 1.8s ease-out 0s 1 AnimationHeader; 
+  margin-bottom: 1%;
+  /*background: #333;*/
 }
 header > ul {
   width: 100%;
-  background-color: black;
+  /*background-color: black;*/
 }
 header > ul > *{
   margin: auto auto;
@@ -60,19 +83,19 @@ header > ul{
   vertical-align: middle;
 }
 header > * , header > ul > li {
-    margin-top:10px;
-    background-color:white;
-    margin:auto -20px;
     text-align:center;
-    border-radius:0px;
     display:inline-block;
-
-    background-color: black;
     color: white;
 
 
 }
-
+div.producto > h3 {
+  font-size: 140%;
+  overflow: hidden;
+  white-space: nowrap;
+  white-space: pre-line;
+  width: 100%;
+}
 article{
   position: unset;
   background-color:;
@@ -87,11 +110,20 @@ img.producte{
   border-bottom-right-radius: 0%;
   border-bottom-left-radius: 0%;
   border: 6px solid white;
-  margin-left: -6px;
+  /*margin-left: -6px; /*SE USA SIN BOSOTRAP*/
   margin-top: -5px;
 }
-footer{ position: relative;
-  background-color:black;color: white;margin:0;height:20%;padding-top:2%;padding-bottom:2%;padding: auto;margin-top: 20%;}
+footer{
+  position: relative;
+  background-color:black;
+  color: white;
+  margin:0;
+  padding-top:2%;
+  padding-bottom:2%;
+  padding: auto;
+  margin-top: 20%;
+
+}
 footer > ul >li{font-style:italic;}
 footer > ul > * {margin-left:50px;}
 li{list-style:none;}
