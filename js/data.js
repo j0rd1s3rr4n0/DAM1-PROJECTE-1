@@ -14,6 +14,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+
 let fifi = '<div class="producto"><img src="'+url_img+'" class="producte" alt="'+img_title+'producte" id="'+id+'"><h3>'+nom_producte+'</h3><p>'+descripcio+'</p></div>';
 let maxprod = 20;
 
@@ -27,6 +28,14 @@ for(let i = 0;i < maxprod;i++){
         contenedor.appendChild(errcontenedor);
     }
     setTimeout(funcionar,2000);
+}
+function change(a){
+    document.getElementById("iconos") = `<div class="input-group rounded">
+                            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                            <span class="input-group-text border-0" id="search-addon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                    </div>`;
 }
 
 

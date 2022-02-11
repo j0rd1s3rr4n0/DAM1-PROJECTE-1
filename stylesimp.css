@@ -262,9 +262,17 @@
 
 
 ul.menu > li{
-  margin: 2vw;
+  margin: 1.5w;
   filter: invert(0%);
 }
 ul.separat > li{
   margin: 1vw;
+}
+
+a:hover{
+    cursor: pointer;
+    color: var(--color-menu);
+}
+a:hover > i{
+    color: var(--color-menu);
 }

@@ -1,42 +1,89 @@
-<html>
-   <head>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-      <link rel="stylesheet" type="text/css" href="style.css">
-      <!--<meta http-equiv="refresh" content="5">-->
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <!-************************************************************************************************-->
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">-->
+      <link rel="stylesheet" type="text/css" href="stylesimp.css">
+      <!--
+      <!---
+        <meta http-equiv="refresh" content="5">
+    -->
+      <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
       <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-   </head>
-
-   <body>
-      <header>
-         <ul>
-            <img src="https://www.correosexpress.com/wpc/chx-portal62-theme/images/logo_correos_express.png" alt="logo" id="logo">
-            <li><a>BOTIGA</a></li>
-            <li><a>SERVEIS</a></li>
-            <li><a>SOBRE NOSALTRES</a></li>
-            <li><a>CARRETA</a></li>
-            <li><a href="#popup">LOGIN</a></li>
+      <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>-->
+    <!-************************************************************************************************-->
+        <!--NECESARI BOOSTRAP-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <!--NECESARI FONTAWESOME ICONS -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+         <header>
+         <ul class="menu">
+            <li><img src="https://www.correosexpress.com/wpc/chx-portal62-theme/images/logo_correos_express.png" height="50px" alt="logo" id="logo"></li>
+            <li><a href="#productos">PRODUCTOS</a></li>
+            <li><a href="#categorias">CATEGORIAS</a></li>
+            <li>
+                <ul class="separat" id="iconos">
+                    
+                    <li><a href=""><i class="fas fa-shopping-cart"></i></a></li>
+                    
+                    <li><a href="#login"><i class="fas fa-user"></i></a></li>
+                    
+                    <li id="tb" onclick="revo()"><a class="test"><i class="fas fa-search"></i></a></li>
+                    
+                </ul>
+            </li>
          </ul>
       </header>
-      <article>
-         <h1>NUESTROS PRODUCTOS</h1>
-         <section class="producto" id="prod">
+<center><h1><u>NUESTROS PRODUCTOS</u></h1></center></br>
+        <div class="container" >
+            <div class="row" id="change">
+                <!------------------------------------------------------------------>
+                <!------------------------------------------------------------------>
+                <!--       <div class="col-md-3 col-sm-6">
+                    <div class="product-grid">
+                        <div class="product-image">
+                            <a href="#" class="image">
+                                <img class="pic-1" src="http://www.free-css.com/assets/files/free-css-templates/preview/page219/garage/assets/image/featurporch3.jpg">
+                            </a>
+                            <a class="add-to-cart" href=""> + </a>
+                        </div>
+                        <div class="product-content">
+                            
+                            <h3 class="title"><a href="#">Product Name</a></h3>
+                            
+                             <div class="price">$21.60</div>
+                            <ul class="rating">
+                               <li class="fas fa-star"></li>
+                               <li class="fas fa-star"></li>
+                               <li class="fas fa-star"></li>
+                               <li class="fas fa-star"></li>
+                               <li class="fas fa-star"></li>
+                           </ul>
+                        </div>
+                        <div class="action-buttons">
+                            <a class="btn-outline">ADD TO CART</a>
+                            <a class="btn-outline-icon"><i class="far fa-heart"></i></a>
+                            <a class="btn-outline-icon"><i class="fas fa-chart-pie"></i></a>
+                        </div>
+                    
+                    </div>
+                    </div>
+                    
+                    -->
+                <!------------------------------------------------------------------>
+                <script typesrc="cositas.js"></script>
+                <script type="text/javascript" src="cosas.js"></script>
 
-<!--
-            <div class="producto">
-               <img src="https://rockcontent.com/es/wp-content/uploads/sites/3/2019/02/o-que-e-produto-no-mix-de-marketing-1024x538.png" class="producte" alt="producte" id="">
-               <h3>Producte</h3>
-               <p>Descripcio:</p>
-               <span>Valoracio:<fieldset class="rating"><input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label><input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label><input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label><input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label><input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label><input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label><input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label><input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label><input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label><input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label></fieldset></span></div></span>
+                <!------------------------------------------------------------------>
             </div>
--->
-
-         </section>
-      </article>
-      <center><nav>
+            <center><nav>
         <ul>
           <li>1</li>
           <li>2</li>
@@ -44,15 +91,16 @@
           <li>4</li>
         </ul>
       </nav></center>
-      <div id="popup" class="overlay">
-            <div id="popupBody">
-                <h2>Inicio de Sessión</h2>
-                <a id="cerrar" href="index.html">&times;</a>
-                <div class="popupContent">
+      </div>
+      <div id="login" class="overlay">
+            <div id="loginBody">
+                <h2>Inicio de Sesión</h2>
+                <a id="cerrar" href="#">&times;</a>
+                <div class="loginContent">
                     <form action="#" method="post">
-                      <label for="username">Username:</label>
-                      <input type="text" id="username" name="username" placeholder="USERNAME"></br>
-                      <label for="password">Password:</label>
+                      <label for="email">EmaiL:</label></br>
+                      <input type="email" id="email" name="email" placeholder="EMAIL"></br>
+                      <label for="password">Password:</label></br>
                       <input type="password" id="password" name="password" placeholder="password">
 
                     </form>
@@ -68,10 +116,4 @@
             <li>Jordi S</li>
          </ul>
       </footer>
-   </body>
-   <!--<script language="javascript" src="js/config.js"></script>
-   <script language="javascript" src="js/firestore.js"></script>
-   <script language="javascript" src="js/storage.js"></script>
-   <script language="javascript" src="js/items.js"></script>-->
-   <script language="javascript" src="js/data.js"></script>
-</html>
+        </section>
