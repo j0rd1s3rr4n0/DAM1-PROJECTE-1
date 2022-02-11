@@ -276,3 +276,13 @@ a:hover{
 a:hover > i{
     color: var(--color-menu);
 }
+
+
+#entrarbtn{
+    position: absolute;
+    margin-left: 2%;
+    width: 26%;
+    height: 40%;
+    border-radius: 20px;
+    margin-top: -117px;
+}

@@ -222,13 +222,15 @@ html body div.container div#change.row div.col-md-3.col-sm-6.asd.aqui div.produc
     margin: 20% auto;
 }
 #loginBody > div > form > input{
-  border: 1px black dotted;
-  border-radius: 20px;
-  background-color: white;
-  color: white;
-  padding-left: 15px;
-  padding: 5px;
-  margin: 5px;
+border: 3px darkorange solid;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    /* padding-left: 15px; */
+    padding: 5px;
+    margin: 5px;
+    width: 70%;
+    font-weight: bold;
 }
 #cerrar{
     position: absolute;
