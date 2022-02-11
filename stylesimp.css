@@ -159,7 +159,7 @@
     font-size: 16px;
     margin: 0 4px;
 }
-.product-grid .icon li a:hover{ color: var(--main-color); }
+.product-grid .icon li a:hover{ color: var(--main-color); color: #42CBF7;}
 .product-grid .title{
      font-family:Roboto;
     font-size:15px;
@@ -260,4 +260,11 @@
 
 }
 
-footer{}
+
+ul.menu > li{
+  margin: 2vw;
+  filter: invert(0%);
+}
+ul.separat > li{
+  margin: 1vw;
+}

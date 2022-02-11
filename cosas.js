@@ -34,12 +34,14 @@ function Randomizador(min, max) {
 
                 let i = 0;
                 let max = 23;
+                let ra = Randomizador(0,2);
+                
                 let code = getCoded(imagen);
                 let t = false;
                 let imagenes = ["https://rockcontent.com/es/wp-content/uploads/sites/3/2019/02/o-que-e-produto-no-mix-de-marketing-1024x538.png","https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"];
                 while(i<max){
                     let ra = Randomizador(0,2);
-                    imagen = imagenes[ra];
+                    imagen = imagenes[1];
                     console.log(imagen);
                      code+=getCoded(imagen);
                     i++;
