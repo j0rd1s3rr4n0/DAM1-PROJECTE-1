@@ -56,12 +56,25 @@ if(t==true){
 }
 
 
+function vistoso(){
+    document.getElementById('iconos').style.backgroundColor = 'rgba(216, 250, 8,0.3)';
+    document.getElementById('iconos').style.borderRadius = '25px';
+    document.getElementById('aa').innerHTML = '<i id="bb" class="fas fa-exclamation-triangle"></i>';
+}
+
+
+function normalizarbtn(){
+    document.getElementById('iconos').style.backgroundColor = '';
+    document.getElementById('iconos').style.borderRadius = '0px';
+ document.getElementById('aa').innerHTML = '<i id="bb" class="far fa-times-circle"></i>';
+}
 function cambio(){
             document.getElementById('iconos').innerHTML = `
                     <li><a href=""><i class="fas fa-shopping-cart"></i></a></li>
                     <li><a href="#login"><i class="fas fa-user"></i></a></li>
                     <li id="tb" onclick="revo()"><a class="test"><i class="fas fa-search"></i></a></li>`;
 };
+
 function revo(){
             document.getElementById('iconos').innerHTML = `
                     <li id="tb" value="0">
@@ -72,7 +85,8 @@ function revo(){
                                 </span>
                         </div>
                         </li>
-                        <li id="aa" style="padding-left -1vw;" onclick="cambio()"><a class="test" style="color:red" ><i class="far fa-times-circle" ></i></a></li>
+                        <li id="aa" style="padding-left -1vw;" onclick="normalizarbtn();cambio();" onmouseenter="vistoso()" onmouseleave="normalizarbtn()" ><i id="bb" class="far fa-times-circle" ></i></a></li>
 
                         `;
+
 };
