@@ -278,6 +278,10 @@ a:hover > i{
 }
 
 
+button#entrarbtn:hover{
+    background-color: yellow;
+    color: black;
+}
 button#entrarbtn{
     position: absolute;
     margin-left: 2%;
@@ -285,6 +289,22 @@ button#entrarbtn{
     height: 40%;
     border-radius: 20px;
     margin-top: -117px;
+    font-weight: bold;
+}
+button#registrarbtn:hover{
+    background-color: yellow;
+    color: black;
+}
+button#registrarbtn{
+    position: absolute;
+    margin-left: 66.5%;
+    width: 26%;
+    height: 20%;
+    border: 3px solid rgb(210,100,0);
+    background-color: rgba(255,140,0,0.9);
+    border-radius: 10px;
+    margin-top: -32px;
+    font-weight: bold;
 }
 .input-group-text{
     margin-top: -1px;
@@ -292,4 +312,50 @@ button#entrarbtn{
 .input-group-text:hover{
     background-color: yellow;
     color: black;
+}
+
+
+
+button.registro#entrarbtn {
+    position: absolute;
+    margin-left: 2%;
+    width: 26%;
+    height: 30%;
+    border-radius: 20px;
+    margin-top: -156px;
+    font-weight: bold;
+}
+button.login#entrarbtn {
+    position: absolute;
+    margin-left: 2%;
+    width: 26%;
+    height: 40%;
+    border-radius: 20px;
+    margin-top: -117px;
+    font-weight: bold;
+}
+
+
+
+button.registro#registrarbtn{
+position: absolute;
+    margin-left: 66.5%;
+    width: 26%;
+    height: 20%;
+    border: 3px solid rgb(210,100,0);
+    background-color: rgba(255,140,0,0.9);
+    border-radius: 10px;
+    margin-top: -32px;
+    font-weight: bold;
+}
+button.login#registrarbtn{
+    position: absolute;
+    margin-left: 66.5%;
+    width: 26%;
+    height: 12%;
+    border: 3px solid rgb(210,100,0);
+    background-color: rgba(255,140,0,0.9);
+    border-radius: 10px;
+    margin-top: -50px;
+    font-weight: bold;
 }

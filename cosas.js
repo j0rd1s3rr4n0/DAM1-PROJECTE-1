@@ -90,3 +90,47 @@ function revo(){
                         `;
 
 };
+
+function enteregister(){
+    document.getElementById('log-in').innerHTML = `
+    <form action="#" method="post">
+                          <label for="email">EmaiL:</label><br>
+                          <input type="email" id="email" name="email" placeholder="name.surname@exchange.org"><br>
+                          <br><label for="password">Password:</label><br>
+                          <input type="password" id="password" name="password" placeholder="password">
+
+                          <input type="password" id="re-password" name="re-password" placeholder="REPEAT PASSWORD"><button id="entrarbtn"class="registro" onclick="registrar()">REGISTRAR</button><br>
+                          <button id="registrarbtn"  class="registro" onclick="tologin()">INICIAR</button><br>
+                          <a onmouseover="this.Color = red;" onclick="register_load()" style="font-size: 12px;"><i></i></a>
+
+                        </form>
+    `;
+    document.querySelector("#entrarbtn").classList.toggle("login");
+    document.querySelector("#entrarbtn").classList.toggle("registro");
+    document.querySelector("#registrarbtn").classList.toggle("login");
+    document.querySelector("#registrarbtn").classList.toggle("registro");
+
+    document.querySelector("#loginBody > h2").innerTEXT = 'CREAR CUENTA';
+}
+function tologin(){
+  document.getElementById('log-in').innerHTML = `
+     <form action="#" method="post">
+                      <label for="email">EmaiL:</label></br>
+                      <input type="email" id="email" name="email" placeholder="EMAIL"></br>
+                      <label for="password">Password:</label></br>
+                      <input type="password" id="password" name="password" placeholder="password">
+
+                      <button id="entrarbtn" class="login">ENTRAR</button></br>
+                      <button id="registrarbtn" class="login" onclick="enteregister()">REGISTRAR</button></br>
+                      <a onmouseover="this.Color = red;" onclick="register_load()" style="font-size: 12px;"><i><u>¿Olvidaste la contraseña? ¡Recuperala aquí!</u></i></a>
+
+                    </form>
+    `;
+    document.querySelector("#entrarbtn").classList.toggle("login");
+    document.querySelector("#entrarbtn").classList.toggle("registro");
+    document.querySelector("#registrarbtn").classList.toggle("login");
+    document.querySelector("#registrarbtn").classList.toggle("registro");
+
+
+    document.querySelector("#loginBody > h2").innerTEXT = 'ACCEDER A UNA CUENTA';
+}

@@ -94,16 +94,17 @@
       </div>
       <div id="login" class="overlay">
             <div id="loginBody">
-                <h2>Inicio de Sesión</h2>
+                <h2>ACCEDER A UNA CUENTA</h2>
                 <a id="cerrar" href="#">&times;</a>
-                <div class="loginContent">
+                <div id="log-in" class="loginContent">
                     <form action="#" method="post">
                       <label for="email">EmaiL:</label></br>
                       <input type="email" id="email" name="email" placeholder="EMAIL"></br>
                       <label for="password">Password:</label></br>
                       <input type="password" id="password" name="password" placeholder="password">
 
-                      <button id="entrarbtn">ENTRAR</button></br>
+                      <button id="entrarbtn" class="login">ENTRAR</button></br>
+                      <button id="registrarbtn"  class="login"onclick="enteregister()">REGISTRAR</button></br>
                       <a onmouseover="this.Color = red;" onclick="register_load()" style="font-size: 12px;"><i><u>¿Olvidaste la contraseña? ¡Recuperala aquí!</u></i></a>
 
                     </form>
