@@ -285,10 +285,7 @@ button#entrarbtn:hover{
 button#entrarbtn{
     position: absolute;
     margin-left: 2%;
-    width: 26%;
-    height: 40%;
     border-radius: 20px;
-    margin-top: -117px;
     font-weight: bold;
 }
 button#registrarbtn:hover{
@@ -298,12 +295,9 @@ button#registrarbtn:hover{
 button#registrarbtn{
     position: absolute;
     margin-left: 66.5%;
-    width: 26%;
-    height: 20%;
     border: 3px solid rgb(210,100,0);
     background-color: rgba(255,140,0,0.9);
     border-radius: 10px;
-    margin-top: -32px;
     font-weight: bold;
 }
 .input-group-text{
@@ -329,9 +323,9 @@ button.login#entrarbtn {
     position: absolute;
     margin-left: 2%;
     width: 26%;
-    height: 40%;
+    height: 30%;
     border-radius: 20px;
-    margin-top: -117px;
+    margin-top: -92px;
     font-weight: bold;
 }
 
@@ -345,7 +339,7 @@ position: absolute;
     border: 3px solid rgb(210,100,0);
     background-color: rgba(255,140,0,0.9);
     border-radius: 10px;
-    margin-top: -32px;
+    margin-top: -82px;
     font-weight: bold;
 }
 button.login#registrarbtn{
@@ -356,6 +350,17 @@ button.login#registrarbtn{
     border: 3px solid rgb(210,100,0);
     background-color: rgba(255,140,0,0.9);
     border-radius: 10px;
-    margin-top: -50px;
+    margin-top: -42px;
+    font-weight: bold;
+}
+
+button.recover#entrarbtn
+{
+    position: absolute;
+    margin-left: 2%;
+    width: 26%;
+    height: 36%;
+    border-radius: 20px;
+    margin-top: -47px;
     font-weight: bold;
 }

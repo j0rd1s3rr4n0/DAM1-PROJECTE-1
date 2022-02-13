@@ -68,6 +68,7 @@ function normalizarbtn(){
     document.getElementById('iconos').style.borderRadius = '0px';
  document.getElementById('aa').innerHTML = '<i id="bb" class="far fa-times-circle"></i>';
 }
+
 function cambio(){
             document.getElementById('iconos').innerHTML = `
                     <li><a href=""><i class="fas fa-shopping-cart"></i></a></li>
@@ -75,11 +76,31 @@ function cambio(){
                     <li id="tb" onclick="revo()"><a class="test"><i class="fas fa-search"></i></a></li>`;
 };
 
+
+function password_recover(){
+    document.getElementById('loginBody').innerHTML = `
+                <h2>Trouble Logging In?</h2><h6>Enter your email, phone, or username and we\'ll send you a link to get back into your account.</h6>
+                <a id="cerrar" href="#">×</a>
+                <div id="log-in" class="loginContent">
+                    <form action="#" method="post">
+                      <label for="email">EMAIL/USERNAME:</label><br>
+                      <input type="email" id="email" name="email" placeholder="EMAIL">
+
+                      <button id="entrarbtn" class="recover">RECOVER</button><br>
+                      <br>
+
+                    </form>
+                </div>
+    `;
+
+}
+
+
 function revo(){
             document.getElementById('iconos').innerHTML = `
                     <li id="tb" value="0">
                         <div class="input-group rounded">
-                                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon">
+                                <input type="search" class="form-control rounded" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon">
                                 <span class="input-group-text border-0" id="search-addon">
                                     <i class="fas fa-search"></i>
                                 </span>
@@ -92,7 +113,24 @@ function revo(){
 };
 
 function enteregister(){
-    document.getElementById('log-in').innerHTML = `
+document.getElementById('loginBody').innerHTML = `
+                <h2>REGISTRAR UNA CUENTA</h2>
+                <a id="cerrar" href="#">×</a>
+                <div id="log-in" class="loginContent">
+    <form action="#" method="post">
+                          <label for="email">Email / Username:</label><br>
+                          <input type="email" id="email" name="email" placeholder="name.surname@exchange.org"><br>
+                          <br><label for="password">Password:</label><br>
+                          <input type="password" id="password" name="password" placeholder="Password">
+
+                          <input type="password" id="re-password" name="re-password" placeholder="REPEAT PASSWORD"><button id="entrarbtn" class="registro" onclick="registrar()">REGISTRAR</button><br>
+                          <button id="registrarbtn" class="registro" onclick="tologin()">INICIAR</button><br>
+                          <a onmouseover="this.Color = red;" onclick="register_load()" style="font-size: 12px;"><i></i></a>
+
+                        </form>
+            </div>`;
+
+  /*
     <form action="#" method="post">
                           <label for="email">EmaiL:</label><br>
                           <input type="email" id="email" name="email" placeholder="name.surname@exchange.org"><br>
@@ -109,28 +147,28 @@ function enteregister(){
     document.querySelector("#entrarbtn").classList.toggle("registro");
     document.querySelector("#registrarbtn").classList.toggle("login");
     document.querySelector("#registrarbtn").classList.toggle("registro");
-
-    document.querySelector("#loginBody > h2").innerTEXT = 'CREAR CUENTA';
+*/
 }
 function tologin(){
-  document.getElementById('log-in').innerHTML = `
-     <form action="#" method="post">
-                      <label for="email">EmaiL:</label></br>
-                      <input type="email" id="email" name="email" placeholder="EMAIL"></br>
-                      <label for="password">Password:</label></br>
-                      <input type="password" id="password" name="password" placeholder="password">
+  document.getElementById('loginBody').innerHTML = `
+                <h2>ACCEDER A UNA CUENTA</h2>
+                <a id="cerrar" href="#">×</a>
+                <div id="log-in" class="loginContent">
+                    <form action="#" method="post">
+                      <label for="email">Email/Username:</label><br>
+                      <input type="email" id="email" name="email" placeholder="name.surname@exchange.org"><br>
+                      <label for="password">Password:</label><br>
+                      <input type="password" id="password" name="password" placeholder="Password">
 
-                      <button id="entrarbtn" class="login">ENTRAR</button></br>
-                      <button id="registrarbtn" class="login" onclick="enteregister()">REGISTRAR</button></br>
-                      <a onmouseover="this.Color = red;" onclick="register_load()" style="font-size: 12px;"><i><u>¿Olvidaste la contraseña? ¡Recuperala aquí!</u></i></a>
+                      <button id="entrarbtn" class="login">ENTRAR</button><br>
+                      <button id="registrarbtn" class="login" onclick="enteregister()">REGISTRAR</button><br>
+                      <a onmouseover="this.Color = red;" style="font-size: 12px;" onclick="password_recover()"><i><u>¿Olvidaste la contraseña? ¡Recuperala aquí!</u></i></a>
 
                     </form>
-    `;
+                </div>`;
+    /*
     document.querySelector("#entrarbtn").classList.toggle("login");
     document.querySelector("#entrarbtn").classList.toggle("registro");
     document.querySelector("#registrarbtn").classList.toggle("login");
-    document.querySelector("#registrarbtn").classList.toggle("registro");
-
-
-    document.querySelector("#loginBody > h2").innerTEXT = 'ACCEDER A UNA CUENTA';
+    document.querySelector("#registrarbtn").classList.toggle("registro");*/
 }
