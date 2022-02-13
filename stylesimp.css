@@ -269,14 +269,6 @@ ul.separat > li{
   margin: 1vw;
 }
 
-a:hover{
-    cursor: pointer;
-    color: var(--color-menu);
-}
-a:hover > i{
-    color: var(--color-menu);
-}
-
 
 button#entrarbtn:hover{
     background-color: yellow;
@@ -363,4 +355,19 @@ button.recover#entrarbtn
     border-radius: 20px;
     margin-top: -47px;
     font-weight: bold;
+}
+
+
+
+ul.menu > li > ul > li a:hover {
+    text-decoration: none;
+    color: var(--main-color);
+}
+a:hover{
+    cursor: pointer;
+    color: var(--main-color);
+    text-decoration: none;
+}
+a:hover > i{
+    color: var(--main-color);
 }

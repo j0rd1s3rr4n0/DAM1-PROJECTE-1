@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <!-************************************************************************************************-->
         <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">-->
-      <link rel="stylesheet" type="text/css" href="stylesimp.css">
       <!--
       <!---
         <meta http-equiv="refresh" content="5">
@@ -21,8 +20,10 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="stylesimp.css">
     </head>
     <body>
+        <form method="get" name="q">
          <header>
          <ul class="menu">
             <li><img src="https://www.correosexpress.com/wpc/chx-portal62-theme/images/logo_correos_express.png" height="50px" alt="logo" id="logo"></li>
@@ -30,17 +31,18 @@
             <li><a href="#categorias">CATEGORIAS</a></li>
             <li>
                 <ul class="separat" id="iconos">
-                    
-                    <li><a href=""><i class="fas fa-shopping-cart"></i></a></li>
-                    
-                    <li><a href="#login"><i class="fas fa-user"></i></a></li>
-                    
+
+                    <li><a href=""><i class="fas fa-shopping-cart"></i> CARRITO </a></li>
+
+                    <li><a href="#login"><i class="fas fa-user"></i> MI CUENTA</a></li>
+
                     <li id="tb" onclick="revo()"><a class="test"><i class="fas fa-search"></i></a></li>
-                    
+
                 </ul>
             </li>
          </ul>
       </header>
+      </form>
 <center><h1><u>NUESTROS PRODUCTOS</u></h1></center></br>
         <div class="container" >
             <div class="row" id="change">
@@ -105,7 +107,7 @@
 
                       <button id="entrarbtn" class="login">ENTRAR</button></br>
                       <button id="registrarbtn"  class="login"onclick="enteregister()">REGISTRAR</button></br>
-                      <a onmouseover="this.Color = red;" style="font-size: 12px;" onclick="pasword_recover()"><i><u>¿Olvidaste la contraseña? ¡Recuperala aquí!</u></i></a>
+                      <a  style="font-size: 12px;" onclick="pasword_recover()"><i><u>¿Olvidaste la contraseña? ¡Recuperala aquí!</u></i></a>
 
                     </form>
                 </div>

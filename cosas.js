@@ -71,8 +71,8 @@ function normalizarbtn(){
 
 function cambio(){
             document.getElementById('iconos').innerHTML = `
-                    <li><a href=""><i class="fas fa-shopping-cart"></i></a></li>
-                    <li><a href="#login"><i class="fas fa-user"></i></a></li>
+                    <li><a href=""><i class="fas fa-shopping-cart"></i> CARRITO</a></li>
+                    <li><a href="#login"><i class="fas fa-user"></i> MI CUENTA</a></li>
                     <li id="tb" onclick="revo()"><a class="test"><i class="fas fa-search"></i></a></li>`;
 };
 
@@ -88,6 +88,7 @@ function password_recover(){
 
                       <button id="entrarbtn" class="recover">RECOVER</button><br>
                       <br>
+                      <a style="font-size: 12px;" onclick="tologin()"><i><u>¿Has cambiado de idea? ¡Accede a tu cuenta!</u></i></a>
 
                     </form>
                 </div>
@@ -98,16 +99,15 @@ function password_recover(){
 
 function revo(){
             document.getElementById('iconos').innerHTML = `
-                    <li id="tb" value="0">
+                    <li id="tb">
                         <div class="input-group rounded">
                                 <input type="search" class="form-control rounded" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon">
-                                <span class="input-group-text border-0" id="search-addon">
+                                <span class="input-group-text border-0" onclick="q.submit()" id="search-addon">
                                     <i class="fas fa-search"></i>
                                 </span>
                         </div>
                         </li>
                         <li id="aa" style="padding-left -1vw;" onclick="normalizarbtn();cambio();" onmouseenter="vistoso()" onmouseleave="normalizarbtn()" ><i id="bb" class="far fa-times-circle" ></i></a></li>
-
                         `;
 
 };
@@ -125,7 +125,7 @@ document.getElementById('loginBody').innerHTML = `
 
                           <input type="password" id="re-password" name="re-password" placeholder="REPEAT PASSWORD"><button id="entrarbtn" class="registro" onclick="registrar()">REGISTRAR</button><br>
                           <button id="registrarbtn" class="registro" onclick="tologin()">INICIAR</button><br>
-                          <a onmouseover="this.Color = red;" onclick="register_load()" style="font-size: 12px;"><i></i></a>
+                          <a onclick="register_load()" style="font-size: 12px;"><i></i></a>
 
                         </form>
             </div>`;
