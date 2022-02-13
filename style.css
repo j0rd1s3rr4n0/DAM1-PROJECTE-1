@@ -154,20 +154,10 @@ article > h1 {
   font-weight: bold;
   text-decoration: underline;
 }
-/*style="
-    <li id="iconos">
-                <ul class="separat">
-                <div id="normal_menu_ico">
-                    <li><a href=""><i class="fas fa-shopping-cart"></i></a></li>
-                    <li><a href="#login"><i class="fas fa-user"></i></a></li>
-                </div>
-                
-                    <li id="tb" style="
-      margin-top: 0px;margin-left:3px;                                                                                                                                                                                                                         
-"><a class="test" href=""><i class="fas fa-search"></i></a></li>
-                </ul>
-            </li>
-"*/
+.menu >li>img:hover{
+  cursor: pointer;
+  zoom: 1.02;
+}
 
 html body div.container div#change.row div.col-md-3.col-sm-6.asd.aqui div.product-grid {
   cursor: pointer;

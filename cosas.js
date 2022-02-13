@@ -76,7 +76,11 @@ function cambio(){
                     <li id="tb" onclick="revo()"><a class="test"><i class="fas fa-search"></i></a></li>`;
 };
 
-
+function refresh(){
+    let url = 'https://j0rd1s3rr4n0.github.io/DAM1-PROJECTE-1/';
+    window.location.href = url;
+    window.location.replace(url);
+}
 function password_recover(){
     document.getElementById('loginBody').innerHTML = `
                 <h2>Trouble Logging In?</h2><h6>Enter your email, phone, or username and we\'ll send you a link to get back into your account.</h6>
