@@ -189,7 +189,7 @@
     font-weight:700;
     line-height:0px;
     display: inline-block;
-    color:#000;
+    color:var(--c-prod);
 }
 .product-grid .rating{
     padding: 0;

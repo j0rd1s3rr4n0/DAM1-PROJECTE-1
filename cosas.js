@@ -15,8 +15,8 @@ function getCoded(imagen){
                       </div>
                       <div class="product-content">
                           <h3 class="title"><a href="#">Product Name</a></h3>
+                          <div class="price">$21.60</div>
                           <!--
-                              <div class="price">$21.60</div>
                               <ul class="rating">
                                 <li class="fas fa-star"></li>
                                 <li class="fas fa-star"></li>
