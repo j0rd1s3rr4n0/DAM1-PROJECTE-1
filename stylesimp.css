@@ -180,7 +180,7 @@ ul.barnum > li:hover{
     font-size:15px;
     text-transform:uppercase;
     font-weight:700;
-    line-height:2px;
+    line-height:20px;
 }
 .product-grid .title a{
     color: #222;

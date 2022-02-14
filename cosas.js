@@ -5,8 +5,8 @@ function Randomizador(min, max) {
 }
 let imagen = "https://rockcontent.com/es/wp-content/uploads/sites/3/2019/02/o-que-e-produto-no-mix-de-marketing-1024x538.png";
 
-function getCoded(imagen){
-    return `<div class="col-md-3 col-sm-6 asd aqui">
+function getCoded(imagen,titulo,preu,identificador){
+    return `<div class="col-md-3 col-sm-6 asd aqui invi" style="/*display:none;*/">
                   <div class="product-grid">
                       <div class="product-image">
                           <a href="#" class="image" style="background-color:#F3F3F3;">
@@ -14,8 +14,8 @@ function getCoded(imagen){
                           </a>
                       </div>
                       <div class="product-content">
-                          <h3 class="title"><a href="#">Product Name</a></h3>
-                          <div class="price">$21.60</div>
+                          <h3 class="title"><a href="#">${titulo}</a></h3>
+                          <div class="price">${preu}€</div>
                           <!--
                               <ul class="rating">
                                 <li class="fas fa-star"></li>
@@ -27,7 +27,7 @@ function getCoded(imagen){
                       </div>
                       <div class="action-buttons">
                           <a class="btn-outline-icon"><i class="fas fa-shopping-cart"></i></a>
-                          <a class="btn-outline-icon"><i class="fas fa-info"></i></a>
+                          <a class="btn-outline-icon" href="producto.html#${identificador}"><i class="fas fa-info"></i></a>
                           <a class="btn-outline-icon"><i class="fas fa-heart"></i></a>
                       </div>
                   </div>
@@ -45,7 +45,11 @@ while(i<max){
     let ra = Randomizador(0,2);
     imagen = imagenes[1];
     console.log(imagen);
-     code+=getCoded(imagen);
+    let tit = 'Naranja Premium Bluetooth 8K 144Hz 1TB SSD';
+    let pree = 30.00;
+    let identi = 'nkjbnasd(bkabd';
+
+    code+=getCoded(imagen,tit,pree,identi);
     i++;
     if(i=>max){
         t = true;
@@ -176,3 +180,23 @@ function tologin(){
     document.querySelector("#registrarbtn").classList.toggle("login");
     document.querySelector("#registrarbtn").classList.toggle("registro");*/
 }
+
+/*
+
+function aaa(idda){
+    document.getElementById(idda).style.display="";
+}
+function noinvi (){
+    //document.getElementsByClassName('invi').style.visiblity;
+
+    let idInterval=setInterval(() => {
+
+        if(i==max) clearInterval(idInterval);
+        else{
+            let idd = "invi"+i;
+            setTimeout(() => aaa(idd),2000);
+            i++;
+        }
+
+    }, 2000);
+    */
