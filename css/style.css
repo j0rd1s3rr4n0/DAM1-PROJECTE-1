@@ -82,11 +82,10 @@ header > ul{
   margin: 0;
   vertical-align: middle;
 }
-header > * , header > ul > li ,header > ul > * > ul >li, header > ul > * > ul > div >li{,
+header > * , header > ul > li ,header > ul > * > ul >li, header > ul > * > ul > div >li{
     text-align:center;
     display:inline-block;
     color: white;
-
 }
 
 div.producto > h3 {
