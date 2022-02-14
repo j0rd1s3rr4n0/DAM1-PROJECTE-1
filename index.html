@@ -61,6 +61,8 @@
     <body>
         <form method="get" name="q">
             <header>
+                 
+           
                 <ul class="menu">
                     <li>
                         <img src="https://www.correosexpress.com/wpc/chx-portal62-theme/images/logo_correos_express.png" height="50px" alt="logo" id="logo" onclick="refresh()">
@@ -87,7 +89,19 @@
                                 </a>
                             </li>
                         </ul>
+
                     </li>
+                    <script>
+                                function funcioncitaderepuesto() {
+                                     if (document.getElementById("iconos").style.display != "none") {
+                                       document.getElementById("iconos").style.display = "none";
+                                     } else {
+                                       document.getElementById("iconos").style.display="";
+                                     }
+                                 }
+                            </script>
+                    <li id="hamgurger"><a  class="icon" onclick="funcioncitaderepuesto()"><i class="fa fa-bars"></i></a></li>
+                            
                 </ul>
             </header>
         </form>

@@ -275,7 +275,17 @@ ul.barnum > li:hover{
 
 }
 
+/*@media screen and (max-width: 1111px) {*/
+    body > form > header > ul > li:nth-child(4){
+        /*display:none;*/
+    }
+/*}*/
 
+/*@media screen and (min-width: 1111px) {*/
+    #hamgurger{
+        /*display:none;*/
+    }
+/*}*/
 ul.menu > li{
   margin: 1.5w;
   filter: invert(0%);

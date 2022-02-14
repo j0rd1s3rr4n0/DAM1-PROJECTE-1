@@ -200,3 +200,34 @@ function noinvi (){
 
     }, 2000);
     */
+
+
+/* COMPRUEBA LA RESOLUCION DE PANTALLA Y EDITA CIERTOS PARAMETROS DE LA WEB SEGUN */
+// EJEMPLO LA BARRA DE NAVEGACION EL MENU
+function pantalla(){
+    //console.log("El tamanno ha cambiado!");
+    let anchoventana = window.innerWidth;
+    if (anchoventana > 1111){
+        document.getElementById('hamgurger').style.display='none';
+        document.getElementById('iconos').style.display='';
+    }
+    else{
+        document.getElementById('iconos').style.display='none';
+        document.getElementById('hamgurger').style.display='';
+    }
+}
+
+window.addEventListener('resize',function() {
+  pantalla();
+});
+
+window.addEventListener('load',function() {
+  pantalla();
+  console.log("CARGADO!");
+});
+
+
+
+
+
+
