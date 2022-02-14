@@ -4,7 +4,7 @@ function Randomizador(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 let imagen = "https://rockcontent.com/es/wp-content/uploads/sites/3/2019/02/o-que-e-produto-no-mix-de-marketing-1024x538.png";
-//https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg-
+//https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg
 function getCoded(imagen,titulo,preu,identificador){
     return `<div class="col-md-3 col-sm-6 asd aqui invi" style="/*display:none;*/">
                   <div class="product-grid">
@@ -48,8 +48,9 @@ while(i<max){
     let tit = 'Naranja Premium Bluetooth 8K 144Hz 1TB SSD';
     let pree = 30.00;
     let identi = 'nkjbnasd(bkabd';
-
     code+=getCoded(imagen,tit,pree,identi);
+
+
     i++;
     if(i=>max){
         t = true;
