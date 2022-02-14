@@ -1,12 +1,39 @@
+//importa funcions de firebase,js
+import {addElement, getElement, onGetNew} from './firebase.js';
 
+const CAMBIARCODIGO = document.getElementById('change');
+
+
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 function Randomizador(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
-let imagen = "https://rockcontent.com/es/wp-content/uploads/sites/3/2019/02/o-que-e-produto-no-mix-de-marketing-1024x538.png";
-//https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg
+
+
+function IdPicker(idda){
+    document.getElementById(idda).style.display="";
+}
+
+// AQUESTA FUNCIO FA QUE ES MOSTRI VISIBLE CADA PRODUCTE CAD X SEGONS
+function noinvi (){
+    let idInterval=setInterval(() => {
+        if(i==max) clearInterval(idInterval);
+        else{
+            let idd = "invi"+i;
+            setTimeout(() => IdPicker(idd),1000);
+            i++;
+        }
+
+    }, 1000);
+}
+
+
 function getCoded(imagen,titulo,preu,identificador){
-    return `<div class="col-md-3 col-sm-6 asd aqui invi" style="/*display:none;*/">
+    return `<div class="col-md-3 col-sm-6 asd aqui invi" id="${identificador}">
                   <div class="product-grid">
                       <div class="product-image">
                           <a href="#" class="image" style="background-color:#F3F3F3;">
@@ -34,37 +61,38 @@ function getCoded(imagen,titulo,preu,identificador){
               </div>`;
 }
 
-let i = 0;
-let max = 23;
-let ra = Randomizador(0,2);
-let code = getCoded(imagen);
-let t = false;
-let imagenes = ["https://rockcontent.com/es/wp-content/uploads/sites/3/2019/02/o-que-e-produto-no-mix-de-marketing-1024x538.png","https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"];
 
-while(i<max){
-    let ra = Randomizador(0,2);
-    imagen = imagenes[1];
-    console.log(imagen);
-    let tit = 'Naranja Premium Bluetooth 8K 144Hz 1TB SSD';
-    let pree = 30.00;
-    let identi = 'nkjbnasd(bkabd';
-    code+=getCoded(imagen,tit,pree,identi);
+function llamarProductos(){
 
+    onGetNew((querySnapshot) => {
+        // variable 'html' cada cop que la recorrerem mostrem un objecte de firebase com a html
+        let html = '';
+        let num = 1;
+        //bucle per cada document de la base de dades crea un div que conté tots els camps
+        querySnapshot.forEach(doc => {
+            const producto = doc.data()
+            html +=getCoded(producto.image[0],producto.nombre,producto.precio,num);
+            num++;
+        })
+        //dins de l'string va codi html
+        CAMBIARCODIGO.innerHTML = html
+        noinvi();
+    });
 
-    i++;
-    if(i=>max){
-        t = true;
-    }
 }
-if(t==true){
-    document.getElementById('change').innerHTML = code;
-}
+//document.getElementById("change").addEventListener("DOM", () => llamarProductos());
+llamarProductos();
+
+
+
+
 
 
 function vistoso(){
     document.getElementById('iconos').style.backgroundColor = 'rgba(216, 250, 8,0.3)';
     document.getElementById('iconos').style.borderRadius = '25px';
     document.getElementById('aa').innerHTML = '<i id="bb" class="fas fa-exclamation-triangle"></i>';
+    console.log("VISTOSO");
 }
 
 
@@ -72,6 +100,7 @@ function normalizarbtn(){
     document.getElementById('iconos').style.backgroundColor = '';
     document.getElementById('iconos').style.borderRadius = '0px';
  document.getElementById('aa').innerHTML = '<i id="bb" class="far fa-times-circle"></i>';
+ console.log("NORMALIZADO");
 }
 
 function cambio(){
@@ -184,7 +213,7 @@ function tologin(){
 
 /*
 
-function aaa(idda){
+function IdPicker(idda){
     document.getElementById(idda).style.display="";
 }
 function noinvi (){
@@ -195,7 +224,7 @@ function noinvi (){
         if(i==max) clearInterval(idInterval);
         else{
             let idd = "invi"+i;
-            setTimeout(() => aaa(idd),2000);
+            setTimeout(() => IdPicker(idd),2000);
             i++;
         }
 
@@ -226,10 +255,4 @@ window.addEventListener('resize',function() {
 window.addEventListener('load',function() {
   pantalla();
 });
-
-
-
-
-
-
 
