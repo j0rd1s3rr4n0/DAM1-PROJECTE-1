@@ -221,10 +221,11 @@ window.addEventListener('resize',function() {
   pantalla();
 });
 
+
 window.addEventListener('load',function() {
   pantalla();
-  console.log("CARGADO!");
 });
+
 
 
 
