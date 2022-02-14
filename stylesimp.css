@@ -141,6 +141,10 @@ border-radius: 20px;
 padding-left: 10px;
 padding-right: 10px;
 }
+ul.barnum > li:hover{
+    background-color: var(--main-color);
+    cursor: pointer;
+}
 .product-grid .product-stock{
     color: #999;
     font-size: 16px;
