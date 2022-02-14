@@ -93,7 +93,7 @@
                         </ul>
 
                     </li>
-                    <script>
+                        <script>
                                 function funcioncitaderepuesto() {
                                      if (document.getElementById("iconos").style.display != "none") {
                                        document.getElementById("iconos").style.display = "none";
@@ -101,9 +101,8 @@
                                        document.getElementById("iconos").style.display="";
                                      }
                                  }
-                            </script>
+                        </script>
                     <li id="hamgurger"><a  class="icon" onclick="funcioncitaderepuesto()"><i class="fa fa-bars"></i></a></li>
-                            
                 </ul>
             </header>
         </form>
@@ -114,7 +113,7 @@
         </center>
         </br>
         <div class="container">
-            <center><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/YouTube_loading_symbol_3_%28transparent%29.gif" height="20%"></center>
+            <center id="loading"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/YouTube_loading_symbol_3_%28transparent%29.gif" width="5%"></center>
             <div class="row" id="change">
                 <!------------------------------------------------------------------>
                 <!------------------------------------------------------------------>
@@ -122,6 +121,7 @@
                     
                     -->
                 <!------------------------------------------------------------------>
+                <script type="text/javascript" src="./js/cosas.js"></script>
                 <script type="module" type="text/javascript" src="./js/mixto.js"></script>
                 <!------------------------------------------------------------------>
             </div>
@@ -141,7 +141,7 @@
                 <h2>ACCEDER A UNA CUENTA</h2>
                 <a id="cerrar" href="#">&times;</a>
                 <div id="log-in" class="loginContent">
-                    <form action="#" method="post">
+                    <form>
                         <label for="email">EMAIL/USERNAME:</label>
                         </br>
                         <input type="email" id="email" name="email" placeholder="EMAIL">

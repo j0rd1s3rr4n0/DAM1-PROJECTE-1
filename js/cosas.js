@@ -1,12 +1,12 @@
 
-
+/*
 function Randomizador(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 let imagen = "https://rockcontent.com/es/wp-content/uploads/sites/3/2019/02/o-que-e-produto-no-mix-de-marketing-1024x538.png";
 //https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg
 function getCoded(imagen,titulo,preu,identificador){
-    return `<div class="col-md-3 col-sm-6 asd aqui invi" style="/*display:none;*/">
+    return `<div class="col-md-3 col-sm-6 asd aqui invi" style="/*display:none;">
                   <div class="product-grid">
                       <div class="product-image">
                           <a href="#" class="image" style="background-color:#F3F3F3;">
@@ -56,10 +56,37 @@ while(i<max){
         t = true;
     }
 }
+
 if(t==true){
     document.getElementById('change').innerHTML = code;
 }
+*/
 
+
+
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function Randomizador(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function revo(){
+    document.getElementById('iconos').innerHTML = `
+                    <li id="tb">
+                        <div class="input-group rounded">
+                                <input type="search" class="form-control rounded" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon">
+                                <span class="input-group-text border-0" onclick="q.submit()" id="search-addon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                        </div>
+                        </li>
+                        <li id="aa" style="padding-left -1vw;" onclick="normalizarbtn();cambio();" onmouseenter="vistoso()" onmouseleave="normalizarbtn()" ><i id="bb" class="far fa-times-circle" ></i></a></li>
+                        `;
+
+};
 
 function vistoso(){
     document.getElementById('iconos').style.backgroundColor = 'rgba(216, 250, 8,0.3)';
@@ -107,21 +134,6 @@ function password_recover(){
 
 }
 
-
-function revo(){
-            document.getElementById('iconos').innerHTML = `
-                    <li id="tb">
-                        <div class="input-group rounded">
-                                <input type="search" class="form-control rounded" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon">
-                                <span class="input-group-text border-0" onclick="q.submit()" id="search-addon">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                        </div>
-                        </li>
-                        <li id="aa" style="padding-left -1vw;" onclick="normalizarbtn();cambio();" onmouseenter="vistoso()" onmouseleave="normalizarbtn()" ><i id="bb" class="far fa-times-circle" ></i></a></li>
-                        `;
-
-};
 
 function enteregister(){
 document.getElementById('loginBody').innerHTML = `
