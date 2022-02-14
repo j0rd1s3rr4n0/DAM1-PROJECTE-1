@@ -1,0 +1,4 @@
+ENCRIPTAR
+console.log(btoa('hola'))
+DESENCRIPTAR
+console.log(atob('aG9sYQ=='))

@@ -2,7 +2,7 @@
 import {addElement, getElement, onGetNew} from './firebase.js';
 
 const CAMBIARCODIGO = document.getElementById('change');
-
+let username = btoa('I\'m who');
 // Set a Cookie
 function setCookie(cName, cValue, expDays) {
         let date = new Date();
