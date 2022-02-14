@@ -15,25 +15,32 @@ function Randomizador(min, max) {
 
 
 function IdPicker(idda){
-    document.getElementById(idda).style.display="";
+    if(idda){
+        document.getElementById(idda).style.display='';
+    }
+    //document.getElementById(idda).removeAttr( 'style' );
 }
 
 // AQUESTA FUNCIO FA QUE ES MOSTRI VISIBLE CADA PRODUCTE CAD X SEGONS
 function noinvi (){
+    let i = 1;
+    let max = 24;
     let idInterval=setInterval(() => {
         if(i==max) clearInterval(idInterval);
         else{
-            let idd = "invi"+i;
-            setTimeout(() => IdPicker(idd),1000);
+//            let idd = "invi"+i;
+            let idd = i;
+            //setTimeout(() => IdPicker(idd),2000);
+            IdPicker(idd);
             i++;
         }
 
-    }, 1000);
+    }, 800);
 }
 
 
 function getCoded(imagen,titulo,preu,identificador){
-    return `<div class="col-md-3 col-sm-6 asd aqui invi" id="${identificador}">
+    return `<div class="col-md-3 col-sm-6 asd aqui invi" id="${identificador}" style="display:none;">
                   <div class="product-grid">
                       <div class="product-image">
                           <a href="#" class="image" style="background-color:#F3F3F3;">
