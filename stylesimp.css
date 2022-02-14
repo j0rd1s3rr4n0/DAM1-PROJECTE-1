@@ -250,7 +250,7 @@ ul.barnum > li:hover{
 }
 
 .action-buttons a{
-    color: #000;
+    /*color: #000;*/
     font-family:Roboto;
     font-size: 12px;
     text-transform: uppercase;
@@ -258,6 +258,15 @@ ul.barnum > li:hover{
     letter-spacing:1px;
     cursor:pointer;
   transition: .4s;
+}
+.action-buttons a:hover{
+    font-size: 101%;
+    padding: 1.1;
+}
+a:hover > i.heart{
+    color: red;
+    font-size: 101%;
+    padding: 1.1;
 }
 
 .action-buttons a:hover{
