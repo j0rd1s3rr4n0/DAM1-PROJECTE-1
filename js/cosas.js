@@ -63,7 +63,11 @@ if(t==true){
 */
 
 
-
+function IdPicker(idda){
+    if(idda){
+        document.getElementById(idda).style.display='inline';
+    }
+    //document.getElementById(idda).removeAttr( 'style' );
 }
 
 function sleep(ms) {
@@ -90,8 +94,6 @@ function revo(){
 };
 
 function vistoso(){
-    document.getElementById('iconos').style.borderRadius = '25px';
-    document.getElementById('aa').innerHTML = '<i id="bb" class="fas fa-exclamation-triangle"></i>';
     //document.getElementById('iconos').style.backgroundColor = 'rgba(216, 250, 8,0.3)';
     //document.getElementById('iconos').style.borderRadius = '25px';
     //document.getElementById('aa').innerHTML = '<i id="bb" class="fas fa-exclamation-triangle"></i>';
