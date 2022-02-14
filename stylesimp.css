@@ -17,7 +17,13 @@
     font-family:Roboto;
     position:relative;
 }
-
+#change > div > div > div.product-image > a > div.img{
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 
 .feature-products::before{
     position:absolute;

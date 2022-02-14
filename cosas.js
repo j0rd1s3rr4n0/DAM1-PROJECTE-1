@@ -10,7 +10,7 @@ function getCoded(imagen,titulo,preu,identificador){
                   <div class="product-grid">
                       <div class="product-image">
                           <a href="#" class="image" style="background-color:#F3F3F3;">
-                          <img class="pic-1" src="${imagen}"><!--https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg-->
+                          <div class="img" style="background-image: url(${imagen});"><!--https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg--></div>
                           </a>
                       </div>
                       <div class="product-content">
