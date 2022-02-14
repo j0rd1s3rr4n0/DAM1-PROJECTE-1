@@ -64,6 +64,7 @@ if(t==true){
 
 
 
+}
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -89,12 +90,13 @@ function revo(){
 };
 
 function vistoso(){
-    document.getElementById('iconos').style.backgroundColor = 'rgba(216, 250, 8,0.3)';
     document.getElementById('iconos').style.borderRadius = '25px';
     document.getElementById('aa').innerHTML = '<i id="bb" class="fas fa-exclamation-triangle"></i>';
+    //document.getElementById('iconos').style.backgroundColor = 'rgba(216, 250, 8,0.3)';
+    //document.getElementById('iconos').style.borderRadius = '25px';
+    //document.getElementById('aa').innerHTML = '<i id="bb" class="fas fa-exclamation-triangle"></i>';
     console.log("VISTOSO");
 }
-
 
 function normalizarbtn(){
     document.getElementById('iconos').style.backgroundColor = '';
@@ -104,10 +106,10 @@ function normalizarbtn(){
 }
 
 function cambio(){
-            document.getElementById('iconos').innerHTML = `
-                    <li><a href=""><i class="fas fa-shopping-cart"></i> CARRITO</a></li>
-                    <li><a href="#login"><i class="fas fa-user"></i> MI CUENTA</a></li>
-                    <li id="tb" onclick="revo()"><a class="test"><i class="fas fa-search"></i></a></li>`;
+    document.getElementById('iconos').innerHTML = `
+    <li><a href=""><i class="fas fa-shopping-cart"></i> CARRITO</a></li>
+    <li><a href="#login"><i class="fas fa-user"></i> MI CUENTA</a></li>
+    <li id="tb" onclick="revo()"><a class="test"><i class="fas fa-search"></i></a></li>`;
 };
 
 function refresh(){
@@ -117,7 +119,7 @@ function refresh(){
 }
 function password_recover(){
     document.getElementById('loginBody').innerHTML = `
-                <h2>Trouble Logging In?</h2><h6>Enter your email, phone, or username and we\'ll send you a link to get back into your account.</h6>
+                <h2>Trouble Logging In?</h2><h6>Enter your email and we\'ll send you a link to get back into your account.</h6>
                 <a id="cerrar" href="#">×</a>
                 <div id="log-in" class="loginContent">
                     <form action="#" method="post">
@@ -152,7 +154,7 @@ document.getElementById('loginBody').innerHTML = `
 
                         </form>
             </div>`;
-
+        }
   /*
     <form action="#" method="post">
                           <label for="email">EmaiL:</label><br>
@@ -171,7 +173,7 @@ document.getElementById('loginBody').innerHTML = `
     document.querySelector("#registrarbtn").classList.toggle("login");
     document.querySelector("#registrarbtn").classList.toggle("registro");
 */
-}
+
 function tologin(){
   document.getElementById('loginBody').innerHTML = `
                 <h2>ACCEDER A UNA CUENTA</h2>
@@ -237,13 +239,4 @@ window.addEventListener('resize',function() {
 });
 
 
-window.addEventListener('load',function() {
-  pantalla();
-});
-
-
-
-
-
-
-
+window.addEventListener('load',function() {pantalla();});

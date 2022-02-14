@@ -5,22 +5,23 @@ const CAMBIARCODIGO = document.getElementById('change');
 
 
 
+
 function IdPicker(idda){
     if(idda){
-        document.getElementById(idda).style.display='';
+        document.getElementById(idda).style.display='inline';
     }
     //document.getElementById(idda).removeAttr( 'style' );
 }
-
 // AQUESTA FUNCIO FA QUE ES MOSTRI VISIBLE CADA PRODUCTE CAD X SEGONS
 function noinvi (){
     let i = 1;
-    let max = 26;
+    let max = 25;
     let idInterval=setInterval(() => {
         if(i==max) clearInterval(idInterval);
         else{
             //let idd = "invi"+i;
             let idd = i;
+            console.log('Mostrando '+idd)
             setTimeout(() => IdPicker(idd),700);
             //IdPicker(idd);
             i++;
@@ -30,8 +31,8 @@ function noinvi (){
 }
 
 
-function getCoded(imagen,titulo,preu,identificador){
-    return `<div class="col-md-3 col-sm-6 asd aqui invi" id="${identificador}" style="display:none;">
+function getCoded(imagen,titulo,preu,identificador,idd){
+    return `<div class="col-md-3 col-sm-6 asd aqui invi" id="${idd}" style="display:none;">
                   <div class="product-grid">
                       <div class="product-image">
                           <a href="#" class="image" style="background-color:#F3F3F3;">
@@ -69,11 +70,16 @@ function llamarProductos(){
         //bucle per cada document de la base de dades crea un div que conté tots els camps
         querySnapshot.forEach(doc => {
             const producto = doc.data()
-            html +=getCoded(producto.image[0],producto.nombre,producto.precio,num);
+            console.log(num);
+            console.log(producto.id);
+            let identificadore = btoa(doc.id);
+            html +=getCoded(producto.image[0],producto.nombre,producto.precio,identificadore,num);
             num++;
         })
         //dins de l'string va codi html
-        CAMBIARCODIGO.innerHTML = html
+        CAMBIARCODIGO.innerHTML = html;
+        console.log('Procedo a eliminar el gif');
+        document.getElementById('loading').style.display ="none";
         noinvi();
     });
 
