@@ -1,4 +1,5 @@
 ENCRIPTAR
-console.log(btoa('hola'))
+console.log(btoa('hola').replace('=','$').replace('=','$'))
 DESENCRIPTAR
 console.log(atob('aG9sYQ=='))
+

@@ -51,7 +51,7 @@ export const onGetNew = (callback) => onSnapshot(collection(db,'productos'), cal
 */
 
 
-import {getAuth,createUserWithEmailAndPassword,signOut, signInWithEmailAndPassword,} from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js'
+import {getAuth,createUserWithEmailAndPassword,signOut, signInWithEmailAndPassword} from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js'
 //inicialitzar auth
 const auth = getAuth()
 
@@ -76,8 +76,9 @@ function registrar_now(){
 
 //COMPROBACIO REPETICIO CONTRASEÑA
 var samepass = Boolean(true);
+if (document.querySelector('#signout')){
+const registre = document.querySelector('#signout')
 
-const registre = document.querySelector('#registerForm')
 registre.addEventListener('submit', (e) => {
     e.preventDefault()
     if(samepass == true){
@@ -86,10 +87,13 @@ registre.addEventListener('submit', (e) => {
     else{
         alert('Contraseñas No Coinciden');
     }
-})
+}
+);
+}
 
 
 // TANCA SESSIÓ
+if(document.querySelector('#logout')){
 const logoutButton = document.querySelector('#logout')
 logoutButton.addEventListener('click', () =>{
     signOut(auth)
@@ -100,9 +104,10 @@ logoutButton.addEventListener('click', () =>{
         console.log(err.message)
     })
 })
-
+}
 //LOGIN
-const iniciSessio = document.querySelector('#loginForm')
+if(document.querySelector('#signin')){
+const iniciSessio = document.querySelector('#signin')
 iniciSessio.addEventListener('click', (e) => {
     e.preventDefault()
 
@@ -117,3 +122,9 @@ iniciSessio.addEventListener('click', (e) => {
         console.log(err.message)
     })
 })
+}
+
+//RECOVER
+if(document.querySelector('#recovery')){
+  const recoveracct = document.querySelector('#recovery')
+}

@@ -1,4 +1,14 @@
 
+
+function crypto(frase){
+    let a = btoa(frase);
+    return a;
+
+}
+function decrypto(frase){
+    let b = atob(frase);
+    return b;
+}
 /*
 function Randomizador(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
@@ -110,7 +120,7 @@ function normalizarbtn(){
 function cambio(){
     document.getElementById('iconos').innerHTML = `
     <li><a href=""><i class="fas fa-shopping-cart"></i> CARRITO</a></li>
-    <li><a href="#login"><i class="fas fa-user"></i> MI CUENTA</a></li>
+    <li><a href="#login"><i class="fas fa-user" onclick="tologin();alert(1);"></i> MI CUENTA</a></li>
     <li id="tb" onclick="revo()"><a class="test"><i class="fas fa-search"></i></a></li>`;
 };
 
@@ -124,7 +134,7 @@ function password_recover(){
                 <h2>Trouble Logging In?</h2><h6>Enter your email and we\'ll send you a link to get back into your account.</h6>
                 <a id="cerrar" href="#">×</a>
                 <div id="log-in" class="loginContent">
-                    <form action="#" method="post">
+                    <form action="#" method="post" id="recovery">
                       <label for="email">EMAIL/USERNAME:</label><br>
                       <input type="email" id="email" name="email" placeholder="EMAIL">
 
@@ -144,7 +154,7 @@ document.getElementById('loginBody').innerHTML = `
                 <h2>REGISTRAR UNA CUENTA</h2>
                 <a id="cerrar" href="#">×</a>
                 <div id="log-in" class="loginContent">
-    <form action="#" method="post">
+    <form action="#" method="post" id="signout">
                           <label for="email">Email / Username:</label><br>
                           <input type="email" id="email" name="email" placeholder="name.surname@exchange.org"><br>
                           <br><label for="password">Password:</label><br>
@@ -175,13 +185,44 @@ document.getElementById('loginBody').innerHTML = `
     document.querySelector("#registrarbtn").classList.toggle("login");
     document.querySelector("#registrarbtn").classList.toggle("registro");
 */
+if(document.cookie){
+    let cook = document.cookie.split('=');
+    console.log(cook[0]);
+    cook[1]=cook[1].replace('$','=').replace('$','=');
+    console.log(cook[1]);
+}
 
 function tologin(){
-  document.getElementById('loginBody').innerHTML = `
+    let uid = '1';
+    let admin = 'YWRtaW4$';
+    if(UID == admin){
+        document.getElementById('loginBody').innerHTML = `
+                <h2>ACCIONES A REALIZAR</h2>
+                <a id="cerrar" href="#">×</a>
+                <div id="log-in" class="loginContent">
+    <form action="#" method="post" id="signout">
+                          <button id="logout" class="logout" onclick="logout()">ADMINISTRAR</button><br>
+                          <button id="logout" class="logout" onclick="logout()">Cerrar Sesion</button><br>
+                        </form>
+            </div>`;
+        }
+    else if (UID != undefined && UID != admin){
+        document.getElementById('loginBody').innerHTML = `
+                <h2>ACCIONES A REALIZAR</h2>
+                <a id="cerrar" href="#">×</a>
+                <div id="log-in" class="loginContent">
+    <form action="#" method="post" id="signout">
+                          <button id="logout" class="logout" onclick="logout()">ULTIMAS COMPRAS</button><br>
+                          <button id="logout" class="logout" onclick="logout()">Cerrar Sesion</button><br>
+                        </form>
+            </div>`;
+        }
+        else{
+            document.getElementById('loginBody').innerHTML = `
                 <h2>ACCEDER A UNA CUENTA</h2>
                 <a id="cerrar" href="#">×</a>
                 <div id="log-in" class="loginContent">
-                    <form action="#" method="post">
+                    <form action="#" method="post" id="signin">
                       <label for="email">Email/Username:</label><br>
                       <input type="email" id="email" name="email" placeholder="name.surname@exchange.org"><br>
                       <label for="password">Password:</label><br>
@@ -193,6 +234,7 @@ function tologin(){
 
                     </form>
                 </div>`;
+        }
     /*
     document.querySelector("#entrarbtn").classList.toggle("login");
     document.querySelector("#entrarbtn").classList.toggle("registro");
