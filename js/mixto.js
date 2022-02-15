@@ -31,12 +31,12 @@ function noinvi (){
             //let idd = "invi"+i;
             let idd = i;
             console.log('Mostrando '+idd)
-            setTimeout(() => IdPicker(idd),700);
+            setTimeout(() => IdPicker(idd),200);
             //IdPicker(idd);
             i++;
         }
 
-    }, 1000);
+    }, 100);
 }
 
 
