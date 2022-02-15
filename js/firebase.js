@@ -24,7 +24,96 @@
   addDoc(collection(db, "productos"), {nom, quantitat, preu})
 }
 
- //crea i exporta (a index.js) la funció per aconseguir dades de la db
+/*productos
+  _____  _____   ____   _____ _    _ _______ ____   _____
+ |  __ \|  __ \ / __ \ / ____| |  | |__   __/ __ \ / ____|
+ | |__) | |__) | |  | | |    | |  | |  | | | |  | | (___
+ |  ___/|  _  /| |  | | |    | |  | |  | | | |  | |\___ \
+ | |    | | \ \| |__| | |____| |__| |  | | | |__| |____) |
+ |_|    |_|  \_\\____/ \_____|\____/   |_|  \____/|_____/
+
+
+ */
+//crea i exporta (a index.js) la funció per aconseguir dades de la db
 export const getElement = () => getDocs(collection(db,"productos"))
 //crea i exporta una funció per no tenir que exportar onSnapshot, collection i db al index.js
 export const onGetNew = (callback) => onSnapshot(collection(db,'productos'), callback )
+
+
+/*auth
+          _    _ _______ _    _
+     /\  | |  | |__   __| |  | |
+    /  \ | |  | |  | |  | |__| |
+   / /\ \| |  | |  | |  |  __  |
+  / ____ \ |__| |  | |  | |  | |
+ /_/    \_\____/   |_|  |_|  |_|
+
+*/
+
+
+import {getAuth,createUserWithEmailAndPassword,signOut, signInWithEmailAndPassword,} from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js'
+//inicialitzar auth
+const auth = getAuth()
+
+// REGISTRAR
+function registrar_now(){
+
+    const email = registre.correu.value
+    const password = registre.contra.value
+
+    createUserWithEmailAndPassword(auth, email, password)
+    //user credentials
+    .then((cred) => {
+        console.log('Nou usuari:', cred.user)
+        registre.reset()
+    })
+    //missatge error
+    .catch((err) => {
+        console.log(err.message)
+    })
+}
+
+
+//COMPROBACIO REPETICIO CONTRASEÑA
+var samepass = Boolean(true);
+
+const registre = document.querySelector('#registerForm')
+registre.addEventListener('submit', (e) => {
+    e.preventDefault()
+    if(samepass == true){
+        registrar_now();
+    }
+    else{
+        alert('Contraseñas No Coinciden');
+    }
+})
+
+
+// TANCA SESSIÓ
+const logoutButton = document.querySelector('#logout')
+logoutButton.addEventListener('click', () =>{
+    signOut(auth)
+        .then(() => {
+            console.log('Has tancat sessió')
+        })
+    .catch((err) => {
+        console.log(err.message)
+    })
+})
+
+//LOGIN
+const iniciSessio = document.querySelector('#loginForm')
+iniciSessio.addEventListener('click', (e) => {
+    e.preventDefault()
+
+    const email = iniciSessio.emailog.value
+    const password = iniciSessio.password.value
+
+    signInWithEmailAndPassword(auth, email, password)
+    .then((cred) => {
+        console.log('Has entrat al teu compte:', cred.user)
+    })
+    .catch((err) => {
+        console.log(err.message)
+    })
+})

@@ -220,6 +220,13 @@ function noinvi (){
     }, 2000);
     */
 
+function sun(){
+
+}
+function moon(){
+    
+}
+
 
 /* COMPRUEBA LA RESOLUCION DE PANTALLA Y EDITA CIERTOS PARAMETROS DE LA WEB SEGUN */
 // EJEMPLO LA BARRA DE NAVEGACION EL MENU

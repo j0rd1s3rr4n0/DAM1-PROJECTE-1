@@ -11,7 +11,7 @@
             <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script><script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>-->
             <!-************************************************************************************************-->
                 <!--NECESARI BOOSTRAP-->
-                <link rel="shortcut icon" type="image/x-icon" href="./img/icons/LogoNar.ico">
+                <link rel="shortcut icon" type="image/x-icon" href="./img/icons/LogoAzul.ico">
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
                 <!--NECESARI FONTAWESOME ICONS -->
                 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -63,11 +63,13 @@
     <body>
         <form method="get" name="q">
             <header>
-                 
-           
+            <div>
+                <span id="sun" onclick="moon()"><i class="fas fa-sun"></i></span>
+                <span id="moon" onclick="sun()"><i class="fas fa-moon"></i></span>
+            </div>
                 <ul class="menu">
                     <li>
-                        <img src="./img/logo/LogoTituloAzul.png" height="150px" alt="logo" id="logo" onclick="refresh()">
+                        <img src="./img/logo/LogoTituloAzul.png" height="120px" alt="logo" id="logo" onclick="refresh()">
                     </li>
                     <li>
                         <a href="#productos">PRODUCTOS</a>
