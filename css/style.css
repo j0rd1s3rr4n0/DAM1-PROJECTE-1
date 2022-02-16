@@ -18,6 +18,14 @@ div.modoswitcher{
   margin-left: 2%;
   margin-bottom: 0%;
 }
+a.darklight:hover{
+  cursor: pointer;
+  color: white;
+}
+a.darklight:hover > * {
+  font-size: 120%;
+  color: white;
+}
 
 @keyframes sunlight {
 0%   {
@@ -29,7 +37,7 @@ div.modoswitcher{
   50%  {
     /*background-color:yellow;*/
     box-shadow: 0px 0px 5px 5px rgba(255, 255, 0, 0.2);
-    right:80%;
+    right:10%;
     top:0px;
   }
   100%   {
@@ -49,7 +57,7 @@ div.modoswitcher{
   50%  {
     /*background-color:yellow;*/
     box-shadow: 0px 0px 5px 5px rgba(255, 255, 0, 0.2);
-    right:80%;
+    right:10%;
     top:0px;
   }
   100%   {
@@ -64,16 +72,16 @@ div.sun{
   box-shadow: 0px 0px 5px 5px yellow;
   position: relative;
   animation-name: sunlight;
-  animation-duration: 5s;
-  animation-delay: 2s;
+  animation-duration: 2.5s;
+  animation-delay: 0s;
 }
 div.moon{
   float: right;
   box-shadow: 0px 0px 5px 5px white;
   position: relative;
   animation-name: moonlight;
-  animation-duration: 5s;
-  animation-delay: 2s;
+  animation-duration: 2.5s;
+  animation-delay: 0s;
 }
 
 

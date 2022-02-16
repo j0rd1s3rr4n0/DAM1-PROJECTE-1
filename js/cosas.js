@@ -295,5 +295,7 @@ window.addEventListener('resize',function() {
   pantalla();
 });
 
-
-window.addEventListener('load',function() {pantalla();});
+function animateNow(){
+    document.getElementById('modoswitch').classList.toggle('moon');
+}
+window.addEventListener('load',function() {pantalla();animateNow();});
