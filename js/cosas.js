@@ -269,7 +269,7 @@ function sun(){
     document.getElementById('modoswitch').classList.toggle("moon");
     document.querySelector('body').classList.toggle("dark");
     document.querySelector('body').classList.toggle("light");
-    document.querySelector("#logo").src = '../img/logo/LogoTituloNar.png';
+    document.querySelector("#logo").src = './img/logo/LogoTituloNar.png';
     document.querySelector("body > footer > div.footer > div.content > div:nth-child(2) > a").innerHTML = `
         <svg style="filter:invert(1);
     " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
@@ -284,7 +284,7 @@ function moon(){
    document.getElementById('modoswitch').classList.toggle("moon");
    document.querySelector('body').classList.toggle("dark");
    document.querySelector('body').classList.toggle("light");
-   document.querySelector("#logo").src = '../img/logo/LogoTituloAzul.png';
+   document.querySelector("#logo").src = './img/logo/LogoTituloAzul.png';
    document.querySelector("body > footer > div.footer > div.content > div:nth-child(2) > a").innerHTML = `
     <svg style="filter:invert(0);
     " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
