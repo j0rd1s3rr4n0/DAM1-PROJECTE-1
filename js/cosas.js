@@ -316,7 +316,7 @@ window.addEventListener('resize',function() {
 function animateNow(){
     document.getElementById('modoswitch').classList.toggle('moon');
 }
-window.addEventListener('load',function() {pantalla();animateNow();});
+window.addEventListener('load',function() {pantalla();animateNow();faq();});
 
 
 
@@ -340,7 +340,7 @@ window.addEventListener('load',function() {pantalla();animateNow();});
                                         document.getElementById("plus4").innerHTML = "+";
                                     }
                                 }
-                               
+
 
                     function displaypregunta1() {
                         let x = document.getElementById("p1");
