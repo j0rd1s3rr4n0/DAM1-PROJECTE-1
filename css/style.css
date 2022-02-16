@@ -8,6 +8,7 @@ div.modoswitch{
   margin-left: 2%;
   margin-bottom: 0%;
 }
+
 div.modoswitcher{
   padding: 1%;
   border:  1px solid white;
@@ -18,13 +19,22 @@ div.modoswitcher{
   margin-left: 2%;
   margin-bottom: 0%;
 }
-a.darklight:hover{
+
+body.dark a.darklight:hover{
   cursor: pointer;
   color: white;
 }
-a.darklight:hover > * {
+body.dark a.darklight:hover > * {
   font-size: 120%;
   color: white;
+}
+body.light a.darklight:hover{
+  cursor: pointer;
+  color: black;
+}
+body.light a.darklight:hover > * {
+  font-size: 120%;
+  color: black;
 }
 
 @keyframes sunlight {
@@ -85,18 +95,32 @@ div.moon{
 }
 
 
-a:hover{
+body.dark a:hover{
   text-decoration: underline;
   font-weight: bold;
   font-size: 110%;
 
 }
-a{
+body.dark a{
   text-decoration: none;
   font-weight: bold;
   font-size: 110%;
   color: white;
 }
+
+body.light a:hover{
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 110%;
+
+}
+body.light a{
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 110%;
+  color: black;
+}
+
 
 *{
   margin:0;
@@ -107,9 +131,13 @@ a{
 h1{
   font-family: "Josefin Sans", sans-serif;
 }
-body{
-  background: var(--color-fondo);
+body.dark{
+  background: var(--color-fondo-d);
   color: white;
+}
+body.light{
+  background: var(--color-fondo-l);
+  color: black;
 }
 nav{
   margin-top: 200px;margin-bottom: -200px;height: auto;width: 50%;background-color: #1E1F26;border-radius: 20px;text-align: center;color: white;
@@ -168,7 +196,20 @@ header > ul{
   margin: 0;
   vertical-align: middle;
 }
-header > * , header > ul > li ,header > ul > * > ul >li, header > ul > * > ul > div >li{
+body.light header > * ,
+body.light  header > ul > li ,
+body.light  header > ul > * > ul >li,
+body.light   header > ul > * > ul > div >li
+  {
+    text-align:center;
+    display:inline-block;
+    color: black;
+}
+body.dark header > * ,
+body.dark  header > ul > li ,
+body.dark  header > ul > * > ul >li,
+body.dark   header > ul > * > ul > div >li
+  {
     text-align:center;
     display:inline-block;
     color: white;

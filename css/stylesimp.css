@@ -1,9 +1,15 @@
-:root{ 
+:root{
     /*FONDOS*/
     --main-color: #f368e0;
-    --color-fondo: #1E1F26;
-    --color-menu:  #34495e;
-    --color-producto:  #1E1F26;
+
+    --color-fondo-d: #1E1F26;
+    --color-fondo-l: white;
+
+    --color-menu-d:  #34495e;
+    --color-menu-l: white;
+
+    --color-producto-d:  #1E1F26;
+    --color-producto-l:  #FFF;
 
     /* TEXTO */
     --c-main: white;
@@ -17,7 +23,7 @@
     position:relative;
 }
 #change > div > div > div.product-image > a > div.img{
-    width: 200px;
+    width: 100%;
     height: 200px;
     background-repeat: no-repeat;
     background-position: center;
@@ -80,8 +86,10 @@
     margin-bottom:40px;
 }
 
-#change > div > div > div.product-content > h3 > a{color: var(--c-prod);}
-.product-grid{
+
+body.dark #change > div > div > div.product-content > h3 > a{color: var(--c-prod);}
+body.light #change > div > div > div.product-content > h3 > a{color: black;}
+body.dark .product-grid{
     border:1px solid transparent;
     font-family: 'Roboto', sans-serif;
     padding:20px;
@@ -89,7 +97,27 @@
     margin-bottom:80px;
     margin-top:40px;
     color: var(--c-prod);
-    background-color: var(--color-producto);
+    background-color: #33343a;
+}
+
+body.light .product-grid{
+    border:1px solid transparent;
+    font-family: 'Roboto', sans-serif;
+    padding:20px;
+    transition: all 0.5s;
+    margin-bottom:80px;
+    margin-top:40px;
+    color: black;
+    background-color: lightgray;
+}
+body .dark{
+    background-color: var(--color-producto-l);
+    color: black;
+}
+
+body .light{
+    background-color: var(--color-producto-d);
+    color: white;
 }
 
 .product-grid .product-image{
@@ -202,7 +230,16 @@ ul.barnum > li:hover{
     transition: all 0.3s ease 0s;
 }
 .product-grid .category a:hover{ color: var(--main-color); }
-.product-grid .price{
+body.light .product-grid .price{
+    font-family:Roboto;
+    font-size:14px;
+    text-transform:uppercase;
+    font-weight:700;
+    line-height:0px;
+    display: inline-block;
+    color:black;
+}
+body.dark .product-grid .price{
     font-family:Roboto;
     font-size:14px;
     text-transform:uppercase;
@@ -496,17 +533,27 @@ body::-webkit-scrollbar {
   width: 12px;               /* width of the entire scrollbar */
 }
 
-body::-webkit-scrollbar-track {
-  background: var(--color-fondo);        /* color of the tracking area */
+body.dark::-webkit-scrollbar-track {
+  background: var(--color-fondo-d);        /* color of the tracking area */
 }
 
-body::-webkit-scrollbar-thumb {
+
+body.dark::-webkit-scrollbar-thumb {
   background-color: var(--c-main);    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid var(--color-fondo);  /* creates padding around scroll thumb */
+  border: 3px solid var(--color-fondo-d);  /* creates padding around scroll thumb */
+}
+
+body.light::-webkit-scrollbar-track {
+  background: var(--color-fondo-l);        /* color of the tracking area */
 }
 
 
+body.light::-webkit-scrollbar-thumb {
+  background-color: var(--c-main);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid var(--color-fondo-l);  /* creates padding around scroll thumb */
+}
 
 
 
@@ -526,11 +573,34 @@ footer {
 }
 .footer {
   z-index: 1;
-  --footer-background:var(--color-fons);
   display: grid;
   position: relative;
   grid-area: footer;
   min-height: 12rem;
+}
+body.light > footer > div.footer > div.content > div > div > * {
+    color: white;
+}
+body.dark > footer > div.footer > div.content > div > div > * {
+    color: black;
+}
+footer > div.footer > div.content > div > div > * {
+    font-weight: bold;
+}
+
+body.light > footer > div.footer > div.content > div:nth-child(2) > p {
+    color: white;
+}
+body.dark > footer > div.footer > div.content > div:nth-child(2) > p {
+    color: black;
+}
+
+
+body.dark .footer{
+    --footer-background:var(--color-fondo-l);
+}
+body.light .footer{
+    --footer-background:var(--color-fondo-d);
 }
 footer .footer .bubbles {
   position: absolute;
