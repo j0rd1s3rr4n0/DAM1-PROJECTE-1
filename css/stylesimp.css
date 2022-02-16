@@ -711,3 +711,30 @@ footer .footer .content > div .image {
   }
 }
 
+
+
+/* PAGINA INICIO */
+#lorem{padding: 2%;}
+#lorem h2{text-transform:none;}
+#lorem p{text-transform:none;}
+.pringados {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 0px;
+  align-items: center;
+  margin: 5%;
+  }
+  .pringado1 { grid-area: 1 / 1 / 2 / 2; } .pringado2 { grid-area: 1 / 2 / 2 / 3; } .pringado3 { grid-area: 1 / 3 / 2 / 4; } .pringado4 { grid-area: 1 / 4 / 2 / 5; }
+#imgur{
+  border: orange 5px solid;
+  border-radius: 20%;
+  width: 100%;
+  height: auto;
+}
+#suma{
+  color:orange;
+  font-style: italic;
+}
+/*PAGINA INICIO*/

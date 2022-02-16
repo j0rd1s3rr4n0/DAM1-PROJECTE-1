@@ -317,3 +317,67 @@ function animateNow(){
     document.getElementById('modoswitch').classList.toggle('moon');
 }
 window.addEventListener('load',function() {pantalla();animateNow();});
+
+
+
+
+                    function funcioncitaderepuesto() {
+                                     if (document.getElementById("iconos").style.display != "none") {
+                                       document.getElementById("iconos").style.display = "none";
+                                     } else {
+                                       document.getElementById("iconos").style.display="";
+                                     }
+                    }
+                    function faq(){
+                        let faq = document.getElementById("faq");
+                        let plus4 = document.getElementById("plus4").innerHTML;
+                        if (faq.style.display === "none") {
+                                        faq.style.display = "block";
+                                        document.getElementById("plus4").innerHTML = plus4.replace("+" , "-");
+                                    }
+                                    else{
+                                        faq.style.display = "none";
+                                        document.getElementById("plus4").innerHTML = "+";
+                                    }
+                                }
+                               
+
+                    function displaypregunta1() {
+                        let x = document.getElementById("p1");
+                        let plus1 = document.getElementById("plus1").innerHTML;
+                                    if (x.style.display === "none") {
+                                        x.style.display = "block";
+                                        document.getElementById("plus1").innerHTML = plus1.replace("+" , "-");
+                                    }else{
+                                        x.style.display = "none";
+                                        document.getElementById("plus1").innerHTML = "+";
+                                    }
+                                        }
+
+                     function displaypregunta2(){
+                        let y = document.getElementById("p2");
+                        let plus2 = document.getElementById("plus2").innerHTML;
+                                    if (y.style.display === "none") {
+                                        y.style.display = "block";
+                                        document.getElementById("plus2").innerHTML = plus2.replace("+" , "-");
+                                    }
+                                    else{
+                                        y.style.display = "none";
+                                        document.getElementById("plus2").innerHTML = "+";
+                                    }
+                                                }
+
+                    function displaypregunta3(){
+                        let z = document.getElementById("p3");
+                        let plus3 = document.getElementById("plus3").innerHTML;
+                                    if (z.style.display === "none") {
+                                        z.style.display = "block";
+                                        document.getElementById("plus3").innerHTML = plus3.replace("+" , "-");
+                                    }
+                                    else{
+                                        z.style.display = "none";
+                                        document.getElementById("plus3").innerHTML = "+";
+                                    }
+
+
+                                             }

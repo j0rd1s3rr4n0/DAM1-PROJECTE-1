@@ -2,7 +2,9 @@
 import {addElement, getElement, onGetNew} from './firebase.js';
 
 const CAMBIARCODIGO = document.getElementById('change');
+
 let username = btoa('I\'m who').replace('=','$').replace('=','$');
+
 // Set a Cookie
 function setCookie(cName, cValue, expDays) {
         let date = new Date();
@@ -16,7 +18,6 @@ function setCookie(cName, cValue, expDays) {
 }
 // Apply setCookie
 setCookie('username', username, 30);
-
 
 
 function IdPicker(idda){
@@ -90,10 +91,12 @@ function llamarProductos(){
             num++;
         })
         //dins de l'string va codi html
+        if(CAMBIARCODIGO){
         CAMBIARCODIGO.innerHTML = html;
         console.log('Procedo a eliminar el gif');
         document.getElementById('loading').style.display ="none";
         noinvi();
+        }
     });
 
 }
