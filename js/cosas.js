@@ -263,10 +263,16 @@ function noinvi (){
     */
 
 function sun(){
-
+    document.getElementById('sun').style.display="inline";
+    document.getElementById('moon').style.display="none";
+    document.getElementById('modoswitch').classList.toggle("sun");
+    document.getElementById('modoswitch').classList.toggle("moon");
 }
 function moon(){
-    
+   document.getElementById('sun').style.display="none";
+   document.getElementById('moon').style.display="inline";
+   document.getElementById('modoswitch').classList.toggle("sun");
+   document.getElementById('modoswitch').classList.toggle("moon");
 }
 
 

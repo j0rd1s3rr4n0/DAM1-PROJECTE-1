@@ -1,3 +1,81 @@
+div.modoswitch{
+  padding: 1%;
+  border:  1px solid white;
+  font-size: 24px;
+  border-radius:50%;
+  margin-top: 2%;
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-bottom: 0%;
+}
+div.modoswitcher{
+  padding: 1%;
+  border:  1px solid white;
+  font-size: 24px;
+  border-radius:50%;
+  margin-top: 2%;
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-bottom: 0%;
+}
+
+@keyframes sunlight {
+0%   {
+    box-shadow: 0px 0px 5px 5px white;
+    /*background-color:red;*/
+    right:0px;
+    top:0px;
+  }
+  50%  {
+    /*background-color:yellow;*/
+    box-shadow: 0px 0px 5px 5px rgba(255, 255, 0, 0.2);
+    right:80%;
+    top:0px;
+  }
+  100%   {
+    box-shadow: 0px 0px 5px 5px yellow;
+    /*background-color:orange;*/
+    right:0px;
+    top:0px;
+  }
+}
+@keyframes moonlight {
+  0%   {
+    box-shadow: 0px 0px 5px 5px yellow;
+    /*background-color:red;*/
+    right:0px;
+    top:0px;
+  }
+  50%  {
+    /*background-color:yellow;*/
+    box-shadow: 0px 0px 5px 5px rgba(255, 255, 0, 0.2);
+    right:80%;
+    top:0px;
+  }
+  100%   {
+    box-shadow: 0px 0px 5px 5px white;
+    /*background-color:orange;*/
+    right:0px;
+    top:0px;
+  }
+}
+div.sun{
+  float: right;
+  box-shadow: 0px 0px 5px 5px yellow;
+  position: relative;
+  animation-name: sunlight;
+  animation-duration: 5s;
+  animation-delay: 2s;
+}
+div.moon{
+  float: right;
+  box-shadow: 0px 0px 5px 5px white;
+  position: relative;
+  animation-name: moonlight;
+  animation-duration: 5s;
+  animation-delay: 2s;
+}
+
 
 a:hover{
   text-decoration: underline;

@@ -5,6 +5,7 @@
             <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">-->
             <!--
       
+        
         <!---
         <meta http-equiv="refresh" content="5">
     -->
@@ -41,13 +42,10 @@
                 <meta name="twitter:site" content="@jordiiiserrano" />
                 <meta name="twitter:creator" content="@jordiiiserrano" />
                 <!-- Favicon -->
-                
                 <link rel="icon" href="https://j0rd1s3rr4n0.github.io/DAM1-PROJECTE-1/favicon-32x32.png" sizes="32x32" />
                 <link rel="icon" href="https://j0rd1s3rr4n0.github.io/DAM1-PROJECTE-1/favicon-192x192.png" sizes="192x192" />
-                
                 <!--
-                <link rel="apple-touch-icon-precomposed" href="https://j0rd1s3rr4n0.github.io/DAM1-PROJECTE-1/favicon-180x180.png">
-                <meta name="msapplication-TileImage" content="https://j0rd1s3rr4n0.github.io/DAM1-PROJECTE-1/favicon-270x270.png">
+                <link rel="apple-touch-icon-precomposed" href="https://j0rd1s3rr4n0.github.io/DAM1-PROJECTE-1/favicon-180x180.png"><meta name="msapplication-TileImage" content="https://j0rd1s3rr4n0.github.io/DAM1-PROJECTE-1/favicon-270x270.png">
                 -->
                 <!-- Multi-language support -->
                 <link rel="alternate" href="https://j0rd1s3rr4n0.github.io/DAM1-PROJECTE-1/" hreflang="es" />
@@ -63,10 +61,14 @@
     <body>
         <form method="get" name="q">
             <header>
-            <div>
-                <span id="sun" onclick="moon()"><i class="fas fa-sun"></i></span>
-                <span id="moon" onclick="sun()"><i class="fas fa-moon"></i></span>
-            </div>
+                <div id="modoswitch" class="modoswitch moon">
+                    <span id="sun" onclick="moon()" style="display:none;">
+                        <i class="fas fa-sun"></i>
+                    </span>
+                    <span id="moon" onclick="sun()">
+                        <i class="fas fa-moon"></i>
+                    </span>
+                </div>
                 <ul class="menu">
                     <li>
                         <img src="./img/logo/LogoTituloAzul.png" height="120px" alt="logo" id="logo" onclick="refresh()">
@@ -93,18 +95,21 @@
                                 </a>
                             </li>
                         </ul>
-
                     </li>
-                        <script>
-                                function funcioncitaderepuesto() {
-                                     if (document.getElementById("iconos").style.display != "none") {
-                                       document.getElementById("iconos").style.display = "none";
-                                     } else {
-                                       document.getElementById("iconos").style.display="";
-                                     }
-                                 }
-                        </script>
-                    <li id="hamgurger"><a  class="icon" onclick="funcioncitaderepuesto()"><i class="fa fa-bars"></i></a></li>
+                    <script>
+                        function funcioncitaderepuesto() {
+                            if (document.getElementById("iconos").style.display != "none") {
+                                document.getElementById("iconos").style.display = "none";
+                            } else {
+                                document.getElementById("iconos").style.display = "";
+                            }
+                        }
+                    </script>
+                    <li id="hamgurger">
+                        <a class="icon" onclick="funcioncitaderepuesto()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
                 </ul>
             </header>
         </form>
@@ -115,7 +120,9 @@
         </center>
         </br>
         <div class="container">
-            <center id="loading"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/YouTube_loading_symbol_3_%28transparent%29.gif" width="5%"></center>
+            <center id="loading">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/YouTube_loading_symbol_3_%28transparent%29.gif" width="5%">
+            </center>
             <div class="row" id="change">
                 <!------------------------------------------------------------------>
                 <!------------------------------------------------------------------>
@@ -344,3 +351,5 @@
             </svg>
         </footer>
         </section>
+    </body>
+</html>
