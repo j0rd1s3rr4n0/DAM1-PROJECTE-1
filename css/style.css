@@ -19,6 +19,9 @@ div.modoswitcher{
   margin-left: 2%;
   margin-bottom: 0%;
 }
+#modoswitch{
+  float: right;
+}
 
 body.dark a.darklight:hover{
   cursor: pointer;
