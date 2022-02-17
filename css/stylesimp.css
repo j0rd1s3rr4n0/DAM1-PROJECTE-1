@@ -740,3 +740,137 @@ footer .footer .content > div .image {
   font-style: italic;
 }
 /*PAGINA INICIO*/
+
+
+
+/*EDGAR*/
+/CSS Template de producto/
+.cuadroProductos {
+  background-color: #34495e;
+  font-family: 'Overlock SC', monospace;
+  width: 75%;
+  margin-left: 10%;
+  margin-bottom: -15%;
+  text-align: justify;
+  padding: 25px;
+  border-radius: 20px;
+  height: 770px;
+  
+  
+}
+
+.product-small-img img{
+  width: 100%;
+  border: 1px solid white;
+  padding: 8px;
+  margin: 10px 10px 15px;
+  cursor: pointer;
+}
+.bordeado{border-radius: 15px;}
+.product-small-img{width: 28%; display: flex;}
+.img-container img{height: 460px; border: 1px solid white; padding: 8px;}
+.img-container{padding: 10px;width: 48%;margin-left: 80px;}
+
+#descripcion{
+  float: right;
+  margin-top: 35px;
+  margin-right: 450px;
+  height: 460px;
+  width: 35%;
+  font-size:x-large;
+}
+
+#precio{
+  font-size:larger;
+}
+
+
+#boton{
+  width: 105%;
+  cursor: pointer;
+  border-radius: 15px;
+  height: 50px;
+  background-color: transparent;
+  color: white;
+  border: 0.5px solid white;
+  -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+}
+
+
+
+#boton2{
+  width: 105%;
+  cursor: pointer;
+  border-radius: 15px;
+  height: 50px;
+  background-color: transparent;
+  color: white;
+  border: 0.5px solid white;
+  -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+}
+
+#boton:hover,#boton2:hover{
+  background-color: #1E1F26;
+  -webkit-transform: scale(1.1); 
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.lboton{
+  margin-left: -33%;
+  margin-top: 60px;
+  margin-right: 20px;  
+}
+
+div.lboton,div.lboton2{
+  display: inline-block;
+}
+
+
+#inputCant{
+  float: left;
+  margin-left: 10px;
+  border-radius: 7px;
+  text-align: right;
+}
+
+#cantidad{
+  font-size: x-large;
+  float: left
+}
+
+#descripcion1{
+  float: right;
+  margin-top: 1%;
+  margin-right: 45%;
+  font-size: large;
+}
+
+#titulo{
+  margin-top: 0px;
+  font-size: 30px;
+}
+
+#contenedorDiv{
+  border: solid;
+  width: 37%;
+  background-color: white;
+  border-radius: 10px;
+  
+}
+
+#texto{
+  font-size: 23px;
+}
+
+#Nproducto{
+  font-size:50px;
+}
+/*CSS Template de producto*/

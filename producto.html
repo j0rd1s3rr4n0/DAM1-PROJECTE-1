@@ -5,19 +5,20 @@
             <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">-->
             <!--
       
+        
         <!---
         <meta http-equiv="refresh" content="5">
     -->
             <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script><script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>-->
             <!-************************************************************************************************-->
                 <!--NECESARI BOOSTRAP-->
-                <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+                <link rel="shortcut icon" type="image/x-icon" href="./img/icons/LogoAzul.ico">
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
                 <!--NECESARI FONTAWESOME ICONS -->
                 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
                 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-                <link rel="stylesheet" type="text/css" href="style.css">
-                <link rel="stylesheet" type="text/css" href="stylesimp.css">
+                <link rel="stylesheet" type="text/css" href="./css/style.css">
+                <link rel="stylesheet" type="text/css" href="./css/stylesimp.css">
                 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
                 <meta http-equiv="Content-Language" content="es-ES" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -34,18 +35,19 @@
                 <meta property="og:description" content="GRUP : Alexandre Torres, Edgar, Sergio, Jordi Serrano" />
                 <meta property="og:url" content="https://j0rd1s3rr4n0.github.io/DAM1-PROJECTE-1/" />
                 <meta property="og:site_name" content="TITULOEMPRESA" />
-                <meta property="og:image" content="https://www.correosexpress.com/wpc/chx-portal62-theme/images/logo_correos_express.png" />
+                <meta property="og:image" content="https://j0rd1s3rr4n0.github.io/DAM1-PROJECTE-1/img/logo/LogoTituloAzul.png" />
                 <meta name="twitter:card" content="summary" />
-                <meta name="twitter:description" content="Tu descripci�n" />
+                <meta name="twitter:description" content="Tu descripción" />
                 <meta name="twitter:title" content="TITULOEMPRESA" />
                 <meta name="twitter:site" content="@jordiiiserrano" />
                 <meta name="twitter:creator" content="@jordiiiserrano" />
                 <!-- Favicon -->
+                <!--
                 <link rel="icon" href="https://j0rd1s3rr4n0.github.io/DAM1-PROJECTE-1/favicon-32x32.png" sizes="32x32" />
                 <link rel="icon" href="https://j0rd1s3rr4n0.github.io/DAM1-PROJECTE-1/favicon-192x192.png" sizes="192x192" />
+                -->
                 <!--
-                <link rel="apple-touch-icon-precomposed" href="https://j0rd1s3rr4n0.github.io/DAM1-PROJECTE-1/favicon-180x180.png">
-                <meta name="msapplication-TileImage" content="https://j0rd1s3rr4n0.github.io/DAM1-PROJECTE-1/favicon-270x270.png">
+                <link rel="apple-touch-icon-precomposed" href="https://j0rd1s3rr4n0.github.io/DAM1-PROJECTE-1/favicon-180x180.png"><meta name="msapplication-TileImage" content="https://j0rd1s3rr4n0.github.io/DAM1-PROJECTE-1/favicon-270x270.png">
                 -->
                 <!-- Multi-language support -->
                 <link rel="alternate" href="https://j0rd1s3rr4n0.github.io/DAM1-PROJECTE-1/" hreflang="es" />
@@ -58,21 +60,27 @@
                 <link rel="canonical" href="https://www.github.com/" />
                 <meta name="keywords" content="firebase,javascript,json,html,css,j0rd1s3rr4n0,pia,mataro,projecte,dam,Desenvolupament,Aplicacions,Multiplataforma">
     </head>
-    <body>
+    <body class="dark">
         <form method="get" name="q">
             <header>
-               
+                <div id="modoswitch" class="modoswitch">
+                    <span id="sun" onclick="moon()" style="display:none;">
+                        <a class="darklight"><i class="fas fa-sun"></i></a>
+                    </span>
+                    <span id="moon" onclick="sun()">
+                        <a class="darklight"><i class="fas fa-moon"></i></a>
+                    </span>
+                </div>
                 <ul class="menu">
                     <li>
-                        <img src="https://www.correosexpress.com/wpc/chx-portal62-theme/images/logo_correos_express.png" height="50px" alt="logo" id="logo" onclick="refresh()">
+                        <img src="./img/logo/LogoTituloAzul.png" height="120px" alt="logo" id="logo" onclick="refresh()">
                     </li>
                     <li>
-                        <a href="#productos">PRODUCTOS</a>
+                        <a href="productos.html">PRODUCTOS</a>
                     </li>
                     <li>
                         <a href="#categorias">CATEGORIAS</a>
                     </li>
-                   
                     <li>
                         <ul class="separat" id="iconos">
                             <li>
@@ -90,28 +98,95 @@
                             </li>
                         </ul>
                     </li>
+                    <script>
+                        function funcioncitaderepuesto() {
+                            if (document.getElementById("iconos").style.display != "none") {
+                                document.getElementById("iconos").style.display = "none";
+                            } else {
+                                document.getElementById("iconos").style.display = "";
+                            }
+                        }
+                    </script>
+                    <li id="hamgurger">
+                        <a class="icon" onclick="funcioncitaderepuesto()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
                 </ul>
             </header>
         </form>
-        <center>
-            <h1>
-                <u>NOMBRE DE PRODUCTO</u>
-            </h1>
-        </center>
         </br>
-        <!----------------------------------------------------------------------
-            CONTENIDO DENTRO DE AQUI
-
-            - DEBE CONTENER ALMENOS UNA IMAGEN SI SE HACE UNA ESPECIE DE FLEX O
-            GRID CON LAS IMAGENES MEJOR
-            - FORMULARIO DE CUANTOS QUIERES COGER
-            - OPCION DE A�ADIR A CARRITO O COMPRAR AHORA
-            - OPCION DE ESCOGER EL COLOR (opcional)
-            - DEBE CONTENER DESSCRIPCION
-
-            - PUEDE CONTENER COMENTARIOS
-
-        ------------------------------------------------------------------------>
+        <div class="container">
+                <!------------------------------------------------------------------>
+                <form id="lorem">
+                    <h1>Esta es nuestra página principal!</h1>
+                    <br>
+                    <h2 onclick="displaypregunta1()"><a id="plus1">+</a> Quiénes somos?</h2>
+                    <div id="p1" style="display: none;" class="suma">   
+                    <p>
+                        Somos una pequeña empresa de desarrollo de software web, nos gusta diseñar páginas con un toque tecnológico y minimalista. Acabamos de empezar
+                        asi que agradeceriamos su pequeña contribución con simplemente ojear un rato nuestra página y sus funciones. Abajo en el footer tienes toda la información y redes
+                        sociales sobre los desarrolladores que han hecho esta web. Muchas gracias por su atención.
+                    </p>
+                    </div>
+                    
+                    <hr width="100%"  style="background-color: orange; border: 2px orange solid; border-radius: 10% ;">
+                    <h2>Donde estamos?</h2>
+                    <iframe src="https://maps.wrld3d.com/embed/?lat=41.535171&lon=2.446801&zoom=18.185664978027344&orient=357.255&marker=41.535171%2C2.446801&marker_title=Epia%20Santa%20Anna" width="100%" height="400vh" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <p>Estamos en el Carrer Agustí, 59</p>
+                    <br>
+                    <hr width="100%"  style="background-color: orange; border: 2px orange solid; border-radius: 10% ;">
+                        <h2>Los Desarrolladores</h2>
+                    <div class="pringados">
+                        <div class="pringado1">
+                            <img src="./img/authors/edgar.jpeg" height="300px" id="imgur"> 
+                            <center><h5 style="margin-top: 25px;">Edgar</h5></center>
+                        </div>
+                        <div class="pringado2">
+                            <img src="./img/authors/jordi.jpg" height="300px" id="imgur">
+                            <center><h5 style="margin-top: 25px;">Sergio</h5></center>
+                        </div>
+                        <div class="pringado3">
+                            <img src="./img/authors/jordi.jpg" height="300px" id="imgur"> 
+                            <center><h5 style="margin-top: 25px;">Jordi</ph5</center>
+                        </div>
+                        <div class="pringado4"> 
+                            <img src="./img/authors/alex.jpeg" height="300px" id="imgur"> 
+                            <center><h5 style="margin-top: 25px;">Alex</h5></center>
+                        </div>
+                    </div>
+                    <br>
+                    <hr width="100%"  style="background-color: orange; border: 2px orange solid; border-radius: 10% ;">
+                    
+                    <h2 onclick="faq()"><a id="plus4">+</a>FAQ</h2>
+                    <div id="faq">
+                        <h2 onclick="displaypregunta2()" ><a id="plus2" >+</a> Porque vendemos productos y fruta?</h2>
+                    <div id="p2" style="display: none;">  
+                    <p>
+                        Nos apetecía mucho ampliar nuestras secciones en la empresa y decidimos crear una sección en la que inculyesemos fruta, hardware y componentes variados
+                        es un gran paso como crecimiento de empresa. Nos enorgullece mucho vender naranjas y limones a 3000€ cada una.😁
+                    </p>
+                    </div>
+                    <hr width="100%"  style="background-color: orange; border: 2px orange solid; border-radius: 10% ;">
+                    <br>
+                    
+                        <h2 onclick="displaypregunta3()" ><a id="plus3">+</a> Porque vuestra fruta es tan cara?</h2>
+                    <div id="p3" style="display: none;">
+                    <p>
+                        Simplemente porque la importamos de Valencia y de Valencia traspasa a Corea del Norte. Cuando la fruta viene de allí es tan cara por temas políticos que acaba 
+                        costando una barbaridad. Por eso no podemos ofrecer fruta con un precio más barato.🍊
+                    </p>
+                    </div>
+                    </div>
+                    <br>
+                </form>
+                <!------------------------------------------------------------------>
+                <!------------------------------------------------------------------>
+                <script>window.addEventListener('load',function() {pantalla();animateNow();faq();displaypregunta1();});</script>
+                <script type="text/javascript" src="./js/cosas.js"></script>
+                <script type="module" type="text/javascript" src="./js/mixto.js"></script>
+                <!------------------------------------------------------------------>
+        </div>
         <div id="login" class="overlay">
             <div id="loginBody">
                 <h2>ACCEDER A UNA CUENTA</h2>
@@ -131,7 +206,7 @@
                         </br>
                         <a style="font-size: 12px;" onclick="pasword_recover()">
                             <i>
-                                <u>�Olvidaste la contrase�a? �Recuperala aqu�!</u>
+                                <u>¿Olvidaste la contraseña? ¡Recuperala aquí!</u>
                             </i>
                         </a>
                     </form>
@@ -276,7 +351,7 @@
                         <div>
                             <span class="xpect">CREATED BY</span>
                             <a href="#">Edgar</a>
-                            <a href="#">Alexandre Torres</a>
+                            <a href="https://www.instagram.com/alye_y">Alexandre Torres</a>
                             <a href="#">Sergio</a>
                             <a href="https://github.com/j0rd1s3rr4n0">Jordi Serrano</a>
                         </div>
@@ -298,12 +373,12 @@
                     </div>
                     <div>
                         <a class="image" href="https://github.com/j0rd1s3rr4n0/DAM1-PROJECTE-1" target="_blank">
-                            <svg style="filter: invert(1)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
                                 <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
                             </svg>
                         </a>
                         <br>
-                        <p>� 2021 GRUP</p>
+                        <p>© 2021 GRUP</p>
                     </div>
                 </div>
             </div>
@@ -318,3 +393,5 @@
             </svg>
         </footer>
         </section>
+    </body>
+</html>
