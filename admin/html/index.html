@@ -1,0 +1,161 @@
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="../css/style.css">
+      <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   </head>
+   <body>
+    
+   <div class="container" id="container">
+      <div class="menu">
+         <ul>
+            <!--VENDES-->
+            <li class="list  first-part">
+               <div class="apartado">
+                  <a href="#" class="link"><i class="fa-solid fa-cart-shopping"></i>Vendes</a>
+                  <i id="flexa1" class="fa-solid fa-chevron-down"></i>
+               </div>
+               <!--CONTINGUT DESPLEGABLE-->
+               <p>abrete</p>
+            </li>
+
+             <!--USUARIS-->
+            <li>
+               <div class="apartado" id="ventas" style="display: none;">
+                  <a href="#" class="link"><i class="fa-solid fa-user"></i>Usuaris</a>
+                  <i class="fa-solid fa-chevron-down"></i>
+               </div>
+               <!--CONTINGUT DESPLEGABLE-->
+               <h3>Mostrar dades usuari</h3>
+               <form>
+                  <label for="user-byname">Elimina per nom</label>
+                  <input type="text" placeholder="Nom usuari" name="user-byname" id="user-byname">
+                  <button>Mostra</button>
+
+                  <label for="user-byid">Elimina per id</label>
+                  <input type="text" placeholder="ID usuari" name="user-byid" id="user-byid">
+                  <button>Mostra</button>
+               </form>
+
+               <h3>Crear usuari</h3>
+               <div id="registrar">
+                  <form id="registerForm">
+                  <label for="email">Correu</label>
+                  <input type="text" name="correu" id="email" required>
+              
+                  <label for="pass">Contrasenya</label>
+                  <input type="password" name="contra" id="pass" required>
+
+                  <button type="submit" class="registrarBtn">Crear</button>
+                  </form>
+              </div>
+               
+
+            </li>           
+
+            <!--PRODUCTES-->
+            <li>
+               <div class="apartado">
+                  <a href="#" class="link"><i class="fa-solid fa-box"></i>Productes</a>
+                  <i class="fa-solid fa-chevron-down"></i>
+               </div>
+               <!--GET-->
+               <h3>Mostrar productes</h3>
+               <form id="get-prod">
+                  <label for="get-byname">Busca per nom</label>
+                  <input type="text" placeholder="Nom del producte" name="get-byname" id="get-byname">
+                  <button>Mostra</button>
+
+                  <label for="get-byid">Mostra per id</label>
+                  <input type="text" placeholder="ID producte" name="get-byid" id="get-byid">
+                  <button>Mostra</button>
+               </form>
+               
+               <!--ADD-->
+               <hr><h3>Afegir producte</h3>
+               <form id="addProd">
+
+                  <label for="prodCategoria">Número categoria:</label>
+                  <input type="number" name="prodCategoria" id="prodCategoria">
+
+                  <!--FIREBASE CUSTOM ID 
+                  <label for="prodId">ID Producte:</label>
+                  <input type="text" placeholder="ID del producte" name="prodId" id="prodId">
+                  -->
+                  <label for="prodId">ID Producte:</label>
+                  <input type="number" name="prodId" id="prodId">
+
+                  <label for="prodName">Nom Producte:</label>
+                  <input type="text" placeholder="Nom del producte" name="prodName" id="prodName">
+                  
+
+                  <label for="prodDesc">Descripció:</label>
+                  <input type="text" placeholder="Descripció del producte" name="prodDesc" id="prodDesc">
+                  
+                  <label for="prodPrice">Preu:</label>
+                  <input type="number" name="prodPrice" id="prodPrice">
+                  
+                  <br><br><label>Link imatges</label>
+                  <input type="text" name="img1">
+                  <input type="text" name="img2">
+                  <input type="text" name="img3">
+
+                  <button>add</button>             
+               </form>
+               
+               <!--UPDATE-->
+               <hr><h3>Update producte</h3>
+               <form id="updProd">
+
+                  <label for="fbId">Firebase ID</label>
+                  <input type="text" name="fbId" id="fbId">
+
+                  <label for="updCategoria">Número categoria:</label>
+                  <input type="number" name="updCategoria" id="updCategoria">
+
+                  <label for="updId">ID Producte:</label>
+                  <input type="number" name="updId" id="updId">
+
+                  <label for="updName">Nom Producte:</label>
+                  <input type="text" placeholder="Nom del producte" name="updName" id="updName">
+                  
+
+                  <label for="updDesc">Descripció:</label>
+                  <input type="text" placeholder="Descripció del producte" name="updDesc" id="updDesc">
+                  
+                  <label for="updPrice">Preu:</label>
+                  <input type="number" name="updPrice" id="updPrice">
+                  
+                  <br><br><label>Link imatges</label>
+                  <input type="text" name="updimg1">
+                  <input type="text" name="updimg2">
+                  <input type="text" name="updimg3">
+
+                  <button>Update</button>
+               </form>
+
+
+               <!--DELETE-->
+               <hr><h3>Elimina producte</h3>
+               <form id="delProd">
+                  <label for="delById">Elimina per id</label>
+                  <input type="text" placeholder="ID producte" name="delById" id="delById">
+                  <button>Elimina</button>
+               </form>
+            </li>
+
+            <li>
+               <div class="apartado last-part">
+                  <a href="#" class="link"><i class="fa-solid fa-folder-open"></i>Storage</a>
+                  <i class="fa-solid fa-chevron-down"></i>
+               </div>
+               <h3>Afegir imatges</h3>
+               <form>
+               </form>
+            </li>
+         </ul>
+      </div>
+   </div>
+    <script type ="module" src="../scripts/index.js"></script>
+    </body>
+</html>
