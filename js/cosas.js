@@ -1,5 +1,3 @@
-
-
 function crypto(frase){
     let a = btoa(frase);
     return a;
@@ -324,6 +322,31 @@ function moon(){
 }
 
 
+function CambiarImg(x){
+    document.getElementById('imgprincipal').src = x.src;
+}
+
+
+/* CARGA LOS PRODUCTOS QUE TENGAN ESE ID Y VA MOSTRANDO SU INFORMACION EN LA PAGINA*/
+function LoadProd(){
+    var url = window.location.href;
+    console.log('URL: ',url);
+    let a = url.split('#')
+    var idprod = atob(a[1]);
+    console.log('ESTO ES EL ID: ',idprod);
+    console.log(
+        selectWhere(
+            db.collection(
+                'prodcutos'
+                ),
+            doc.data().id,
+            '==',
+            idprod
+            )
+        )
+}
+
+
 /* COMPRUEBA LA RESOLUCION DE PANTALLA Y EDITA CIERTOS PARAMETROS DE LA WEB SEGUN */
 // EJEMPLO LA BARRA DE NAVEGACION EL MENU
 function pantalla(){
@@ -410,16 +433,6 @@ function animateNow(){
 
 
                                              }
-
-
-function LoadProd(){
-    var url = window.location.href;
-    console.log(url);
-    let a = url.split('#')
-    let idprod = atob(a[1]);
-    console.log(idprod);
-    //selectWhere('prodcutos','==',idprod)
-}
 
 window.addEventListener('load',function() {pantalla();animateNow();});
 

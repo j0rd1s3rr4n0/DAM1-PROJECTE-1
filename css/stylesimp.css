@@ -766,7 +766,7 @@ footer .footer .content > div .image {
 }
 .bordeado{border-radius: 15px;}
 .product-small-img{width: 28%; display: flex;}
-.img-container img{height: 460px; border: 1px solid white; padding: 8px;}
+.img-container img{height: 460px; border: 1px solid white; padding: 8px;margin-left: -30%;}
 .img-container{padding: 10px;width: 48%;margin-left: 80px;}
 
 #descripcion{

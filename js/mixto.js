@@ -104,7 +104,6 @@ function llamarProductos(){
 llamarProductos();
 
 
-
 function selectWhere(collection,field,operator,value){
     return new Promise((resolve,reject) => {
         collection.Where(field,operator,value).get()
@@ -118,6 +117,7 @@ function selectWhere(collection,field,operator,value){
         .catch(reject);
     });
 }
+
 /*db.collection('cafes').where('city','==','manchester').get().then(snapshot)=>{
         snapshot.docs.foreach(doc => {
            renderCafe(doc);
