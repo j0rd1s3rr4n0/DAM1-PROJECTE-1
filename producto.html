@@ -113,16 +113,23 @@
                 </ul>
             </header>
         </form>
-        <center>
-            <h1>
-                <u>NUESTROS PRODUCTOS</u>
-            </h1>
-        </center>
         </br>
         <!------>
 
         <!--<div id="descripcion">-->
-            <div style="margin-left: 40%;margin-right: 20%;">
+            <div class="cuadroProductos">
+                <div id="contenedorDiv" >
+                    <div class="img-container">
+                        <img id="imgprincipal" class="bordeado" src="./img/prod/a.jpeg">
+                    </div>
+                    <div class="product-small-img">
+                        <img class="bordeado" onclick="CambiarImg(this)" id ="img1" src="./img/prod/a.jpeg">
+                        <img class="bordeado" onclick="CambiarImg(this)" id ="img2" src="./img/prod/b.jpeg">
+                        <img class="bordeado" onclick="CambiarImg(this)" id ="img3" src="./img/prod/c.jpeg">
+                    </div>
+                </div>
+            </div>
+            <div style="margin-left: 40%;margin-right: 20%;margin-top:-35%;">
             <p id="Nproducto">NOMBRE DE PRODUCTO</p>
             <p id="titulo">Descripcion: </p>
             <p id="texto">It is a long established fact that a reader will 
@@ -131,13 +138,15 @@
                 Lorem Ipsum is that it has a more-or-less normal 
                 distribution of letters</p>
             <br><br>
-            <p id="precio">75€</p>
-            <p id="cantidad">Cantidad</p>
-            <input type="number" id="inputCant" name="cantidad" min="1" max="100" value="1">
+            <h2>PRECIO:
+                <h3 style="margin-left: 1%;;">75€</h3>
+            </h2>
+            <h3 id="cantidad"> Cantidad
+            <input type="number" id="inputCant" name="cantidad" min="1" max="100" value="1" style="margin-right: 20px;">
             <form>
                 <div class="lboton"><button type="submit" id="boton"class="fas fa-shopping-cart"> Añadir al carrito</button></div>
                 <div class="lboton2"><button type="submit" id="boton2">Comprar ya</button></div>
-            </form>
+            </form></h3>
         </div>
         <!--</div>-->
 

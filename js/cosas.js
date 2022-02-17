@@ -412,5 +412,14 @@ function animateNow(){
                                              }
 
 
+function LoadProd(){
+    var url = window.location.href;
+    console.log(url);
+    let a = url.split('#')
+    let idprod = atob(a[1]);
+    console.log(idprod);
+    //selectWhere('prodcutos','==',idprod)
+}
 
 window.addEventListener('load',function() {pantalla();animateNow();});
+
