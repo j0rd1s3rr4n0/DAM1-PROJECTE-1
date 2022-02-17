@@ -195,7 +195,7 @@ if(document.cookie){
 function tologin(){
     let uid = '1';
     let admin = 'YWRtaW4$';
-    if(UID == admin){
+    if(uid == admin){
         document.getElementById('loginBody').innerHTML = `
                 <h2>ACCIONES A REALIZAR</h2>
                 <a id="cerrar" href="#">×</a>
@@ -207,7 +207,7 @@ function tologin(){
             </div>
             `;
         }
-    else if (UID != undefined && UID != admin){
+    else if (uid != undefined && UID != admin){
         document.getElementById('loginBody').innerHTML = `
                 <h2>ACCIONES A REALIZAR</h2>
                 <a id="cerrar" href="#">×</a>
@@ -231,7 +231,7 @@ function tologin(){
 
                       <button id="entrarbtn" class="login">ENTRAR</button><br>
                       <button id="registrarbtn" class="login" onclick="enteregister()">REGISTRAR</button><br>
-                      <a onmouseover="this.Color = red;" style="font-size: 12px;" onclick="password_recover()"><i><u>¿Olvidaste la contraseña? ¡Recuperala aquí!</u></i></a>
+                      <a onmouseover="this.Color = red;" style="font-size: 12px;" onclick="password_rec()"><i><u>¿Olvidaste la contraseña? ¡Recuperala aquí!</u></i></a>
 
                     </form>
                 </div>`;
