@@ -135,22 +135,22 @@ document.getElementById('loginBody').innerHTML = `
                 <h2>REGISTRAR UNA CUENTA</h2>
                 <a id="cerrar" href="#">×</a>
                 <div id="log-in" class="loginContent">
-    <form action="#" method="post" id="signout">
+                    <form action="#" method="post" id="signout">
                           <label for="email">Email / Username:</label><br>
                           <input type="email" id="email" name="email" placeholder="name.surname@exchange.org"><br>
                           <br><label for="password">Password:</label><br>
                           <input type="password" id="password" name="password" placeholder="Password">
 
-                          <input type="password" id="re-password" name="re-password" placeholder="REPEAT PASSWORD"><button id="entrarbtn" class="registro" onclick="registrar()">REGISTRAR</button><br>
+                          <input type="password" id="re-password" name="re-password" placeholder="REPEAT PASSWORD">
+                          <button id="entrarbtn" class="registro" onclick="registrar()">REGISTRAR</button><br>
                           <button id="registrarbtn" class="registro" onclick="tologin()">INICIAR</button><br>
                           <a onclick="register_load()" style="font-size: 12px;"><i></i></a>
-
-                        </form>
+                    </form>
             </div>`;
+
         }
 function password_rec(){
-    console.log('Hi');
-    /*document.getElementById('loginBody').innerHTML = `
+    document.getElementById('loginBody').innerHTML = `
                 <h2>Trouble Logging In?</h2><h6>Enter your email and we\'ll send you a link to get back into your account.</h6>
                 <a id="cerrar" href="#">×</a>
                 <div id="log-in" class="loginContent">
@@ -164,7 +164,7 @@ function password_rec(){
 
                     </form>
                 </div>
-    `;*/
+    `;
 
 }
   /*
@@ -193,6 +193,35 @@ if(document.cookie){
 }
 
 function tologin(){
+    document.getElementById('loginBody').innerHTML = `
+                <h2>ACCEDER A UNA CUENTA</h2>
+                <a id="cerrar" href="#">×</a>
+                <div id="log-in" class="loginContent">
+                    <form action="#" method="post">
+                        <label for="email">EMAIL/USERNAME:</label>
+                        <br>
+                        <input type="email" id="email" name="email" placeholder="EMAIL">
+                        <br>
+                        <label for="password">Password:</label>
+                        <br>
+                        <input type="password" id="password" name="password" placeholder="password">
+                        <button id="entrarbtn" class="login">ENTRAR</button>
+                        <br>
+                        <button id="registrarbtn" class="login" onclick="enteregister()">REGISTRAR</button>
+                        <br>
+                        <a style="font-size: 12px;" onclick="password_rec()">
+                            <i>
+                                <u>¿Olvidaste la contraseña? ¡Recuperala aquí!</u>
+                            </i>
+                        </a>
+                    </form>
+                </div>`;
+    //document.querySelector("#entrarbtn").classList.toggle("login");
+    //document.querySelector("#entrarbtn").classList.toggle("registro");
+    //document.querySelector("#registrarbtn").classList.toggle("login");
+    //document.querySelector("#registrarbtn").classList.toggle("registro");
+}
+/*
     let uid = '1';
     let admin = 'YWRtaW4$';
     if(uid == admin){
@@ -240,8 +269,8 @@ function tologin(){
     document.querySelector("#entrarbtn").classList.toggle("login");
     document.querySelector("#entrarbtn").classList.toggle("registro");
     document.querySelector("#registrarbtn").classList.toggle("login");
-    document.querySelector("#registrarbtn").classList.toggle("registro");*/
-}
+    document.querySelector("#registrarbtn").classList.toggle("registro");
+}*/
 
 /*
 
