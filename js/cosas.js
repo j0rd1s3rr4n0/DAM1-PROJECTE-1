@@ -129,25 +129,6 @@ function refresh(){
     window.location.href = url;
     window.location.replace(url);
 }
-function password_recover(){
-    document.getElementById('loginBody').innerHTML = `
-                <h2>Trouble Logging In?</h2><h6>Enter your email and we\'ll send you a link to get back into your account.</h6>
-                <a id="cerrar" href="#">×</a>
-                <div id="log-in" class="loginContent">
-                    <form action="#" method="post" id="recovery">
-                      <label for="email">EMAIL/USERNAME:</label><br>
-                      <input type="email" id="email" name="email" placeholder="EMAIL">
-
-                      <button id="entrarbtn" class="recover">RECOVER</button><br>
-                      <br>
-                      <a style="font-size: 12px;" onclick="tologin()"><i><u>¿Has cambiado de idea? ¡Accede a tu cuenta!</u></i></a>
-
-                    </form>
-                </div>
-    `;
-
-}
-
 
 function enteregister(){
 document.getElementById('loginBody').innerHTML = `
@@ -167,6 +148,25 @@ document.getElementById('loginBody').innerHTML = `
                         </form>
             </div>`;
         }
+function password_rec(){
+    console.log('Hi');
+    /*document.getElementById('loginBody').innerHTML = `
+                <h2>Trouble Logging In?</h2><h6>Enter your email and we\'ll send you a link to get back into your account.</h6>
+                <a id="cerrar" href="#">×</a>
+                <div id="log-in" class="loginContent">
+                    <form action="#" method="post" id="recovery">
+                      <label for="email">EMAIL/USERNAME:</label><br>
+                      <input type="email" id="email" name="email" placeholder="EMAIL">
+
+                      <button id="entrarbtn" class="recover">RECOVER</button><br>
+                      <br>
+                      <a style="font-size: 12px;" onclick="tologin()"><i><u>¿Has cambiado de idea? ¡Accede a tu cuenta!</u></i></a>
+
+                    </form>
+                </div>
+    `;*/
+
+}
   /*
     <form action="#" method="post">
                           <label for="email">EmaiL:</label><br>
@@ -204,7 +204,8 @@ function tologin(){
                           <button id="logout" class="logout" onclick="logout()">ADMINISTRAR</button><br>
                           <button id="logout" class="logout" onclick="logout()">Cerrar Sesion</button><br>
                         </form>
-            </div>`;
+            </div>
+            `;
         }
     else if (UID != undefined && UID != admin){
         document.getElementById('loginBody').innerHTML = `

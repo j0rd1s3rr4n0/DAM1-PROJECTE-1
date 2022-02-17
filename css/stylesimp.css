@@ -744,7 +744,7 @@ footer .footer .content > div .image {
 
 
 /*EDGAR*/
-/CSS Template de producto/
+/*CSS Template de producto*/
 .cuadroProductos {
   background-color: #34495e;
   font-family: 'Overlock SC', monospace;
@@ -755,8 +755,6 @@ footer .footer .content > div .image {
   padding: 25px;
   border-radius: 20px;
   height: 770px;
-  
-  
 }
 
 .product-small-img img{
