@@ -207,7 +207,7 @@ function tologin(){
             </div>
             `;
         }
-    else if (uid != undefined && UID != admin){
+    else if (uid != undefined && uid != admin){
         document.getElementById('loginBody').innerHTML = `
                 <h2>ACCIONES A REALIZAR</h2>
                 <a id="cerrar" href="#">×</a>
