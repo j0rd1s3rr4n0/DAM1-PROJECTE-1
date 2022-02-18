@@ -7,6 +7,8 @@ function decrypto(frase){
     let b = atob(frase);
     return b;
 }
+
+
 /*
 function Randomizador(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
@@ -140,8 +142,8 @@ document.getElementById('loginBody').innerHTML = `
                           <input type="password" id="password" name="password" placeholder="Password">
 
                           <input type="password" id="re-password" name="re-password" placeholder="REPEAT PASSWORD">
-                          <button id="entrarbtn" class="registro" onclick="registrar()">REGISTRAR</button><br>
-                          <button id="registrarbtn" class="registro" onclick="tologin()">INICIAR</button><br>
+                          <input type="button" onclick="actionForm()" id="entrarbtn" class="registro" onclick="registrar()" value="REGISTRAR"><br>
+                          <input type="button" id="registrarbtn" class="registro" onclick="tologin()" value="INICIAR"><br>
                           <a onclick="register_load()" style="font-size: 12px;"><i></i></a>
                     </form>
             </div>`;
@@ -156,7 +158,7 @@ function password_rec(){
                       <label for="email">EMAIL/USERNAME:</label><br>
                       <input type="email" id="email" name="email" placeholder="EMAIL">
 
-                      <button id="entrarbtn" class="recover">RECOVER</button><br>
+                      <input type="button" onclick="actionForm()" id="entrarbtn" class="recover" value="RECOVER"><br>
                       <br>
                       <a style="font-size: 12px;" onclick="tologin()"><i><u>¿Has cambiado de idea? ¡Accede a tu cuenta!</u></i></a>
 
@@ -345,6 +347,19 @@ function LoadProd(){
             )
         )
 }
+
+/* LLAMADA A LA ACCION DE TODOS LOS FORMULARIOS DE LOGIN/REGISTRO/RECUPERAR CONTRASEÑA / INFO USUARIO ETC ETC*/
+function actionForm(){
+    switch(document.querySelector("#loginBody > h2").innerText){
+        case 'ACCEDER A UNA CUENTA' : console.log('Login');break;
+        case 'REGISTRAR UNA CUENTA' : console.log('Registro');break;
+        case 'TROUBLE LOGGING IN?' : console.log('Recuperar Contraseña');break;
+        case 'MI CUENTA':console.log('Mi Cuenta:');break;
+        case '' :
+        default : console.log('DEFAULT');break;
+    }
+}
+
 
 
 /* COMPRUEBA LA RESOLUCION DE PANTALLA Y EDITA CIERTOS PARAMETROS DE LA WEB SEGUN */
