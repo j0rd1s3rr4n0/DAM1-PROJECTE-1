@@ -8,6 +8,10 @@ function iniciar_sesion(){
       .then((userCredential) => {
         // Signed in
         var user = userCredential.user;
+        var uid = user.uid;
+        uid = btoa(uid);
+        document.cookie="";
+        document.cookie="userUID="+uid;
         // ...
       })
       .catch((error) => {
@@ -31,7 +35,10 @@ function registrar(){
 
                 .then((userCredential) => {
                     alert('Hola, '+email);
-                    document.cookie="userUID="+userUID
+                    var uid = user.uid;
+                    uid = btoa(uid);
+                    document.cookie="";
+                    document.cookie="userUID="+uid;
                 })
                 .catch((error) => {console.log('Puede que algo haya salido mal...')});
         }else{
