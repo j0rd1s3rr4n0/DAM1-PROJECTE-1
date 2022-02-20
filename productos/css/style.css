@@ -1,0 +1,454 @@
+div.modoswitch{
+  padding: 1%;
+  border:  1px solid white;
+  font-size: 24px;
+  border-radius:50%;
+  margin-top: 2%;
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-bottom: 0%;
+}
+
+div.modoswitcher{
+  padding: 1%;
+  border:  1px solid white;
+  font-size: 24px;
+  border-radius:50%;
+  margin-top: 2%;
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-bottom: 0%;
+}
+#modoswitch{
+  float: right;
+}
+
+body.dark a.darklight:hover{
+  cursor: pointer;
+  color: white;
+}
+body.dark a.darklight:hover > * {
+  font-size: 120%;
+  color: white;
+}
+body.light a.darklight:hover{
+  cursor: pointer;
+  color: black;
+}
+body.light a.darklight:hover > * {
+  font-size: 120%;
+  color: black;
+}
+
+@keyframes sunlight {
+0%   {
+    box-shadow: 0px 0px 5px 5px white;
+    /*background-color:red;*/
+    right:0px;
+    top:0px;
+  }
+  50%  {
+    /*background-color:yellow;*/
+    box-shadow: 0px 0px 5px 5px rgba(255, 255, 0, 0.2);
+    right:10%;
+    top:0px;
+  }
+  100%   {
+    box-shadow: 0px 0px 5px 5px yellow;
+    /*background-color:orange;*/
+    right:0px;
+    top:0px;
+  }
+}
+@keyframes moonlight {
+  0%   {
+    box-shadow: 0px 0px 5px 5px yellow;
+    /*background-color:red;*/
+    right:0px;
+    top:0px;
+  }
+  50%  {
+    /*background-color:yellow;*/
+    box-shadow: 0px 0px 5px 5px rgba(255, 255, 0, 0.2);
+    right:10%;
+    top:0px;
+  }
+  100%   {
+    box-shadow: 0px 0px 5px 5px white;
+    /*background-color:orange;*/
+    right:0px;
+    top:0px;
+  }
+}
+div.sun{
+  float: right;
+  box-shadow: 0px 0px 5px 5px yellow;
+  position: relative;
+  animation-name: sunlight;
+  animation-duration: 2.5s;
+  animation-delay: 0s;
+}
+div.moon{
+  float: right;
+  box-shadow: 0px 0px 5px 5px white;
+  position: relative;
+  animation-name: moonlight;
+  animation-duration: 2.5s;
+  animation-delay: 0s;
+}
+
+
+body.dark a:hover{
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 110%;
+
+}
+body.dark a{
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 110%;
+  color: white;
+}
+
+body.light a:hover{
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 110%;
+
+}
+body.light a{
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 110%;
+  color: black;
+}
+
+
+*{
+  margin:0;
+  padding:0;
+  font-family: "ROBOTO", sans-serif;
+  text-transform: uppercase;
+}
+h1{
+  font-family: "Josefin Sans", sans-serif;
+}
+body.dark{
+  background: var(--color-fondo-d);
+  color: white;
+}
+body.light{
+  background: var(--color-fondo-l);
+  color: black;
+}
+nav{
+  margin-top: 200px;margin-bottom: -200px;height: auto;width: 50%;background-color: #1E1F26;border-radius: 20px;text-align: center;color: white;
+}
+nav > ul > li {
+display:inline-block;
+margin: 5px;
+border: 1px white solid;
+padding: 5px;
+}
+
+@keyframes AnimationHeader {
+  0% {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 30px;
+
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 0px;
+
+  }
+}
+
+header {  
+  /*border-radius: 30px;*/
+  /*border: 5px yellow solid;*/
+  animation: 1.8s ease-out 0s 1 AnimationHeader; 
+  margin-bottom: 1%;
+  /*background: #333;*/
+}
+header > ul {
+  width: 100%;
+  /*background-color: black;*/
+}
+header > ul > *{
+  margin: auto auto;
+  padding: 5% 5%;
+}
+header > ul > img{
+  position: absolute;
+  margin-top: -2%;
+  margin-left: -18%;
+  height: 10%;
+  width: 12%;
+}
+img#logo{
+}
+header > ul{
+  margin: 0;
+  vertical-align: middle;
+}
+body.light header > * ,
+body.light  header > ul > li ,
+body.light  header > ul > * > ul >li,
+body.light   header > ul > * > ul > div >li
+  {
+    text-align:center;
+    display:inline-block;
+    color: black;
+}
+body.dark header > * ,
+body.dark  header > ul > li ,
+body.dark  header > ul > * > ul >li,
+body.dark   header > ul > * > ul > div >li
+  {
+    text-align:center;
+    display:inline-block;
+    color: white;
+}
+
+div.producto > h3 {
+  font-size: 140%;
+  overflow: hidden;
+  white-space: nowrap;
+  white-space: pre-line;
+  width: 100%;
+}
+article{
+  position: unset;
+  background-color:;
+  padding:3%;
+}
+img.producte{
+  width:100%;
+  height:100px;
+  object-fit: cover;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 0%;
+  border-bottom-left-radius: 0%;
+  border: 6px solid white;
+  /*margin-left: -6px; /*SE USA SIN BOSOTRAP*/
+  margin-top: -5px;
+}
+footer{
+
+  position: relative;
+  color: white;
+  margin:0;
+
+  padding-top:5%;
+  padding-bottom:2%;
+  padding: auto;
+  margin-top: 20%;
+
+}
+footer > ul >li{font-style:italic;}
+footer > ul > * {margin-left:50px;}
+li{list-style:none;}
+div.producto{
+  height:200px;
+  width:210px;
+  border:8px solid white;
+  border-radius: 10%;
+ background: rgb(63,94,251);
+}
+div.producto > p,span,h3 {
+  margin: 5px;
+}
+
+section {
+  height: 95%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin: 10%;
+  border: 0px blue solid;
+  background-color: #ff;
+}
+article > h1 {
+  font-size: 45px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.menu >li>img:hover{
+  cursor: pointer;
+  zoom: 1.02;
+}
+
+html body div.container div#change.row div.col-md-3.col-sm-6.asd.aqui div.product-grid {
+  cursor: pointer;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@charset "utf-8";
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(30, 31, 38,0.9);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+#loginBody{
+    width: 40%;
+    padding: 2%;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #CCC;
+    background: var(--color-producto);
+    position: relative;
+    transition: all 5s ease-in-out;
+    margin: 20% auto;
+}
+#loginBody > div > form > input{
+border: 3px darkorange solid;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    /* padding-left: 15px; */
+    padding: 5px;
+    margin: 5px;
+    width: 70%;
+    font-weight: bold;
+}
+#cerrar{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #F00;
+}
+
+
+
+
+
+
+
+@keyframes AnimationBorder {
+  0% {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 30px;
+
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 0px;
+
+  }
+}
+a#buscar:hover{
+animation: 1.8s ease-in-out; 0s 1 AnimationBorder; 
+border: 2px white solid;
+  margin-bottom: 1%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+
+
+a{
+  color: linear-gradient(red,orange);
+}
+
+

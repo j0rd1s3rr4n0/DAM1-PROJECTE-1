@@ -1,0 +1,48 @@
+:root{
+  /* OTROS  */
+  --color-fondo: #1E1F26;
+  --color-menu:  #34495e;
+
+  /* Light theme */
+  --Ltext: #333;
+  --Lbackground: #fff;
+  --Lfocus: deepskyblue;
+  --Linteractive: mediumvioletred;
+
+  /* Dark theme */
+  --Dtext: #fff;
+  --Dbackground: #333;
+  --Dfocus: deeppink;
+  --Dinteractive: palegreen;
+}
+
+
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+    padding: 1.5rem;
+    color: var(--Dtext);
+    background-color: var(--Dbackground);
+  }
+  /*BARRA NAVEGACION*/
+  nav {
+    color: var(--Ltext);
+  }
+}
+
+
+
+
+
+@media (prefers-color-scheme: light) {
+  body {
+    padding: 1.5rem;
+    color: var(--Ltext);
+    background-color: var(--Lbackground);
+  }
+  /*BARRA NAVEGACION*/
+  nav {
+    color: var(--Dtext);
+  }
+}

@@ -55,7 +55,7 @@ const colCarrito= collection(db,'carrito')
 
 
 //RECIBIR DB ------------------------------------------------------------------------------------------------------------
-getDocs(colCarrito)
+getDocs(colProductos)
   .then((snapshot) => {
       let productos = []
       snapshot.docs.forEach((doc) => {
@@ -70,16 +70,6 @@ getDocs(colCarrito)
 
 
 
-//QUERIES------------------------------------------------------------------------------------------------------------------
-
-const showById = document.getElementById('showIdForm')
-
-const showByCategory = document.getElementById('showCtgForm')
-
-
-const docRef = doc(db, 'carrito', showById.getById.value,)
-
-
 
 
 //ADD----------------------------------------------------------------------------------------------------------------------
@@ -88,7 +78,7 @@ const addProduct = document.getElementById('addProd')
 addProduct.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    addDoc((colCarrito), {
+    addDoc((colProductos), {
         categoria: addProduct.prodName.value,
         idproducto: addProduct.prodId.valueAsNumber,
         nombre: addProduct.prodName.value,
@@ -110,7 +100,7 @@ let productId = document.getElementById('prodId')
 addProduct.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    setDoc(doc(db, "carrito", productId.value), {
+    setDoc(doc(db, "productos", productId.value), {
         nombre: addProduct.prodName.value,
         descripcion: addProduct.prodDesc.value,
       })
@@ -123,130 +113,12 @@ addProduct.addEventListener('submit', (e) => {
 const deleteProduct = document.getElementById('delProd')
 deleteProduct.addEventListener('submit', (e) => {
     e.preventDefault
-    const  deleteRef = doc(db, 'carrito', deleteProduct.delById.value)
+    const  deleteRef = doc(db, 'productos', deleteProduct.delById.value)
 
     deleteDoc(deleteRef)
     .then(() => {
         deleteProduct.reset
     })
-})
-
-//UPDATE---------------------------------------------------------------------------------------------------------------------
-const updateProduct = document.getElementById('updProd')
-//dona un event al formulari
-updateProduct.addEventListener('submit', (e) => {
-    e.preventDefault
-    const  updateRef = doc(db, 'carrito', fbId.value)
-
-    
-    var InputCategoria = document.getElementById('updCategoria')
-    var InputId = document.getElementById('updId')
-    var InputNombre = document.getElementById('updName')
-    var InputDesc = document.getElementById('updDesc')
-    var InputPrecio = document.getElementById('updPrice')
-    var InputImg1 = document.getElementById('updimg1')
-    var InputImg2 = document.getElementById('updimg2')
-    var InputImg3 = document.getElementById('updimg3')
-
-
-    //UPDCATEGORIA
-    if(InputNombre.value.trim().length == 0) {
-        console.log('emptyField')
-
-    }
-    else {
-        updateDoc (updateRef, {
-            categoria: updateProduct.updCategoria.value, 
-        })
-    }
-    //UPDID
-    if(InputNombre.value.trim().length == 0) {
-        console.log('emptyField')
-
-    }
-    else {
-        updateDoc (updateRef, {
-            idproducto: updateProduct.updId.valueAsNumber, 
-        })
-    }
-    //UPDNOMBRE
-    if(InputNombre.value.trim().length == 0) {
-        console.log('emptyField')
-
-    }
-    else {
-        updateDoc (updateRef, {
-            nombre: updateProduct.updName.value, 
-        })
-    }
-    //UPDDESCRIPCION    
-
-    if(InputNombre.value.trim().length == 0) {
-        console.log('emptyField')
-
-    }
-    else {
-        updateDoc (updateRef, {
-            descripcion: updateProduct.updDesc.value, 
-        })
-    }
-    //UPDPRECIO
-    if(InputNombre.value.trim().length == 0) {
-        console.log('emptyField')
-
-    }
-    else {
-        updateDoc (updateRef, {
-            precio: updateProduct.updPrice.valueAsNumber, 
-        })
-    }
-
-    //UPDIMAGEN1
-    if(InputNombre.value.trim().length == 0) {
-        console.log('emptyField')
-
-    }
-    else {
-        updateDoc (updateRef, {
-            images: {
-                0: updateProduct.updimg1.value,
-            }
-        })
-    }
-    //UPDIMAGEN2
-    if(InputNombre.value.trim().length == 0) {
-        console.log('emptyField')
-
-    }
-    else {
-        updateDoc (updateRef, {
-            images: {
-                1: updateProduct.updimg2.value,
-            }
-        })
-    }
-    //UPDIMAGEN3
-    if(InputNombre.value.trim().length == 0) {
-        console.log('emptyField')
-
-    }
-    else {
-        updateDoc (updateRef, {
-            images: {
-                2: updateProduct.updimg3.value,
-            }
-        })
-        
-    }
-   /* 
-    .then(() => {
-        updateProduct.reset
-    })
-    .catch((error) => {
-        alert("ERROR" +error)
-    })
-*/
-
 })
 
 
@@ -339,7 +211,7 @@ UpBtn.onclick= UploadProcess;
 
 async function GetImageFromFirestore(){
 
-    var ref = doc(db, "carrito", 'B')
+    var ref = doc(db, "productos", 'B')
 
         const docSnap = await getDoc(ref);
 

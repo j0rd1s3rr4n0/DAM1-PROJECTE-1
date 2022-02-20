@@ -29,16 +29,12 @@ function llamarProductos(){
     onGetNew((querySnapshot) => {
         // variable 'html' cada cop que la recorrerem mostrem un objecte de firebase com a html
         let html = '';
-        let num = 0;
+        let num = 1;
         //bucle per cada document de la base de dades crea un div que conté tots els camps
         querySnapshot.forEach(doc => {
-            const item = doc.data()
-            html += `
-              ${num}            <!-// ID -->
-              ${item.nom}       <!-// NOMBRE -->
-              ${item.quantitat} <!-// CANTIDAD -->
-              ${item.preu}      <!-// PRECIO -->
-            `;
+            const producto = doc.data()
+            html +=getCoded(producto.image[0],producto.nombre,producto.precio,num);
+
             num++;
             max = num;
         })

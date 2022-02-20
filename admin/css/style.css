@@ -108,3 +108,22 @@ h3 {
     width: 200px;
     border: 2px black solid
 }
+
+
+
+/*
+
+const showById = document.getElementById('showIdForm')
+const q = query(collection(db, "carrito"), where("nombre", "==", "ojalá funcione"));
+
+const querySnapshot = await getDocs(q);
+showById.addEventListener('submit', (e) => {
+    e.preventDefault()
+    querySnapshot.forEach((doc) => {
+  // doc.data() is never undefined for query doc snapshots
+  console.log(doc.id, " => ", doc.data());
+    })
+
+})
+
+*/
