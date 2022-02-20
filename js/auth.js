@@ -23,7 +23,7 @@ function registrar(){
     let password = document.querySelector("#password").value;
     let repassword = document.querySelector("#re-password").value;
     if (email != ''){
-        if((password === repassword ){
+        if(password === repassword ){
             //BORRAR
             console.log(password,repassword,email);
             //BORRAR
@@ -39,7 +39,19 @@ function registrar(){
     }
     document.querySelector("#email").style ="border: 2px solid red";
 }
+function restore(){
+    let email = document.querySelector("#email");
+    auth.sendPasswordResetEmail(email)
+    .then(() => {
+        document.getElementById('loginBody').innerHTML = '<h2>EMAIL DE RECUPERACION</h2><h6>REVISE EL CORREO ELECTRONICO. PUEDE SER QUE VAYA A LA SECCIÓN DE SPAM.</h6><a id="cerrar" href="#">×</a>';})
+  .catch((error) => {
+    alert('Email NO Valido');
+    var errorCode = error.code;
+    var errorMessage = error.message;
 
+    // ..
+  });
+}
 function salir(){
     document.cookie = "";
     auth.signOut().then(() => {
@@ -65,6 +77,7 @@ function actionForm(){
 
         case 'TROUBLE LOGGING IN?' :
             console.log('Recuperar Contraseña');
+            restore();
             break;
 
         case 'MI CUENTA':
