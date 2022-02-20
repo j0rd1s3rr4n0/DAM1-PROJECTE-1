@@ -200,9 +200,6 @@ function moon() {
 }
 
 
-function CambiarImg(x) {
-    document.getElementById('imgprincipal').src = x.src;
-}
 
 
 /* CARGA LOS PRODUCTOS QUE TENGAN ESE ID Y VA MOSTRANDO SU INFORMACION EN LA PAGINA*/

@@ -747,15 +747,15 @@ footer .footer .content > div .image {
 /*EDGAR*/
 /*CSS Template de producto*/
 .cuadroProductos {
-  background-color: #34495e;
-  font-family: 'Overlock SC', monospace;
-  width: 75%;
-  margin-left: 10%;
-  margin-bottom: -15%;
-  text-align: justify;
-  padding: 25px;
-  border-radius: 20px;
-  height: 770px;
+    background-color: #34495e;
+    font-family: 'Overlock SC', monospace;
+    width: 75%;
+    margin-left: 14%;
+    margin-bottom: 17%;
+    text-align: justify;
+    padding: 0;
+    border-radius: 20px;
+    height: 770px;
 }
 
 .product-small-img img{

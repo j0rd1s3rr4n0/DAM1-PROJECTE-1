@@ -3,7 +3,7 @@
 
 const CAMBIARCODIGO = document.getElementById('change');
 
-let username = btoa('I\'m who').replace('=','$').replace('=','$');
+
 
 // Set a Cookie
 function setCookie(cName, cValue, expDays) {
@@ -16,8 +16,44 @@ function setCookie(cName, cValue, expDays) {
         cook[1]=cook[1].replace('$','=').replace('$','=');
         console.log(cook[1]);
 }
+function generarCookieRandom(length,type) {
+    switch(type){
+        case 'num':
+            characters = "0123456789";
+            break;
+        case 'alf':
+            characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            break;
+        case 'rand':
+            //FOR ↓
+            break;
+        default:
+            characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            break;
+    }
+    var pass = "";
+    for (i=0; i < length; i++){
+        if(type == 'rand'){
+            pass += String.fromCharCode((Math.floor((Math.random() * 100)) % 94) + 33);
+        }else{
+            pass += characters.charAt(Math.floor(Math.random()*characters.length));   
+        }
+    }
+    return pass;
+}
 // Apply setCookie
-setCookie('username', username, 30);
+if(!document.cookie){
+    let b = generarCookieRandom(11); //TIENE 3.684227838451159e+64 combinaciones es temporal
+    let username = btoa(b).replace('=','$').replace('=','$');
+    setCookie('username', username, 30);
+}
+else{
+    if(document.cookie=''){
+    let b = generarCookieRandom(11,'num');
+    let username = btoa(b).replace('=','$').replace('=','$');
+    setCookie('username', username, 30);
+    }
+}
 
 
 function IdPicker(idda){

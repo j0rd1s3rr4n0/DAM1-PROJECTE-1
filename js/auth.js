@@ -18,21 +18,26 @@ function iniciar_sesion(){
 
 function registrar(){
     console.log('register');
+    document.querySelector("#email").style ="";
     let email = document.querySelector("#email").value;
     let password = document.querySelector("#password").value;
     let repassword = document.querySelector("#re-password").value;
-    if((password === repassword )&&((email != '')||(email != null)||(email != undefined))){
-        //BORRAR
-        console.log(password,repassword,email);
-        //BORRAR
-        auth.createUserWithEmailAndPassword(email, password)
-            .then((userCredential) => {alert('Hola, '+email);})
-            .catch((error) => {alert('Algo salio mal')});
-    }else{
-        alert('Las contraseñas no coinciden');
-        document.querySelector("#password").value = '';
-        document.querySelector("#re-password").value = '';
+    if (email != ''){
+        if((password === repassword ){
+            //BORRAR
+            console.log(password,repassword,email);
+            //BORRAR
+            auth.createUserWithEmailAndPassword(email, password)
+
+                .then((userCredential) => {alert('Hola, '+email);document.cookie="userUID="+userUID})
+                .catch((error) => {alert('Algo salio mal')});
+        }else{
+            alert('Las contraseñas no coinciden');
+            document.querySelector("#password").value = '';
+            document.querySelector("#re-password").value = '';
+        }
     }
+    document.querySelector("#email").style ="border: 2px solid red";
 }
 
 function salir(){
