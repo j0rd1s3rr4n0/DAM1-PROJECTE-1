@@ -78,8 +78,10 @@ function enteregister() {
                           <input type="password" id="password" name="password" placeholder="Password">
 
                           <input type="password" id="re-password" name="re-password" placeholder="REPEAT PASSWORD">
-                          <input type="button" onclick="actionForm()" id="entrarbtn" class="registro" onclick="registrar()" value="REGISTRAR"><br>
-                          <input type="button" id="registrarbtn" class="registro" onclick="tologin()" value="INICIAR"><br>
+                        <button id="entrarbtn" onclick="actionForm()" id="entrarbtn" class="registro" onclick="registrar()">REGISTRAR</button>
+                        <br>
+                        <button id="registrarbtn" class="registro" onclick="tologin()" >INICIAR</button>
+                        <br>
                           <a onclick="register_load()" style="font-size: 12px;"><i></i></a>
                     </form>
             </div>`;
@@ -95,7 +97,7 @@ function password_rec() {
                       <label for="email">EMAIL/USERNAME:</label><br>
                       <input type="email" id="email" name="email" placeholder="EMAIL">
 
-                      <input type="button" onclick="actionForm()" id="entrarbtn" class="recover" value="RECOVER"><br>
+                      <button onclick="actionForm()" id="entrarbtn" class="recover">RECOVER</button><br>
                       <br>
                       <a style="font-size: 12px;" onclick="tologin()"><i><u>¿Has cambiado de idea? ¡Accede a tu cuenta!</u></i></a>
 

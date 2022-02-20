@@ -378,7 +378,7 @@ button#registrarbtn{
 
 
 
-input[type=button].registro#entrarbtn {
+button.registro#entrarbtn {
     position: absolute;
     margin-left: 2%;
     width: 26%;
@@ -387,7 +387,7 @@ input[type=button].registro#entrarbtn {
     margin-top: -156px;
     font-weight: bold;
 }
-input[type=button].login#entrarbtn {
+button.login#entrarbtn {
     position: absolute;
     margin-left: 2%;
     width: 26%;
@@ -399,7 +399,7 @@ input[type=button].login#entrarbtn {
 
 
 
-input[type=button].registro#registrarbtn{
+button.registro#registrarbtn{
 position: absolute;
     margin-left: 66.5%;
     width: 26%;
@@ -410,7 +410,7 @@ position: absolute;
     margin-top: -82px;
     font-weight: bold;
 }
-input[type=button].login#registrarbtn{
+button.login#registrarbtn{
     position: absolute;
     margin-left: 66.5%;
     width: 26%;
@@ -422,7 +422,7 @@ input[type=button].login#registrarbtn{
     font-weight: bold;
 }
 
-input[type=button].recover#entrarbtn
+button.recover#entrarbtn
 {
     position: absolute;
     margin-left: 2%;
