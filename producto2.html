@@ -57,8 +57,7 @@
                 <meta name="title" content="GPComponentes" />
                 <link rel="canonical" href="https://www.github.com/" />
                 <meta name="keywords" content="firebase,javascript,json,html,css,j0rd1s3rr4n0,pia,mataro,projecte,dam,Desenvolupament,Aplicacions,Multiplataforma">
-                <script type="text/javascript" src="./js/mixto.js"></script>
-                <script type="text/javascript" src="./js/cosas.js"></script>
+
     </head>
     <body class="dark">
         <form method="get" name="q">
@@ -117,41 +116,44 @@
         </form>
         </br>
         <!------>
-
-        <!--TemplateHTML Producto-->
-        <table class="cuadroProductos">
-            <tr>
-                <td class="img-container" id="tdimg">
-                    <img class="bordeado" id="imgprincipal" src="bamba.jpg">
-                </td>
-                <td id="tdMargin">
-                    <br><br>
-                    <p id="Nproducto"> Nombre del producto</p>
-                    <p id="titulo">descripcion</p>
-                    <p id="texto">It is a long established fact that a reader will 
-                        be distracted by the readable content of a page 
-                        when looking at its layout. The point of using 
-                        Lorem Ipsum is that it has a more-or-less normal 
-                        distribution of letters</p>
-                        
-                    <p id="titulo">Precio:</p>
-                    <p id="Tprecio">Precio<span>75€</span>(Precio base: 75€)</p>
-                    <p id="cantidad">Cantidad <input type="number" id="inputCant" name="cantidad" min="1" max="100" value="1" style="margin-right: 20px;"></p>
-                    <p id="lboton"><button type="submit" id="boton"class="fas fa-shopping-cart"> Añadir al carrito</button> <span id="lboton2"><button type="submit" id="boton2">Comprar ya</button></span></p>
-                
-                </td>
-                
-            </tr>
-            <tr>
-                <td class="product-small-img">
-                    <img class="bordeado"  onclick="CambiarImg(this)" id ="img1" src="bamba2.jpg">
-                    <img class="bordeado"  onclick="CambiarImg(this)" id ="img2" src="descarga.jpg">
-                    <img class="bordeado"  onclick="CambiarImg(this)" id ="img3" src="bamba.jpg">
-                </td>
-            
-            </tr>
-        </table>
-        <!--TemplateHTML Producto-->
+        <!------------------------------------------------------------------>
+                <script type="text/javascript" src="./old_js/cosas.js"></script>
+                <script type="text/javascript" src="./old_js/mixto.js"></script>
+                <script>window.addEventListener('load',function() {pantalla();animateNow();faq();displaypregunta1();});</script>
+                <!------------------------------------------------------------------>
+        <!--<div id="descripcion">-->
+            <div class="cuadroProductos">
+                <div id="contenedorDiv" >
+                    <div class="img-container">
+                        <img id="imgprincipal" class="bordeado" src="./img/prod/a.jpeg">
+                    </div>
+                    <div class="product-small-img">
+                        <img class="bordeado" onclick="CambiarImg(this)" id ="img1" src="./img/prod/a.jpeg">
+                        <img class="bordeado" onclick="CambiarImg(this)" id ="img2" src="./img/prod/b.jpeg">
+                        <img class="bordeado" onclick="CambiarImg(this)" id ="img3" src="./img/prod/c.jpeg">
+                    </div>
+                </div>
+            </div>
+            <div style="margin-left: 40%;margin-right: 20%;margin-top:-50%;">
+            <p id="Nproducto">NOMBRE DE PRODUCTO</p>
+            <p id="titulo">Descripcion: </p>
+            <p id="texto">It is a long established fact that a reader will
+                be distracted by the readable content of a page
+                when looking at its layout. The point of using
+                Lorem Ipsum is that it has a more-or-less normal
+                distribution of letters</p>
+            <br><br>
+            <h2>PRECIO:
+                <h3 style="margin-left: 1%;;">PRECIO: <span>75€</span>(PRECIO BASE: 75€)</h3>
+            </h2>
+            <h3 id="cantidad"> Cantidad
+            <input type="number" id="inputCant" name="cantidad" min="1" max="100" value="1" style="margin-right: 20px;">
+            <form>
+                <div class="lboton"><button type="submit" id="boton"class="fas fa-shopping-cart"> Añadir al carrito</button></div>
+                <div class="lboton2"><button type="submit" id="boton2">Comprar ya</button></div>
+            </form></h3>
+        </div>
+        <!--</div>-->
 
         <!------>
         <div id="login" class="overlay">
@@ -161,16 +163,16 @@
                 <div id="log-in" class="loginContent">
                     <form action="#" method="post">
                         <label for="email">EMAIL/USERNAME:</label>
-                        </br>
+                        <br>
                         <input type="email" id="email" name="email" placeholder="EMAIL">
-                        </br>
+                        <br>
                         <label for="password">Password:</label>
-                        </br>
+                        <br>
                         <input type="password" id="password" name="password" placeholder="password">
-                        <button id="entrarbtn" class="login">ENTRAR</button>
-                        </br>
-                        <button id="registrarbtn" class="login" onclick="enteregister()">REGISTRAR</button>
-                        </br>
+                        <input id="entrarbtn" class="login" type="button" value="ENTRAR">
+                        <br>
+                        <input id="registrarbtn" class="login" onclick="enteregister()" type="button" value="REGISTRAR">
+                        <br>
                         <a style="font-size: 12px;" onclick="password_rec()">
                             <i>
                                 <u>¿Olvidaste la contraseña? ¡Recuperala aquí!</u>
