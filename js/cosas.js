@@ -8,71 +8,6 @@ function decrypto(frase){
     return b;
 }
 
-
-/*
-function Randomizador(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-let imagen = "https://rockcontent.com/es/wp-content/uploads/sites/3/2019/02/o-que-e-produto-no-mix-de-marketing-1024x538.png";
-//https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg
-function getCoded(imagen,titulo,preu,identificador){
-    return `<div class="col-md-3 col-sm-6 asd aqui invi" style="/*display:none;">
-                  <div class="product-grid">
-                      <div class="product-image">
-                          <a href="#" class="image" style="background-color:#F3F3F3;">
-                          <div class="img" style="background-image: url(${imagen});"></div>
-                          </a>
-                      </div>
-                      <div class="product-content">
-                          <h3 class="title"><a href="#">${titulo}</a></h3>
-                          <div class="price">${preu}€</div>
-                          <!--
-                              <ul class="rating">
-                                <li class="fas fa-star"></li>
-                                <li class="fas fa-star"></li>
-                                <li class="fas fa-star"></li>
-                                <li class="fas fa-star"></li>
-                                <li class="fas fa-star disable"></li>
-                              </ul>-->
-                      </div>
-                      <div class="action-buttons">
-                          <a class="btn-outline-icon" onlcick="alcarrito(${identificador})"><i class="fas fa-shopping-cart"></i></a>
-                          <a class="btn-outline-icon" href="producto.html#${identificador}"><i class="fas fa-info"></i></a>
-                          <a class="btn-outline-icon" onlcick="favoritos(${identificador})"><i class="fas fa-heart heart"></i></a>
-                      </div>
-                  </div>
-              </div>`;
-}
-
-let i = 0;
-let max = 8;
-let ra = Randomizador(0,2);
-let code = "";
-let t = false;
-let imagenes = ["https://rockcontent.com/es/wp-content/uploads/sites/3/2019/02/o-que-e-produto-no-mix-de-marketing-1024x538.png","https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"];
-
-while(i<max){
-    let ra = Randomizador(0,2);
-    imagen = imagenes[1];
-    console.log(imagen);
-    let tit = 'Naranja Premium Bluetooth 8K 144Hz 1TB SSD';
-    let pree = 30.00;
-    let identi = 'nkjbnasd(bkabd';
-    code+=getCoded(imagen,tit,pree,identi);
-
-
-    i++;
-    if(i=>max){
-        t = true;
-    }
-}
-
-if(t==true){
-    document.getElementById('change').innerHTML = code;
-}
-*/
-
-
 function IdPicker(idda){
     if(idda){
         document.getElementById(idda).style.display='inline';
@@ -221,76 +156,6 @@ function tologin(){
     //document.querySelector("#registrarbtn").classList.toggle("login");
     //document.querySelector("#registrarbtn").classList.toggle("registro");
 }
-/*
-    let uid = '1';
-    let admin = 'YWRtaW4$';
-    if(uid == admin){
-        document.getElementById('loginBody').innerHTML = `
-                <h2>ACCIONES A REALIZAR</h2>
-                <a id="cerrar" href="#">×</a>
-                <div id="log-in" class="loginContent">
-    <form action="#" method="post" id="signout">
-                          <button id="logout" class="logout" onclick="logout()">ADMINISTRAR</button><br>
-                          <button id="logout" class="logout" onclick="logout()">Cerrar Sesion</button><br>
-                        </form>
-            </div>
-            `;
-        }
-    else if (uid != undefined && uid != admin){
-        document.getElementById('loginBody').innerHTML = `
-                <h2>ACCIONES A REALIZAR</h2>
-                <a id="cerrar" href="#">×</a>
-                <div id="log-in" class="loginContent">
-    <form action="#" method="post" id="signout">
-                          <button id="logout" class="logout" onclick="logout()">ULTIMAS COMPRAS</button><br>
-                          <button id="logout" class="logout" onclick="logout()">Cerrar Sesion</button><br>
-                        </form>
-            </div>`;
-        }
-        else{
-            document.getElementById('loginBody').innerHTML = `
-                <h2>ACCEDER A UNA CUENTA</h2>
-                <a id="cerrar" href="#">×</a>
-                <div id="log-in" class="loginContent">
-                    <form action="#" method="post" id="signin">
-                      <label for="email">Email/Username:</label><br>
-                      <input type="email" id="email" name="email" placeholder="name.surname@exchange.org"><br>
-                      <label for="password">Password:</label><br>
-                      <input type="password" id="password" name="password" placeholder="Password">
-
-                      <button id="entrarbtn" class="login">ENTRAR</button><br>
-                      <button id="registrarbtn" class="login" onclick="enteregister()">REGISTRAR</button><br>
-                      <a onmouseover="this.Color = red;" style="font-size: 12px;" onclick="password_rec()"><i><u>¿Olvidaste la contraseña? ¡Recuperala aquí!</u></i></a>
-
-                    </form>
-                </div>`;
-        }
-    /*
-    document.querySelector("#entrarbtn").classList.toggle("login");
-    document.querySelector("#entrarbtn").classList.toggle("registro");
-    document.querySelector("#registrarbtn").classList.toggle("login");
-    document.querySelector("#registrarbtn").classList.toggle("registro");
-}*/
-
-/*
-
-function aaa(idda){
-    document.getElementById(idda).style.display="";
-}
-function noinvi (){
-    //document.getElementsByClassName('invi').style.visiblity;
-
-    let idInterval=setInterval(() => {
-
-        if(i==max) clearInterval(idInterval);
-        else{
-            let idd = "invi"+i;
-            setTimeout(() => aaa(idd),2000);
-            i++;
-        }
-
-    }, 2000);
-    */
 
 function sun(){
     document.getElementById('sun').style.display="inline";
@@ -451,3 +316,136 @@ function animateNow(){
 
 window.addEventListener('load',function() {pantalla();animateNow();});
 
+
+/*
+    let uid = '1';
+    let admin = 'YWRtaW4$';
+    if(uid == admin){
+        document.getElementById('loginBody').innerHTML = `
+                <h2>ACCIONES A REALIZAR</h2>
+                <a id="cerrar" href="#">×</a>
+                <div id="log-in" class="loginContent">
+    <form action="#" method="post" id="signout">
+                          <button id="logout" class="logout" onclick="logout()">ADMINISTRAR</button><br>
+                          <button id="logout" class="logout" onclick="logout()">Cerrar Sesion</button><br>
+                        </form>
+            </div>
+            `;
+        }
+    else if (uid != undefined && uid != admin){
+        document.getElementById('loginBody').innerHTML = `
+                <h2>ACCIONES A REALIZAR</h2>
+                <a id="cerrar" href="#">×</a>
+                <div id="log-in" class="loginContent">
+    <form action="#" method="post" id="signout">
+                          <button id="logout" class="logout" onclick="logout()">ULTIMAS COMPRAS</button><br>
+                          <button id="logout" class="logout" onclick="logout()">Cerrar Sesion</button><br>
+                        </form>
+            </div>`;
+        }
+        else{
+            document.getElementById('loginBody').innerHTML = `
+                <h2>ACCEDER A UNA CUENTA</h2>
+                <a id="cerrar" href="#">×</a>
+                <div id="log-in" class="loginContent">
+                    <form action="#" method="post" id="signin">
+                      <label for="email">Email/Username:</label><br>
+                      <input type="email" id="email" name="email" placeholder="name.surname@exchange.org"><br>
+                      <label for="password">Password:</label><br>
+                      <input type="password" id="password" name="password" placeholder="Password">
+
+                      <button id="entrarbtn" class="login">ENTRAR</button><br>
+                      <button id="registrarbtn" class="login" onclick="enteregister()">REGISTRAR</button><br>
+                      <a onmouseover="this.Color = red;" style="font-size: 12px;" onclick="password_rec()"><i><u>¿Olvidaste la contraseña? ¡Recuperala aquí!</u></i></a>
+
+                    </form>
+                </div>`;
+        }
+    /*
+    document.querySelector("#entrarbtn").classList.toggle("login");
+    document.querySelector("#entrarbtn").classList.toggle("registro");
+    document.querySelector("#registrarbtn").classList.toggle("login");
+    document.querySelector("#registrarbtn").classList.toggle("registro");
+}*/
+
+/*
+
+function aaa(idda){
+    document.getElementById(idda).style.display="";
+}
+function noinvi (){
+    //document.getElementsByClassName('invi').style.visiblity;
+
+    let idInterval=setInterval(() => {
+
+        if(i==max) clearInterval(idInterval);
+        else{
+            let idd = "invi"+i;
+            setTimeout(() => aaa(idd),2000);
+            i++;
+        }
+
+    }, 2000);
+    */
+/*
+function Randomizador(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+let imagen = "https://rockcontent.com/es/wp-content/uploads/sites/3/2019/02/o-que-e-produto-no-mix-de-marketing-1024x538.png";
+//https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg
+function getCoded(imagen,titulo,preu,identificador){
+    return `<div class="col-md-3 col-sm-6 asd aqui invi" style="/*display:none;">
+                  <div class="product-grid">
+                      <div class="product-image">
+                          <a href="#" class="image" style="background-color:#F3F3F3;">
+                          <div class="img" style="background-image: url(${imagen});"></div>
+                          </a>
+                      </div>
+                      <div class="product-content">
+                          <h3 class="title"><a href="#">${titulo}</a></h3>
+                          <div class="price">${preu}€</div>
+                          <!--
+                              <ul class="rating">
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star"></li>
+                                <li class="fas fa-star disable"></li>
+                              </ul>-->
+                      </div>
+                      <div class="action-buttons">
+                          <a class="btn-outline-icon" onlcick="alcarrito(${identificador})"><i class="fas fa-shopping-cart"></i></a>
+                          <a class="btn-outline-icon" href="producto.html#${identificador}"><i class="fas fa-info"></i></a>
+                          <a class="btn-outline-icon" onlcick="favoritos(${identificador})"><i class="fas fa-heart heart"></i></a>
+                      </div>
+                  </div>
+              </div>`;
+}
+
+let i = 0;
+let max = 8;
+let ra = Randomizador(0,2);
+let code = "";
+let t = false;
+let imagenes = ["https://rockcontent.com/es/wp-content/uploads/sites/3/2019/02/o-que-e-produto-no-mix-de-marketing-1024x538.png","https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"];
+
+while(i<max){
+    let ra = Randomizador(0,2);
+    imagen = imagenes[1];
+    console.log(imagen);
+    let tit = 'Naranja Premium Bluetooth 8K 144Hz 1TB SSD';
+    let pree = 30.00;
+    let identi = 'nkjbnasd(bkabd';
+    code+=getCoded(imagen,tit,pree,identi);
+
+
+    i++;
+    if(i=>max){
+        t = true;
+    }
+}
+
+if(t==true){
+    document.getElementById('change').innerHTML = code;
+}
+*/

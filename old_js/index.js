@@ -1,5 +1,5 @@
 //importa funcions de firebase,js
-import {addElement, getElement, onGetNew} from './js/firebase.js';
+//import {addElement, getElement, onGetNew} from './js/firebase.js';
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
     }

@@ -1,5 +1,5 @@
-//importa funcions de firebase,js
-import {addElement, getElement, onGetNew} from './firebase.js';
+////importa funcions de firebase,js
+//import {addElement, getElement, onGetNew} from './firebase.js';
 
 const CAMBIARCODIGO = document.getElementById('change');
 
