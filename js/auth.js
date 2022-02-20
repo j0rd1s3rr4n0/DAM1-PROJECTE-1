@@ -1,3 +1,5 @@
+const auth = firebase.auth();
+
 function iniciar_sesion(){
     console.log('login');
     let email = document.querySelector("#email").value;
@@ -19,7 +21,7 @@ function registrar(){
     let email = document.querySelector("#email").value;
     let password = document.querySelector("#password").value;
     let repassword = document.querySelector("#re-password").value;
-    if((password === repassword )&&((email != '') ||(email != null)||(email != undefined)){
+    if((password === repassword )&&((email != '')||(email != null)||(email != undefined))){
         //BORRAR
         console.log(password,repassword,email);
         //BORRAR
@@ -33,6 +35,14 @@ function registrar(){
     }
 }
 
+function salir(){
+    document.cookie = "";
+    auth.signOut().then(() => {
+    // Sign-out successful.
+    }).catch((error) => {
+        // An error happened.
+    });
+}
 
 /* LLAMADA A LA ACCION DE TODOS LOS FORMULARIOS DE LOGIN/REGISTRO/RECUPERAR CONTRASEÑA / INFO USUARIO ETC ETC*/
 function actionForm(){
@@ -72,3 +82,4 @@ function actionForm(){
 if(document.cookie){
 	alert(document.cookie);
 }
+//BORRAR
