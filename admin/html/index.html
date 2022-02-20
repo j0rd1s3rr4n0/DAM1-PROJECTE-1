@@ -1,6 +1,7 @@
 <html>
    <head>
-      <link rel="stylesheet" type="text/css" href="../css/style.css">
+      <meta charset="UTF-8">
+      <link rel="stylesheet" type="text/css" href="../css/style.css">     
       <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    </head>
@@ -13,27 +14,29 @@
             <li class="list  first-part">
                <div class="apartado">
                   <a href="#" class="link"><i class="fa-solid fa-cart-shopping"></i>Vendes</a>
-                  <i id="flexa1" class="fa-solid fa-chevron-down"></i>
-               </div>
-               <!--CONTINGUT DESPLEGABLE-->
-               <p>abrete</p>
-            </li>
-
-             <!--USUARIS-->
-            <li>
-               <div class="apartado" id="ventas" style="display: none;">
-                  <a href="#" class="link"><i class="fa-solid fa-user"></i>Usuaris</a>
                   <i class="fa-solid fa-chevron-down"></i>
                </div>
                <!--CONTINGUT DESPLEGABLE-->
-               <h3>Mostrar dades usuari</h3>
-               <form>
-                  <label for="user-byname">Elimina per nom</label>
-                  <input type="text" placeholder="Nom usuari" name="user-byname" id="user-byname">
-                  <button>Mostra</button>
+               <div>
+                  <table style="width:50%">
+                  <tr>
+                      <th>Usuario</th>
+                      <th>Total</th>
+                      <th>fecha</th>
+                 </table>
+            </li>
 
-                  <label for="user-byid">Elimina per id</label>
-                  <input type="text" placeholder="ID usuari" name="user-byid" id="user-byid">
+             <!--USUARIS
+            <li>
+               <div class="apartado">
+                  <a href="#" class="link"><i class="fa-solid fa-user"></i>Usuaris</a>
+                  <i class="fa-solid fa-chevron-down"></i>
+               </div>
+               
+               <h3>Mostrar dades usuari</h3>
+               <form id="showUserForm">
+                  <label for="userByEmail">Mostra l'usuari per email</label>
+                  <input type="email" placeholder="Email usuari" name="userByEmail" id="userByEmail">
                   <button>Mostra</button>
                </form>
 
@@ -51,25 +54,43 @@
               </div>
                
 
-            </li>           
+            </li>
+                       
+-->
+            <li>
+               <div class="apartado">
+                  <a href="#" class="link"><i class="fa-solid fa-magnifying-glass"></i></i>Buscar</a>
+                  <i class="fa-solid fa-chevron-down"></i>
+               </div>
+               
+               <h3>Mostrar productes</h3>
+               <form id="showIdForm">
+                  <label for="getById">Buscar per NOM</label>
+                  <input type="text" id="getById">
+                  <button>Mostra</button>
+               </form>
+               
+               <form id="showCtgForm">
+                  <label for="ctgForm">Buscar per CATEGORIA</label>
+                  <select  name="ctgForm" id="ctgForm">
+                     
+                       <option value="1">Móviles</option>
+                       <option value="2">PCs sobremesa</option>
+                       <option value="2">Portátiles</option>
+                     
+                   </select>
+                  <button>Mostra</button>
+               </form>
+               
+   
 
+            </li>             
             <!--PRODUCTES-->
             <li>
                <div class="apartado">
                   <a href="#" class="link"><i class="fa-solid fa-box"></i>Productes</a>
                   <i class="fa-solid fa-chevron-down"></i>
                </div>
-               <!--GET-->
-               <h3>Mostrar productes</h3>
-               <form id="get-prod">
-                  <label for="get-byname">Busca per nom</label>
-                  <input type="text" placeholder="Nom del producte" name="get-byname" id="get-byname">
-                  <button>Mostra</button>
-
-                  <label for="get-byid">Mostra per id</label>
-                  <input type="text" placeholder="ID producte" name="get-byid" id="get-byid">
-                  <button>Mostra</button>
-               </form>
                
                <!--ADD-->
                <hr><h3>Afegir producte</h3>
@@ -108,7 +129,7 @@
                <form id="updProd">
 
                   <label for="fbId">Firebase ID</label>
-                  <input type="text" name="fbId" id="fbId">
+                  <input type="text" name="fbId" id="fbId" class="emptyOrNot">
 
                   <label for="updCategoria">Número categoria:</label>
                   <input type="number" name="updCategoria" id="updCategoria">
@@ -131,7 +152,7 @@
                   <input type="text" name="updimg2">
                   <input type="text" name="updimg3">
 
-                  <button>Update</button>
+                  <button id="validar">Update</button>
                </form>
 
 
@@ -149,9 +170,25 @@
                   <a href="#" class="link"><i class="fa-solid fa-folder-open"></i>Storage</a>
                   <i class="fa-solid fa-chevron-down"></i>
                </div>
-               <h3>Afegir imatges</h3>
-               <form>
-               </form>
+               <h3>Afegir imatges</h3> <br>
+               <!--STORAGE afegir documents-->
+              
+               <label for="idbox">ID del document</label>
+               <input type="text" id="idbox"> 
+               <select name="imageSelection" id="imageSelection">
+                  <option value="image1">Imatge1</option>
+                  <option value="image2">Imatge2</option>
+                  <option value="image3">Imatge3</option>
+               </select>
+               
+               <br> <br>
+
+               <label>Nom imatge</label> <input type="text" id="namebox"> <!--extlab (extensio)--><label id="extlab"></label> <br> <br>
+               <img id="myimg"> <label id="upprogress"></label> <br><br>
+
+               <button id =selbtn>Importar</button>
+               <button id="upbtn">Penjar</button>
+               <button id ="downbtn">Recuperar</button>
             </li>
          </ul>
       </div>

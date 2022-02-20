@@ -5,14 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
 
 </head>
 <body>
-	<form id="loginBody">
-		<h2>ACCEDER A UNA CUENTA</h2>
-	</form>
 
 
 
@@ -20,27 +18,18 @@
 
 
 
-<script type="text/javascript">
-function iniciar_sesion(){
-    console.log('iniciar_sesion')
-}
-function registrar(){
-    console.log('registrar')
-}
 
-/* LLAMADA A LA ACCION DE TODOS LOS FORMULARIOS DE LOGIN/REGISTRO/RECUPERAR CONTRASEÑA / INFO USUARIO ETC ETC*/
-function actionForm(){
-    switch(document.querySelector("#loginBody > h2").innerText){
-        case 'ACCEDER A UNA CUENTA' : console.log('Login');break;
-        case 'REGISTRAR UNA CUENTA' : console.log('Registro');break;
-        case 'TROUBLE LOGGING IN?' : console.log('Recuperar Contraseña');break;
-        case 'MI CUENTA':console.log('Mi Cuenta:');break;
-        default : console.log('DEFAULT');break;
-    }
-}
-actionForm()
-</script>
+<script type="text/javascript" src="./js/auth.js" ></script>
+<script type="text/javascript" src="./js/cabecera.js" ></script>
+<script type="text/javascript" src="./js/carrusel.js" ></script>
+<script type="text/javascript" src="./js/config.js" ></script>
+<script type="text/javascript" src="./js/firestore.js" ></script>
+<script type="text/javascript" src="./js/funciones.js" ></script>
+<script type="text/javascript" src="./js/loadData.js" ></script>
+<script type="text/javascript" src="./js/user.js" ></script>
+<script type="text/javascript" src="./js/validate.js" ></script>
 <script type="text/javascript" src="./js/config.js"></script>
+
 <!--<script type="text/javascript" src="./js/firebase.js"></script>
 <script type="text/javascript" src="./js/index.js"></script>
 <script type="text/javascript" src="./js/mixto.js"></script>

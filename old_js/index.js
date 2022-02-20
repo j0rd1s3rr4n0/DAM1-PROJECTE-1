@@ -1,5 +1,5 @@
-//importa funcions de firebase,js
-//import {addElement, getElement, onGetNew} from './js/firebase.js';
+////importa funcions de firebase,js
+//import {addElement, getElement, onGetNew} from './firebase.js';
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
     }
@@ -44,10 +44,9 @@ function llamarProductos(){
     });
 
 }
-const botonSyncCart = document.getElementById("syncButtonCart");
-if (botonSyncCart){
-botonSyncCart.addEventListener("click", () => llamarProductos());
-}
+
+document.getElementById("syncButtonCart").addEventListener("click", () => llamarProductos());
+
 /*window.addEventListener('DOMContentLoaded', async() => {
    //onSnapshot (permet que no hagi de refrescar la pàgina quan entri un nou objecte) 
    //es queda "escoltant" a l'espera de noves entrades

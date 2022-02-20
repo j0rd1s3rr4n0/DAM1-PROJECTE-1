@@ -51,10 +51,12 @@ li {
     text-decoration: none;
     font-family: sans-serif;
     color: var(--color_White);
-}   
+    pointer-events: none
+}
 
 i {
     margin-right: 10px;
+    pointer-events: none
 }
 
 .fa-chevron-down {
@@ -99,4 +101,10 @@ h3 {
 
 #get-prod, #addprod, #upd-prod, #del-prod {
     padding-left: 20px;
+}
+
+#myimg {
+    height: 200px;
+    width: 200px;
+    border: 2px black solid
 }

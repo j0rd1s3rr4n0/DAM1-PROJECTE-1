@@ -1,4 +1,5 @@
-//importa funcions de firebase,js
+////importa funcions de firebase,js
+//import {addElement, getElement, onGetNew} from './firebase.js';
 
 const CAMBIARCODIGO = document.getElementById('change');
 
@@ -74,6 +75,7 @@ function getCoded(imagen,titulo,preu,identificador,idd){
 }
 
 
+/* REHACER
 function llamarProductos(){
 
     onGetNew((querySnapshot) => {
@@ -101,6 +103,7 @@ function llamarProductos(){
 }
 //document.getElementById("change").addEventListener("DOM", () => llamarProductos());
 llamarProductos();
+*/
 
 
 function selectWhere(collection,field,operator,value){
