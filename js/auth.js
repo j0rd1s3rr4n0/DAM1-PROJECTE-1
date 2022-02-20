@@ -33,16 +33,15 @@ function registrar(){
                     alert('Hola, '+email);
                     document.cookie="userUID="+userUID
                 })
-                .catch((error) => {
-                    alert('Algo salio mal')
-                });
+                .catch((error) => {console.log('Puede que algo haya salido mal...')});
         }else{
             alert('Las contraseñas no coinciden');
             document.querySelector("#password").value = '';
             document.querySelector("#re-password").value = '';
+            document.querySelector("#email").style ="border: 2px solid red";
         }
     }
-    document.querySelector("#email").style ="border: 2px solid red";
+
 }
 function restore(){
     let email = document.querySelector("#email");
@@ -99,6 +98,6 @@ function actionForm(){
 
 // BORRAR
 if(document.cookie){
-	alert(document.cookie);
+	console.log(document.cookie);
 }
 //BORRAR
