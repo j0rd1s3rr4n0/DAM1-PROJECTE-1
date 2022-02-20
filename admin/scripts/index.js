@@ -72,43 +72,15 @@ getDocs(colCarrito)
 
 //QUERIES------------------------------------------------------------------------------------------------------------------
 
-
-var valores = document.querySelector("#getById").value;
 const showById = document.getElementById('showIdForm')
-const q = query(collection(db, "carrito"), where("nombre", "===", valores));
-
-const querySnapshot = await getDocs(q);
-showById.addEventListener('submit', (e) => {
-    e.preventDefault()
-    querySnapshot.forEach((doc) => {
-  // doc.data() is never undefined for query doc snapshots
-  console.log(doc.id, " => ", doc.data() );
-    })
-    console.log('SE HA EJECUTADO EL SCRIPT');
-})
-/*const showById = document.getElementById('showIdForm')
 
 const showByCategory = document.getElementById('showCtgForm')
 
 
-var docRef = doc(db, 'carrito', 'XfrCQAPC5CnbYWTcrC7r')
-
-var docSnap = getDoc(docRef)
+const docRef = doc(db, 'carrito', showById.getById.value,)
 
 
-showById.addEventListener('submit', (e) => {
-    e.preventDefault()
-    console.log(docRef)
-    console.log(docSnap.doc.dat())
-    
-    if(docSnap().exists()){
-        console.log(docSnap.data())
-    }
-    
-    console.log(doc.data())
 
-})
-*/ 
 
 //ADD----------------------------------------------------------------------------------------------------------------------
 const addProduct = document.getElementById('addProd')

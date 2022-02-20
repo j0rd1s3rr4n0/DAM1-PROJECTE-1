@@ -5,7 +5,7 @@ auth.onAuthStateChanged((user) => {
     // https://firebase.google.com/docs/reference/js/firebase.User
     var uid = user.uid;
     alert(uid);
-    document.getElementById('').class
+    
   } else {
   }
 });
@@ -18,12 +18,10 @@ function iniciar_sesion(){
       .then((userCredential) => {
         // Signed in
         var user = userCredential.user;
-        var uid = user.uid;
-        uid = btoa(uid);
         delcookie('username');
         setCookie('uid',uid,1);
-        document.querySelector("#iconos > li:nth-child(2) > a > i").className = "fa-solid fa-user-bounty-hunte";
-        window.location.href = 'index.html';
+        document.querySelector("#iconos > li:nth-child(2) > a").innerHTML = '<i class="fa-solid fa-user-astronaut"></i>';
+        window.location.href = './index.html';
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -50,8 +48,8 @@ function registrar(){
                     uid = btoa(uid);
                     delcookie('username');
                     setCookie('uid',uid,1);
-
-                    window.location.href = 'index.html#login';
+                    window.location.href ='./#'
+                    document.querySelector("#iconos > li:nth-child(2) > a").innerHTML = '<i class="fa-solid fa-user-secret"></i>';
                 })
                 .catch((error) => {console.log('Puede que algo haya salido mal...')});
         }else{

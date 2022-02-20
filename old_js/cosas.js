@@ -74,7 +74,7 @@ function enteregister() {
                     <form action="#" method="post" id="signout">
                       <label for="email">Email / Username:</label>
                       <br>
-                      <input type="email" id="email" name="email" placeholder="name.surname@exchange.org">
+                      <input type="email" pattern="[^@\s]+@[^@\s]+" id="email" name="email" placeholder="name.surname@exchange.org">
                       <br>
                       <br>
                       <label for="password">Password:</label>
