@@ -29,8 +29,13 @@ function registrar(){
             //BORRAR
             auth.createUserWithEmailAndPassword(email, password)
 
-                .then((userCredential) => {alert('Hola, '+email);document.cookie="userUID="+userUID})
-                .catch((error) => {alert('Algo salio mal')});
+                .then((userCredential) => {
+                    alert('Hola, '+email);
+                    document.cookie="userUID="+userUID
+                })
+                .catch((error) => {
+                    alert('Algo salio mal')
+                });
         }else{
             alert('Las contraseñas no coinciden');
             document.querySelector("#password").value = '';
@@ -68,6 +73,7 @@ function actionForm(){
 
         case 'ACCEDER A UNA CUENTA' :
             console.log('Login');
+            iniciar_sesion();
             break;
 
         case 'REGISTRAR UNA CUENTA' :
@@ -88,11 +94,6 @@ function actionForm(){
             console.log('DEFAULT');
             break;
     }
-    let user = document.querySelector("#user").value;
-	let pass = document.querySelector("#password").value;
-    if(pass && user){
-    	console.log(user+':'+pass);
-    }else{console.log('NO HAY NADA')}
 
 }
 
