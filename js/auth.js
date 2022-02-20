@@ -1,5 +1,15 @@
 const auth = firebase.auth();
 
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    var uid = user.uid;
+    alert(uid);
+    document.getElementById('').class
+  } else {
+  }
+});
+
 function iniciar_sesion(){
     console.log('login');
     let email = document.querySelector("#email").value;
@@ -10,9 +20,10 @@ function iniciar_sesion(){
         var user = userCredential.user;
         var uid = user.uid;
         uid = btoa(uid);
-        document.cookie="";
-        document.cookie="userUID="+uid;
-        // ...
+        delcookie('username');
+        setCookie('uid',uid,1);
+        document.querySelector("#iconos > li:nth-child(2) > a > i").className = "fa-solid fa-user-bounty-hunte";
+        window.location.href = 'index.html';
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -37,8 +48,10 @@ function registrar(){
                     alert('Hola, '+email);
                     var uid = user.uid;
                     uid = btoa(uid);
-                    document.cookie="";
-                    document.cookie="userUID="+uid;
+                    delcookie('username');
+                    setCookie('uid',uid,1);
+
+                    window.location.href = 'index.html#login';
                 })
                 .catch((error) => {console.log('Puede que algo haya salido mal...')});
         }else{
@@ -66,6 +79,8 @@ function restore(){
 function salir(){
     document.cookie = "";
     auth.signOut().then(() => {
+        delcookie('username');
+        delcookie('uid');
     // Sign-out successful.
     }).catch((error) => {
         // An error happened.

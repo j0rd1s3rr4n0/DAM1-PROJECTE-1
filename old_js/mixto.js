@@ -3,9 +3,12 @@
 
 const CAMBIARCODIGO = document.getElementById('change');
 
-
+function delcookie(name) {
+  document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
 
 // Set a Cookie
+
 function setCookie(cName, cValue, expDays) {
         let date = new Date();
         date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
@@ -137,7 +140,6 @@ function llamarProductos(){
     });
 
 }
-//document.getElementById("change").addEventListener("DOM", () => llamarProductos());
 llamarProductos();
 */
 
