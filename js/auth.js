@@ -1,10 +1,38 @@
-
 function iniciar_sesion(){
-    console.log('iniciar_sesion')
+    console.log('login');
+    let email = document.querySelector("#email").value;
+    let password = document.querySelector("#password").value;
+    auth.signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+      });
 }
+
 function registrar(){
-    console.log('registrar')
+    console.log('register');
+    let email = document.querySelector("#email").value;
+    let password = document.querySelector("#password").value;
+    let repassword = document.querySelector("#re-password").value;
+    if((password === repassword )&&((email != '') ||(email != null)||(email != undefined)){
+        //BORRAR
+        console.log(password,repassword,email);
+        //BORRAR
+        auth.createUserWithEmailAndPassword(email, password)
+            .then((userCredential) => {alert('Hola, '+email);})
+            .catch((error) => {alert('Algo salio mal')});
+    }else{
+        alert('Las contraseñas no coinciden');
+        document.querySelector("#password").value = '';
+        document.querySelector("#re-password").value = '';
+    }
 }
+
 
 /* LLAMADA A LA ACCION DE TODOS LOS FORMULARIOS DE LOGIN/REGISTRO/RECUPERAR CONTRASEÑA / INFO USUARIO ETC ETC*/
 function actionForm(){
@@ -17,6 +45,7 @@ function actionForm(){
 
         case 'REGISTRAR UNA CUENTA' :
             console.log('Registro');
+            registrar()
             break;
 
         case 'TROUBLE LOGGING IN?' :

@@ -346,21 +346,21 @@ ul.separat > li{
 }
 
 
-button#entrarbtn:hover{
+input[type=button]#entrarbtn:hover{
     background-color: yellow;
     color: black;
 }
-button#entrarbtn{
+input[type=button]#entrarbtn{
     position: absolute;
     margin-left: 2%;
     border-radius: 20px;
     font-weight: bold;
 }
-button#registrarbtn:hover{
+input[type=button]#registrarbtn:hover{
     background-color: yellow;
     color: black;
 }
-button#registrarbtn{
+input[type=button]#registrarbtn{
     position: absolute;
     margin-left: 66.5%;
     border: 3px solid rgb(210,100,0);
@@ -378,7 +378,7 @@ button#registrarbtn{
 
 
 
-button.registro#entrarbtn {
+input[type=button].registro#entrarbtn {
     position: absolute;
     margin-left: 2%;
     width: 26%;
@@ -387,7 +387,7 @@ button.registro#entrarbtn {
     margin-top: -156px;
     font-weight: bold;
 }
-button.login#entrarbtn {
+input[type=button].login#entrarbtn {
     position: absolute;
     margin-left: 2%;
     width: 26%;
@@ -399,7 +399,7 @@ button.login#entrarbtn {
 
 
 
-button.registro#registrarbtn{
+input[type=button].registro#registrarbtn{
 position: absolute;
     margin-left: 66.5%;
     width: 26%;
@@ -407,10 +407,11 @@ position: absolute;
     border: 3px solid rgb(210,100,0);
     background-color: rgba(255,140,0,0.9);
     border-radius: 10px;
+    margin-top: -40px;
     margin-top: -82px;
     font-weight: bold;
 }
-button.login#registrarbtn{
+input[type=button].login#registrarbtn{
     position: absolute;
     margin-left: 66.5%;
     width: 26%;
@@ -422,7 +423,7 @@ button.login#registrarbtn{
     font-weight: bold;
 }
 
-button.recover#entrarbtn
+input[type=button].recover#entrarbtn
 {
     position: absolute;
     margin-left: 2%;

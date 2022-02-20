@@ -72,17 +72,23 @@ function enteregister() {
                 <a id="cerrar" href="#">×</a>
                 <div id="log-in" class="loginContent">
                     <form action="#" method="post" id="signout">
-                          <label for="email">Email / Username:</label><br>
-                          <input type="email" id="email" name="email" placeholder="name.surname@exchange.org"><br>
-                          <br><label for="password">Password:</label><br>
-                          <input type="password" id="password" name="password" placeholder="Password">
-
-                          <input type="password" id="re-password" name="re-password" placeholder="REPEAT PASSWORD">
-                        <button id="entrarbtn" onclick="actionForm()" id="entrarbtn" class="registro" onclick="registrar()">REGISTRAR</button>
-                        <br>
-                        <button id="registrarbtn" class="registro" onclick="tologin()" >INICIAR</button>
-                        <br>
-                          <a onclick="register_load()" style="font-size: 12px;"><i></i></a>
+                      <label for="email">Email / Username:</label>
+                      <br>
+                      <input type="email" id="email" name="email" placeholder="name.surname@exchange.org">
+                      <br>
+                      <br>
+                      <label for="password">Password:</label>
+                      <br>
+                      <input type="password" id="password" name="password" placeholder="Password">
+                      <input type="password" id="re-password" name="re-password" placeholder="REPEAT PASSWORD">
+                      <input id="entrarbtn" class="registro" onclick="actionForm()" value="REGISTRAR" type="button">  <br>
+                      <input id="registrarbtn" class="registro" onclick="tologin()" type="button" value="INICIAR">
+                      <br>
+                      <a style="font-size: 12px;" onclick="password_rec()">
+                        <i>
+                          <u>¿Olvidaste la contraseña? ¡Recuperala aquí!</u>
+                        </i>
+                      </a>
                     </form>
             </div>`;
 
@@ -97,7 +103,7 @@ function password_rec() {
                       <label for="email">EMAIL/USERNAME:</label><br>
                       <input type="email" id="email" name="email" placeholder="EMAIL">
 
-                      <button onclick="actionForm()" id="entrarbtn" class="recover">RECOVER</button><br>
+                      <input onclick="actionForm()" id="entrarbtn" class="recover" type="button" value="RECOVER"><br>
                       <br>
                       <a style="font-size: 12px;" onclick="tologin()"><i><u>¿Has cambiado de idea? ¡Accede a tu cuenta!</u></i></a>
 
@@ -144,9 +150,9 @@ function tologin() {
                         <label for="password">Password:</label>
                         <br>
                         <input type="password" id="password" name="password" placeholder="password">
-                        <button id="entrarbtn" class="login">ENTRAR</button>
+                        <input id="entrarbtn" class="login" type="button" value="ENTRAR">
                         <br>
-                        <button id="registrarbtn" class="login" onclick="enteregister()">REGISTRAR</button>
+                        <input id="registrarbtn" class="login" onclick="enteregister()" type="button" value="REGISTRAR">
                         <br>
                         <a style="font-size: 12px;" onclick="password_rec()">
                             <i>
@@ -218,27 +224,6 @@ function LoadProd() {
     )
 }
 
-/* LLAMADA A LA ACCION DE TODOS LOS FORMULARIOS DE LOGIN/REGISTRO/RECUPERAR CONTRASEÑA / INFO USUARIO ETC ETC*/
-function actionForm() {
-    switch (document.querySelector("#loginBody > h2").innerText) {
-        case 'ACCEDER A UNA CUENTA':
-            console.log('Login');
-            break;
-        case 'REGISTRAR UNA CUENTA':
-            console.log('Registro');
-            break;
-        case 'TROUBLE LOGGING IN?':
-            console.log('Recuperar Contraseña');
-            break;
-        case 'MI CUENTA':
-            console.log('Mi Cuenta:');
-            break;
-        case '':
-        default:
-            console.log('DEFAULT');
-            break;
-    }
-}
 
 
 
