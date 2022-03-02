@@ -3,7 +3,6 @@ function crypto(frase) {
     return a;
 
 }
-
 function decrypto(frase) {
     let b = atob(frase);
     return b;
