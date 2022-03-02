@@ -106,7 +106,7 @@ function getCoded(imagen,titulo,preu,identificador,idd){
                       </div>
                       <div class="action-buttons">
                           <a class="btn-outline-icon" onlcick="alcarrito(${identificador})"><i class="fas fa-shopping-cart"></i></a>
-                          <a class="btn-outline-icon" href="producto.html#${identificador}"><i class="fas fa-info"></i></a>
+                          <a class="btn-outline-icon" href="./producto.html#${identificador}"><i class="fas fa-info"></i></a>
                           <a class="btn-outline-icon" onlcick="favoritos(${identificador})"><i class="fas fa-heart heart"></i></a>
                       </div>
                   </div>
