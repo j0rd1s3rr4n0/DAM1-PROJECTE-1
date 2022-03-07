@@ -55,7 +55,7 @@ const colCarrito= collection(db,'carrito')
 
 
 //RECIBIR DB ------------------------------------------------------------------------------------------------------------
-getDocs(colProductos)
+getDocs(colCarrito)
   .then((snapshot) => {
       let productos = []
       snapshot.docs.forEach((doc) => {
@@ -78,7 +78,7 @@ const addProduct = document.getElementById('addProd')
 addProduct.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    addDoc((colProductos), {
+    addDoc((colCarrito), {
         categoria: addProduct.prodName.value,
         idproducto: addProduct.prodId.valueAsNumber,
         nombre: addProduct.prodName.value,
@@ -109,19 +109,115 @@ addProduct.addEventListener('submit', (e) => {
     })
 })
 */
+
+//UPDATE-------------------------------------------------------------------------------------------------------------------
+/*ESTE ES EL BUENO
+document.getElementById("updBtn").addEventListener("click", updateFunction);
+function updateFunction() {
+  var updID = document.getElementById('fbId')
+  var preu = document.getElementById('updPrice')
+  //var updCategoria = document.getElementById('updCategoria')
+  updateDoc(doc(db, "carrito", updID.value), {
+        precio: preu.value,
+        //categoria : updCategoria.value
+  });
+
+  updID.value = ''
+  preu.value = ''
+}
+*/
+document.getElementById("updBtn").addEventListener("click", updateFunction);
+function updateFunction() {
+  var firebaseID = document.getElementById('fbId')
+  var updCategoria = document.getElementById('updCategoria')
+  var updId = document.getElementById('updId')
+  var updName = document.getElementById('updName')
+  var updDesc = document.getElementById('updDesc')
+  var updPreu = document.getElementById('updPrice')
+  //var updImg1 = document.getElementById('updimg1')
+  //var updImg2 = document.getElementById('updimg2')
+  //var updImg3 = document.getElementById('updimg3')
+  
+
+    //CATEGORIA
+    if(!updCategoria.value.trim().length == 0){
+        updateDoc(doc(db, "carrito", firebaseID.value), {
+        categoria: updCategoria.value,
+    });
+    }
+    //ID PRODUCTE
+    if(!updId.value.trim().length == 0){
+        updateDoc(doc(db, "carrito", firebaseID.value), {
+        idproducto: updId.value,
+    });
+    }
+
+    //NOM PRODUCTE
+    if(!updName.value.trim().length == 0){
+        updateDoc(doc(db, "carrito", firebaseID.value), {
+        nombre: updName.value,
+    });
+    }
+    //DESCRIPCIO
+    if(!updDesc.value.trim().length == 0){
+        updateDoc(doc(db, "carrito", firebaseID.value), {
+        descripcion: updDesc.value,
+    });
+    }
+
+    //PREU
+    if(!updPreu.value.trim().length == 0){
+        updateDoc(doc(db, "carrito", firebaseID.value), {
+        precio: updPreu.value,
+    });
+    }
+    
+    /*IMATGES
+    if(!updImg1.value.trim().length == 0){
+        updateDoc(doc(db, "carrito", firebaseID.value), {
+        images: {
+            0: updImg1.value,
+        }
+    });
+    }
+    if(!updImg2.value.trim().length == 0){
+        updateDoc(doc(db, "carrito", firebaseID.value), {
+        images: {
+            1: updImg2.value,
+        }
+    });
+    }
+    if(!updImg3.value.trim().length == 0){
+        updateDoc(doc(db, "carrito", firebaseID.value), {
+        images: {
+            2: updImg3.value,
+        }
+    });
+    }
+    */
+
+    else {
+     console.log("all values are empty")
+    }
+
+firebaseID.value = ''
+updCategoria.value = ''
+updId.value = ''
+updName.value = ''
+updDesc.value = ''
+updPreu.value = ''
+
+
+}
+
 //delete-------------------------------------------------------------------------------------------------------------------
-const deleteProduct = document.getElementById('delProd')
-deleteProduct.addEventListener('submit', (e) => {
-    e.preventDefault
-    const  deleteRef = doc(db, 'productos', deleteProduct.delById.value)
 
-    deleteDoc(deleteRef)
-    .then(() => {
-        deleteProduct.reset
-    })
-})
-
-
+document.getElementById("Delbtn").addEventListener("click", myFunction);
+function myFunction() {
+  var idDoc = document.getElementById('delById')
+  deleteDoc(doc(db, "carrito", idDoc.value));
+  idDoc.value = ''
+}
 //STORAGE---------------------------------------------------------------------------------------------------------------------
 //variables i refs
 var files = [];

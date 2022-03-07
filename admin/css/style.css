@@ -37,6 +37,9 @@ li {
     transition: .7s;
     overflow: hidden;
 }
+li > input, label{
+    padding-left: 6px;
+}
 
 .apartado {
     display: flex;
@@ -99,9 +102,6 @@ h3 {
     padding-left: 10px;
 }
 
-#get-prod, #addprod, #upd-prod, #del-prod {
-    padding-left: 20px;
-}
 
 #myimg {
     height: 200px;
